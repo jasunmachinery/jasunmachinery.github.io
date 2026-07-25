@@ -9,22 +9,26 @@
         header { background: #1a2a3a; color: white; padding: 50px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 2.8em; font-weight: 600; letter-spacing: 1px; }
         header p { margin: 12px 0 0; color: #a0aec0; font-size: 1.3em; }
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        
+        /* 放大容器宽度，让前两个卡片和第三个一样宽大 */
+        .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; }
+        
         .intro { text-align: center; margin-bottom: 50px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
         .intro h2 { color: #1a2a3a; margin-top: 0; }
-        .intro p { font-size: 1.2em; color: #4a5568; line-height: 1.7; max-width: 900px; margin: 0 auto; }
+        .intro p { font-size: 1.2em; color: #4a5568; line-height: 1.7; max-width: 1000px; margin: 0 auto; }
         
-        /* 核心改变：每个设备独占一整行，采用左右两栏高端排版 */
-        .product-section { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 35px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; border: 1px solid #e2e8f0; }
-        .product-info { flex: 1; min-width: 320px; }
-        .product-video { flex: 1; min-width: 320px; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 12px rgba(0,0,0,0.15); aspect-ratio: 16 / 9; }
-        .product-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+        /* 核心改变：每个设备板块的尺寸、外边距、内边距严格按相同标准对齐 */
+        .product-section { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 40px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; border: 1px solid #e2e8f0; box-sizing: border-box; }
+        .product-info { flex: 1.2; min-width: 350px; }
         
-        .product-info h3 { margin-top: 0; color: #1a2a3a; font-size: 1.8em; border-bottom: 3px solid #3182ce; padding-bottom: 12px; margin-bottom: 20px; }
-        .product-info p { font-size: 1.1em; color: #4a5568; line-height: 1.6; }
+        /* 统一右侧模块的尺寸比例，让它们高矮胖瘦完全一致 */
+        .product-video { flex: 1; min-width: 350px; height: 260px; background: #2d3748; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; box-sizing: border-box; padding: 20px; }
+        
+        .product-info h3 { margin-top: 0; color: #1a2a3a; font-size: 1.9em; border-bottom: 3px solid #3182ce; padding-bottom: 12px; margin-bottom: 20px; }
+        .product-info p { font-size: 1.15em; color: #4a5568; line-height: 1.6; }
         .specs { list-style: none; padding: 0; margin: 25px 0 0; }
-        .specs li { padding: 10px 0; border-bottom: 1px dashed #edf2f7; font-size: 1.05em; }
-        .specs strong { color: #2d3748; display: inline-block; width: 160px; }
+        .specs li { padding: 12px 0; border-bottom: 1px dashed #edf2f7; font-size: 1.1em; }
+        .specs strong { color: #2d3748; display: inline-block; width: 180px; }
         
         .contact-section { background: #edf2f7; border-radius: 12px; padding: 40px; margin-top: 60px; text-align: center; }
         .contact-section h2 { color: #1a2a3a; margin-top: 0; font-size: 2em; }
@@ -32,7 +36,7 @@
         .btn-whatsapp:hover { transform: scale(1.05); }
         .email-link { display: block; font-size: 1.3em; color: #3182ce; font-weight: bold; margin-top: 15px; text-decoration: none; }
         .email-link:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 40px; color: #718096; font-size: 0.95em; border-top: 1px solid #e2e8f0; margin-top: 60px; background: #1a2a3a; color: #a0aec0; }
+        footer { text-align: center; padding: 40px; color: #a0aec0; font-size: 0.95em; border-top: 1px solid #e2e8f0; margin-top: 60px; background: #1a2a3a; }
     </style>
 </head>
 <body>
@@ -43,12 +47,14 @@
     </header>
 
     <div class="container">
+        
+        <!-- 顶部介绍 -->
         <div class="intro">
             <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
             <p>We supply high-efficiency laundry soap and toilet soap manufacturing equipment globally. From raw material mixing to final soap bar packing, we provide complete, customized engineering solutions to meet your factory's capacity needs.</p>
         </div>
 
-        <!-- 设备 1 -->
+        <!-- 设备 1：压条机 -->
         <div class="product-section">
             <div class="product-info">
                 <h3>1. Soap Plodder (Extruder)</h3>
@@ -59,13 +65,13 @@
                     <li><strong>Application:</strong>Laundry & Toilet Soap Bars</li>
                 </ul>
             </div>
-            <!-- 压条机暂无视频，留空一个高端提示，随时可以换成视频 -->
-            <div class="product-video" style="background:#2d3748; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1em;">
-                <span>Video Demonstration Coming Soon</span>
+            <div class="product-video">
+                <span style="font-size: 1.2em; font-weight: bold; color: #3182ce; margin-bottom: 10px;">Equipment Video</span>
+                <span style="font-size: 0.95em; color: #a0aec0;">Demonstration Coming Soon</span>
             </div>
         </div>
 
-                <!-- 设备 2：切皂成型机（完美修复跳转，点击直达具体视频） -->
+        <!-- 设备 2：切皂成型机（全新统一样式，大小比例完全对齐） -->
         <div class="product-section">
             <div class="product-info">
                 <h3>2. Soap Stamping & Cutting Machine</h3>
@@ -76,27 +82,16 @@
                     <li><strong>Mold:</strong>Customizable Logo/Shape</li>
                 </ul>
             </div>
-            <div class="product-section" style="flex: 1; min-width: 320px; background: #2d3748; padding: 25px; border-radius: 8px; text-align: center; color: white;">
-                <h4 style="margin-top:0; color:#3182ce; font-size:1.3em;">Equipment Demonstration Video</h4>
-                <p style="font-size:0.95em; color:#a0aec0; margin-bottom:20px;">Watch our automatic laundry bar soap cutter working live on YouTube.</p>
-                
-                <!-- 核心修复：精准直达视频详情播放页，带有高转化小图标 -->
-                <a href="https://youtu.be/k7i8Yf1b_X8" target="_blank" style="display: inline-block; background: #e50914; color: white; padding: 14px 28px; font-size: 1.1em; font-weight: bold; border-radius: 6px; text-decoration: none; box-shadow: 0 4px 10px rgba(229,9,20,0.4); margin-bottom:10px;">
+            <div class="product-video">
+                <h4 style="margin: 0 0 10px 0; color: #3182ce; font-size: 1.3em;">Equipment Demonstration Video</h4>
+                <p style="font-size: 0.95em; color: #a0aec0; margin: 0 0 20px 0; padding: 0 10px;">Watch our automatic laundry bar soap cutter working live on YouTube.</p>
+                <a href="https://youtu.be" target="_blank" style="display: inline-block; background: #e50914; color: white; padding: 12px 25px; font-size: 1.05em; font-weight: bold; border-radius: 6px; text-decoration: none; box-shadow: 0 4px 10px rgba(229,9,20,0.4);">
                     ▶️ Click to Watch Video on YouTube
                 </a>
-                <span style="display:block; font-size:0.85em; color:#718096; margin-top:5px;">(WhatsApp & Email included in video description)</span>
             </div>
         </div>
 
-    </div>
-</a>
-<p style="text-align: center; margin-top: 10px; font-size: 0.95em; color: #718096; margin-bottom: 0;">💬 Click the image above to watch the working video</p>
-
-
-            </div>
-        </div>
-
-        <!-- 设备 3 -->
+        <!-- 设备 3：搅拌磨粉系统 -->
         <div class="product-section">
             <div class="product-info">
                 <h3>3. Soap Mixing & Milling System</h3>
@@ -107,18 +102,21 @@
                     <li><strong>Feature:</strong>Uniform mixing & fine refining</li>
                 </ul>
             </div>
-            <div class="product-video" style="background:#2d3748; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1em;">
-                <span>Video Demonstration Coming Soon</span>
+            <div class="product-video">
+                <span style="font-size: 1.2em; font-weight: bold; color: #3182ce; margin-bottom: 10px;">Equipment Video</span>
+                <span style="font-size: 0.95em; color: #a0aec0;">Demonstration Coming Soon</span>
             </div>
         </div>
 
+        <!-- 底部联系板块 -->
         <div class="contact-section">
             <h2>Contact Us for a Free Quote & Catalog</h2>
             <p>Get in touch with our engineering team directly via WhatsApp or Email for prices and specifications.</p>
             <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
             <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉️ Email: jasunmachinery@gmail.com</a>
         </div>
-    </div>
+        
+    </div> <!-- 完美的容器闭合暗号，保障前两项放大并与第三项绝对对齐 -->
 
     <footer>
         &copy; 2026 Jasun Machinery. All Rights Reserved. | Dedicated to Soap Making Technology.
@@ -126,4 +124,3 @@
 
 </body>
 </html>
-    
