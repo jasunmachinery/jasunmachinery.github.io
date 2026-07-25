@@ -20,7 +20,7 @@
         .intro h2 { color: #1a2a3a; margin-top: 0; font-size: 2.2em; }
         .intro p { font-size: 1.35em; color: #4a5568; line-height: 1.8; max-width: 1200px; margin: 0 auto; text-align: center; }
         
-        .product-section { background: white; border-radius: 16px; box-shadow: 0 6px 25px rgba(0,0,0,0.06); padding: 50px; margin-bottom: 50px; display: flex; flex-wrap: wrap; gap: 50px; align-items: center; border: 1px solid #e2e8f0; box-sizing: border-box; }
+        .product-section { background: white; border-radius: 16px; box-shadow: 0 6px 25 rgba(0,0,0,0.06); padding: 50px; margin-bottom: 50px; display: flex; flex-wrap: wrap; gap: 50px; align-items: center; border: 1px solid #e2e8f0; box-sizing: border-box; }
         
         .product-info { flex: 1.3; min-width: 400px; }
         .product-info h3 { margin-top: 0; color: #1a2a3a; font-size: 2.3em; border-bottom: 4px solid #3182ce; padding-bottom: 15px; margin-bottom: 25px; }
@@ -30,7 +30,9 @@
         .specs li { padding: 16px 0; border-bottom: 1px dashed #edf2f7; font-size: 1.25em; }
         .specs strong { color: #2d3748; display: inline-block; width: 220px; }
         
-        .product-video { flex: 1; min-width: 400px; height: 350px; background: #2d3748; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; box-sizing: border-box; padding: 30px; }
+        /* 核心改变：右侧全部升级为高端图片展示框样式，自适应宽屏 */
+        .product-image-container { flex: 1; min-width: 400px; height: 350px; background: #f8fafc; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.04); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px dashed #cbd5e1; box-sizing: border-box; position: relative; }
+        .product-image-container img { width: 100%; height: 100%; object-fit: cover; display: none; position: absolute; top:0; left:0; }
         
         .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 18px 45px; font-size: 1.3em; font-weight: bold; border-radius: 50px; text-decoration: none; margin: 10px 15px; box-shadow: 0 6px 15px rgba(37,211,102,0.4); transition: transform 0.2s; }
         .btn-whatsapp:hover { transform: scale(1.05); }
@@ -60,79 +62,105 @@
 
     <div class="container">
         
-        <!-- 🌟 核心替换：完美嵌入您最新的开封佳顺工业公司中英文简介 🌟 -->
         <div class="intro">
             <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
             <p>Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
         </div>
 
-        <!-- 设备 1：压条机 -->
+        <!-- 1. Mixer/Kneader -->
         <div class="product-section">
             <div class="product-info">
-                <h3>1. Soap Plodder (Extruder)</h3>
-                <p>Heavy-duty vacuum duplex plodder for refining and extruding high-density soap bars. Ensures perfectly smooth surface finishing.</p>
+                <h3>1. Mixer/Kneader</h3>
+                <p>High-efficiency intensive mixing equipment for thorough blending of soap noodles and raw ingredients.</p>
                 <ul class="specs">
-                    <li><strong>Capacity:</strong>500 - 2000 kg/h</li>
-                    <li><strong>Material:</strong>Stainless Steel 304</li>
-                    <li><strong>Application:</strong>Laundry & Toilet Soap Bars</li>
+                    <li><strong>Capacity:</strong> </li>
+                    <li><strong>Power:</strong> </li>
+                    <li><strong>Material:</strong> </li>
                 </ul>
             </div>
-            <div class="product-video">
-                <span style="font-size: 1.4em; font-weight: bold; color: #3182ce; margin-bottom: 15px;">Equipment Video</span>
-                <span style="font-size: 1.1em; color: #a0aec0;">Demonstration Coming Soon</span>
+            <div class="product-image-container">
+                <span style="font-size: 1.3em; font-weight: bold; color: #64748b; margin-bottom: 10px;">Mixer Photo</span>
+                <span style="font-size: 1em; color: #94a3b8;">Upload Image via GitHub</span>
             </div>
         </div>
 
-        <!-- 设备 2：切皂成型机 -->
+        <!-- 2. Refine Plodder -->
         <div class="product-section">
             <div class="product-info">
-                <h3>2. Soap Stamping & Cutting Machine</h3>
-                <p>Automatic high-speed soap cutting and shaping machine with custom logo molds. Controlled by advanced PLC touch screen system.</p>
+                <h3>2. Refine Plodder</h3>
+                <p>Professional continuous refining machine to homogenize and strain the soap mass for a smoother texture.</p>
                 <ul class="specs">
-                    <li><strong>Stamping Speed:</strong>60 - 120 pcs/min</li>
-                    <li><strong>Control System:</strong>PLC & Touch Screen</li>
-                    <li><strong>Mold:</strong>Customizable Logo/Shape</li>
+                    <li><strong>Capacity:</strong> </li>
+                    <li><strong>Power:</strong> </li>
+                    <li><strong>Material:</strong> </li>
                 </ul>
             </div>
-            <div class="product-video">
-                <h4 style="margin: 0 0 15px 0; color: #3182ce; font-size: 1.5em;">Equipment Demonstration Video</h4>
-                <p style="font-size: 1.1em; color: #a0aec0; margin: 0 0 25px 0; padding: 0 15px;">Watch our automatic laundry bar soap cutter working live on YouTube.</p>
-                <a href="https://youtu.be/k7i8Yf1b_X8" target="_blank" style="display: inline-block; background: #e50914; color: white; padding: 15px 35px; font-size: 1.2em; font-weight: bold; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 10px rgba(229,9,20,0.4);">
-                    ▶️ Click to Watch Video on YouTube
-                </a>
+            <div class="product-image-container">
+                <span style="font-size: 1.3em; font-weight: bold; color: #64748b; margin-bottom: 10px;">Refine Plodder Photo</span>
+                <span style="font-size: 1em; color: #94a3b8;">Upload Image via GitHub</span>
             </div>
         </div>
 
-        <!-- 设备 3：搅拌磨粉系统 -->
+        <!-- 3. Three Roll Mill -->
         <div class="product-section">
             <div class="product-info">
-                <h3>3. Soap Mixing & Milling System</h3>
-                <p>High-shear sigma mixer and heavy three-roll mill for perfect chemical blending and soap base refinement before extrusion.</p>
+                <h3>3. Three Roll Mill</h3>
+                <p>Heavy-duty milling machinery with precise rollers to guarantee uniform chemical mixing and ultimate refinement.</p>
                 <ul class="specs">
-                    <li><strong>Mixer Capacity:</strong>100 - 500 kg/batch</li>
-                    <li><strong>Roll Diameter:</strong>260 mm / 400 mm</li>
-                    <li><strong>Feature:</strong>Uniform mixing & fine refining</li>
+                    <li><strong>Capacity:</strong> </li>
+                    <li><strong>Power:</strong> </li>
+                    <li><strong>Material:</strong> </li>
                 </ul>
             </div>
-            <div class="product-video">
-                <span style="font-size: 1.4em; font-weight: bold; color: #3182ce; margin-bottom: 15px;">Equipment Video</span>
-                <span style="font-size: 1.1em; color: #a0aec0;">Demonstration Coming Soon</span>
+            <div class="product-image-container">
+                <span style="font-size: 1.3em; font-weight: bold; color: #64748b; margin-bottom: 10px;">Three Roll Mill Photo</span>
+                <span style="font-size: 1em; color: #94a3b8;">Upload Image via GitHub</span>
             </div>
         </div>
 
-        <!-- 底部联系板块 -->
-        <div class="contact-section">
-            <h2>Contact Us for a Free Quote & Catalog</h2>
-            <p>Get in touch with our engineering team directly via WhatsApp or Email for prices and specifications.</p>
-            <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
-            <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉️ Email: jasunmachinery@gmail.com</a>
+        <!-- 4. Vacuum Soap Plodder (Extruder) -->
+        <div class="product-section">
+            <div class="product-info">
+                <h3>4. Vacuum Soap Plodder (Extruder)</h3>
+                <p>Advanced double-stage duplex vacuum plodder for compressing and extruding high-density bar soaps.</p>
+                <ul class="specs">
+                    <li><strong>Capacity:</strong> </li>
+                    <li><strong>Power:</strong> </li>
+                    <li><strong>Material:</strong> </li>
+                </ul>
+            </div>
+            <div class="product-image-container">
+                <span style="font-size: 1.3em; font-weight: bold; color: #64748b; margin-bottom: 10px;">Vacuum Plodder Photo</span>
+                <span style="font-size: 1em; color: #94a3b8;">Upload Image via GitHub</span>
+            </div>
         </div>
-        
-    </div>
 
-    <footer>
-        &copy; 2026 Jasun Machinery. All Rights Reserved. | Dedicated to Soap Making Technology.
-    </footer>
+        <!-- 5. Vacuum Pump -->
+        <div class="product-section">
+            <div class="product-info">
+                <h3>5. Vacuum Pump</h3>
+                <p>Reliable vacuum system provider designed to sustain steady negative pressure for vacuum plodder extrusion.</p>
+                <ul class="specs">
+                    <li><strong>Capacity:</strong> </li>
+                    <li><strong>Power:</strong> </li>
+                    <li><strong>Material:</strong> </li>
+                </ul>
+            </div>
+            <div class="product-image-container">
+                <span style="font-size: 1.3em; font-weight: bold; color: #64748b; margin-bottom: 10px;">Vacuum Pump Photo</span>
+                <span style="font-size: 1em; color: #94a3b8;">Upload Image via GitHub</span>
+            </div>
+        </div>
 
-</body>
-</html>
+        <!-- 6. Single-Screw Extruder -->
+        <div class="product-section">
+            <div class="product-info">
+                <h3>6. Single-Screw Extruder</h3>
+                <p>Robust extrusion machine designed for smooth and continuous forming of laundry or toilet soap shapes.</p>
+                <ul class="specs">
+                    <li><strong>Capacity:</strong> </li>
+                    <li><strong>Power:</strong> </li>
+                    <li><strong>Material:</strong> </li>
+                </ul>
+            </div>
+            <div class="product-image-container">
