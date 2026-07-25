@@ -24,6 +24,7 @@
         .specs li { padding: 12px 0; border-bottom: 1px dashed #edf2f7; font-size: 1.2em; }
         .specs strong { color: #2d3748; display: inline-block; width: 220px; }
         .product-image-container { flex: 1; min-width: 400px; height: 320px; background: #f8fafc; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.04); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px dashed #cbd5e1; box-sizing: border-box; }
+        .product-image-container img { width:100%; height:100%; object-fit:cover; }
         .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 18px 45px; font-size: 1.3em; font-weight: bold; border-radius: 50px; text-decoration: none; margin: 10px 15px; box-shadow: 0 6px 15px rgba(37,211,102,0.4); }
         .email-link { display: inline-block; font-size: 1.4em; color: #3182ce; font-weight: bold; margin: 10px 15px; text-decoration: none; }
         .contact-section { background: #edf2f7; border-radius: 16px; padding: 60px 40px; margin-top: 80px; text-align: center; }
@@ -51,7 +52,6 @@
             <p>Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
         </div>
 
-        <!-- 🌟 核心引擎：这里将自动、完整、无截断地循环生成 1-16 种设备板块 🌟 -->
         <div id="product-list-container"></div>
 
         <div class="contact-section">
@@ -66,48 +66,36 @@
         &copy; 2026 Jasun Machinery. All Rights Reserved. | Dedicated to Soap Making Technology.
     </footer>
 
-    <!-- 全自动高效率渲染脚本，完美保障 16 种设备按顺序无缝平铺 -->
     <script>
+        // 🛠️ 【修改区域】在这里直接敲入您的参数或机器照片链接 🛠️
         const devices = [
-            { name: "Mixer/Kneader", desc: "High-efficiency intensive mixing equipment for thorough blending of soap noodles and raw ingredients." },
-            { name: "Refine Plodder", desc: "Professional continuous refining machine to homogenize and strain the soap mass for a smoother texture." },
-            { name: "Three Roll Mill", desc: "Heavy-duty milling machinery with precise rollers to guarantee uniform chemical mixing and ultimate refinement." },
-            { name: "Vacuum Soap Plodder (Extruder)", desc: "Advanced double-stage duplex vacuum plodder for compressing and extruding high-density bar soaps." },
-            { name: "Vacuum Pump", desc: "Reliable vacuum system provider designed to sustain steady negative pressure for vacuum plodder extrusion." },
-            { name: "Single-Screw Extruder", desc: "Robust extrusion machine designed for smooth and continuous forming of laundry or toilet soap shapes." },
-            { name: "Soap Stamper", desc: "Automatic shaping and logo embossing stamper with high precision and customizable premium mold configurations." },
-            { name: "Soap Cutter", desc: "High-speed cutting machine controlled by stable systems to divide extruded soap bars perfectly with uniform lengths." },
-            { name: "All-in-One Machine", desc: "Integrated highly compact multi-functional soap processing unit optimized for small to medium scale manufacturing setups." },
-            { name: "Soap Packaging Machine", desc: "Automated industrial packaging machinery to wrap soap bars with maximum sealing speed and protective efficiency." },
-            { name: "Air-Cooled Chiller", desc: "Industrial chilling mechanism to drop temperature inside processing rollers and crystallization units uniformly." },
-            { name: "Freezer", desc: "Heavy duty low-temperature mold refrigeration system ensuring high production speeds during continuous stamping cycles." },
-            { name: "Vacuum Pump", desc: "Secondary auxiliary high pressure vacuum extraction component supporting global packing line layouts." },
-            { name: "Air Compressor", desc: "Heavy air supply station providing intense pneumatics for stamping cylinders and sorting lines." },
-            { name: "Soap Molds", desc: "Custom precision-engraved durable molds supporting exquisite toilet soap shapes with clean customer brand embossing." },
-            { name: "Saponification Drying System", desc: "Full scale turn-key industrial oil boiling, saponification reactors and vacuum spray cooling dryer lines." }
+            { name: "Mixer/Kneader", desc: "High-efficiency intensive mixing equipment for thorough blending of soap noodles and raw ingredients.", capacity: "500 kg/batch", power: "15 kW", material: "Stainless Steel 304", img: "" },
+            { name: "Refine Plodder", desc: "Professional continuous refining machine to homogenize and strain the soap mass for a smoother texture.", capacity: "1000-2000 kg/h", power: "11 kW", material: "Stainless Steel 304", img: "" },
+            { name: "Three Roll Mill", desc: "Heavy-duty milling machinery with precise rollers to guarantee uniform chemical mixing and ultimate refinement.", capacity: "500-1500 kg/h", power: "7.5 kW", material: "Alloy Chilled Cast Iron", img: "" },
+            { name: "Vacuum Soap Plodder (Extruder)", desc: "Advanced double-stage duplex vacuum plodder for compressing and extruding high-density bar soaps.", capacity: "1000-3000 kg/h", power: "22 kW", material: "Stainless Steel 304", img: "" },
+            { name: "Vacuum Pump", desc: "Reliable vacuum system provider designed to sustain steady negative pressure for vacuum plodder extrusion.", capacity: "5.5 kW", power: "5.5 kW", material: "Cast Iron", img: "" },
+            { name: "Single-Screw Extruder", desc: "Robust extrusion machine designed for smooth and continuous forming of laundry or toilet soap shapes.", capacity: "500-1500 kg/h", power: "11 kW", material: "Stainless Steel 304", img: "" },
+            { name: "Soap Stamper", desc: "Automatic shaping and logo embossing stamper with high precision and customizable premium mold configurations.", capacity: "60-120 pcs/min", power: "5.5 kW", material: "Custom Alloy", img: "" },
+            { name: "Soap Cutter", desc: "High-speed cutting machine controlled by stable systems to divide extruded soap bars perfectly with uniform lengths.", capacity: "60-150 pcs/min", power: "2.2 kW", material: "Stainless Steel 304", img: "" },
+            { name: "All-in-One Machine", desc: "Integrated highly compact multi-functional soap processing unit optimized for small to medium scale manufacturing setups.", capacity: "150-300 kg/h", power: "7.5 kW", material: "Stainless Steel 304", img: "" },
+            { name: "Soap Packaging Machine", desc: "Automated industrial packaging machinery to wrap soap bars with maximum sealing speed and protective efficiency.", capacity: "40-200 bags/min", power: "3.7 kW", material: "Carbon Steel & Stainless", img: "" },
+            { name: "Air-Cooled Chiller", desc: "Industrial chilling mechanism to drop temperature inside processing rollers and crystallization units uniformly.", capacity: "10 HP", power: "7.5 kW", material: "Standard Industrial", img: "" },
+            { name: "Freezer", desc: "Heavy duty low-temperature mold refrigeration system ensuring high production speeds during continuous stamping cycles.", capacity: "-15°C Cooling", power: "4.5 kW", material: "Standard Industrial", img: "" },
+            { name: "Vacuum Pump", desc: "Secondary auxiliary high pressure vacuum extraction component supporting global packing line layouts.", capacity: "3 kW", power: "3 kW", material: "Cast Iron", img: "" },
+            { name: "Air Compressor", desc: "Heavy air supply station providing intense pneumatics for stamping cylinders and sorting lines.", capacity: "0.9 m³/min", power: "7.5 kW", material: "Standard Industrial", img: "" },
+            { name: "Soap Molds", desc: "Custom precision-engraved durable molds supporting exquisite toilet soap shapes with clean customer brand embossing.", capacity: "Custom Size", power: "N/A", material: "Premium Brass/Copper", img: "" },
+            { name: "Saponification Drying System", desc: "Full scale turn-key industrial oil boiling, saponification reactors and vacuum spray cooling dryer lines.", capacity: "1-5 Tons/Day", power: "Custom Design", material: "Stainless Steel 316/304", img: "" }
         ];
 
         const container = document.getElementById('product-list-container');
         devices.forEach((item, index) => {
             const num = index + 1;
+            let mediaContent = `<span style="font-size: 1.3em; font-weight: bold; color: #64748b;">${item.name} Photo</span>
+                                <span style="font-size: 1em; color: #94a3b8; margin-top: 10px;">Upload Image via GitHub</span>`;
+            if(item.img && item.img !== "") {
+                mediaContent = `<img src="${item.img}" alt="${item.name}">`;
+            }
             container.innerHTML += `
                 <div class="product-section">
                     <div class="product-info">
                         <h3>${num}. ${item.name}</h3>
-                        <p>${item.desc}</p>
-                        <ul class="specs">
-                            <li><strong>Capacity:</strong> </li>
-                            <li><strong>Power:</strong> </li>
-                            <li><strong>Material:</strong> </li>
-                        </ul>
-                    </div>
-                    <div class="product-image-container">
-                        <span style="font-size: 1.3em; font-weight: bold; color: #64748b;">${item.name} Photo</span>
-                        <span style="font-size: 1em; color: #94a3b8; margin-top: 10px;">Upload Image via GitHub</span>
-                    </div>
-                </div>
-            `;
-        });
-    </script>
-</body>
-</html>
