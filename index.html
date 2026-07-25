@@ -5,26 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soap Making Machine & Production Line - Jasun Machinery</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; background: #f9f9f9; }
-        header { background: #1a2a3a; color: white; padding: 40px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5em; font-weight: 600; }
-        header p { margin: 10px 0 0; color: #a0aec0; font-size: 1.2em; }
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .intro { text-align: center; margin-bottom: 50px; }
-        .intro p { font-size: 1.2em; color: #4a5568; line-height: 1.6; }
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; border: 1px solid #e2e8f0; }
-        .product-card h3 { margin-top: 0; color: #1a2a3a; border-bottom: 2px solid #3182ce; padding-bottom: 10px; }
-        .specs { list-style: none; padding: 0; margin: 20px 0; }
-        .specs li { padding: 8px 0; border-bottom: 1px dashed #edf2f7; font-size: 0.95em; }
-        .specs strong { color: #4a5568; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; background: #f4f7f6; }
+        header { background: #1a2a3a; color: white; padding: 50px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.8em; font-weight: 600; letter-spacing: 1px; }
+        header p { margin: 12px 0 0; color: #a0aec0; font-size: 1.3em; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .intro { text-align: center; margin-bottom: 50px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .intro h2 { color: #1a2a3a; margin-top: 0; }
+        .intro p { font-size: 1.2em; color: #4a5568; line-height: 1.7; max-width: 900px; margin: 0 auto; }
+        
+        /* 核心改变：每个设备独占一整行，采用左右两栏高端排版 */
+        .product-section { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 35px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; border: 1px solid #e2e8f0; }
+        .product-info { flex: 1; min-width: 320px; }
+        .product-video { flex: 1; min-width: 320px; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 12px rgba(0,0,0,0.15); aspect-ratio: 16 / 9; }
+        .product-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+        
+        .product-info h3 { margin-top: 0; color: #1a2a3a; font-size: 1.8em; border-bottom: 3px solid #3182ce; padding-bottom: 12px; margin-bottom: 20px; }
+        .product-info p { font-size: 1.1em; color: #4a5568; line-height: 1.6; }
+        .specs { list-style: none; padding: 0; margin: 25px 0 0; }
+        .specs li { padding: 10px 0; border-bottom: 1px dashed #edf2f7; font-size: 1.05em; }
+        .specs strong { color: #2d3748; display: inline-block; width: 160px; }
+        
         .contact-section { background: #edf2f7; border-radius: 12px; padding: 40px; margin-top: 60px; text-align: center; }
-        .contact-section h2 { color: #1a2a3a; margin-top: 0; }
-        .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 15px 30px; font-size: 1.1em; font-weight: bold; border-radius: 50px; text-decoration: none; margin: 15px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: transform 0.2s; }
+        .contact-section h2 { color: #1a2a3a; margin-top: 0; font-size: 2em; }
+        .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 16px 35px; font-size: 1.2em; font-weight: bold; border-radius: 50px; text-decoration: none; margin: 15px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: transform 0.2s; }
         .btn-whatsapp:hover { transform: scale(1.05); }
-        .email-link { display: block; font-size: 1.2em; color: #3182ce; font-weight: bold; margin-top: 15px; text-decoration: none; }
+        .email-link { display: block; font-size: 1.3em; color: #3182ce; font-weight: bold; margin-top: 15px; text-decoration: none; }
         .email-link:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 30px; color: #718096; font-size: 0.9em; border-top: 1px solid #e2e8f0; margin-top: 60px; }
+        footer { text-align: center; padding: 40px; color: #718096; font-size: 0.95em; border-top: 1px solid #e2e8f0; margin-top: 60px; background: #1a2a3a; color: #a0aec0; }
     </style>
 </head>
 <body>
@@ -40,49 +48,59 @@
             <p>We supply high-efficiency laundry soap and toilet soap manufacturing equipment globally. From raw material mixing to final soap bar packing, we provide complete, customized engineering solutions to meet your factory's capacity needs.</p>
         </div>
 
-        <div class="products">
-            <div class="product-card">
+        <!-- 设备 1 -->
+        <div class="product-section">
+            <div class="product-info">
                 <h3>1. Soap Plodder (Extruder)</h3>
-                <p>Heavy-duty vacuum duplex plodder for refining and extruding soap bars.</p>
+                <p>Heavy-duty vacuum duplex plodder for refining and extruding high-density soap bars. Ensures perfectly smooth surface finishing.</p>
                 <ul class="specs">
-                    <li><strong>Capacity:</strong> 500 - 2000 kg/h</li>
-                    <li><strong>Material:</strong> Stainless Steel 304</li>
-                    <li><strong>Application:</strong> Laundry & Toilet Soap Bars</li>
+                    <li><strong>Capacity:</strong>500 - 2000 kg/h</li>
+                    <li><strong>Material:</strong>Stainless Steel 304</li>
+                    <li><strong>Application:</strong>Laundry & Toilet Soap Bars</li>
                 </ul>
             </div>
-
-            <div class="product-card">
-                <h3>2. Soap Stamping Machine</h3>
-                <p>Automatic soap cutting and shaping machine with custom logo molds.</p>
-                <ul class="specs">
-                    <li><strong>Stamping Speed:</strong> 60 - 120 pcs/min</li>
-                    <li><strong>Control System:</strong> PLC & Touch Screen</li>
-                    <li><strong>Mold:</strong> Customizable Logo/Shape</li>
-                </ul>
-                <!-- 下方是为您全新优化的高清自适应视频播放器 -->
-                <div style="width: 100%; margin-top: 15px; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-                    <iframe width="100%" height="315" src="https://youtube.com" title="automatic soap cutter" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display: block; width: 100%;"></iframe>
-                </div>
+            <!-- 压条机暂无视频，留空一个高端提示，随时可以换成视频 -->
+            <div class="product-video" style="background:#2d3748; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1em;">
+                <span>Video Demonstration Coming Soon</span>
             </div>
+        </div>
 
-            <div class="product-card">
-                <h3>3. Soap Mixing & Milling</h3>
-                <p>High-shear sigma mixer and three-roll mill for perfect soap base refinement.</p>
+        <!-- 设备 2：切皂成型机（完美实现左右两栏大屏，视频极其宽阔） -->
+        <div class="product-section">
+            <div class="product-info">
+                <h3>2. Soap Stamping & Cutting Machine</h3>
+                <p>Automatic high-speed soap cutting and shaping machine with custom logo molds. Controlled by advanced PLC touch screen system.</p>
                 <ul class="specs">
-                    <li><strong>Mixer Capacity:</strong> 100 - 500 kg/batch</li>
-                    <li><strong>Roll Diameter:</strong> 260 mm / 400 mm</li>
-                    <li><strong>Feature:</strong> Uniform mixing & fine refining</li>
+                    <li><strong>Stamping Speed:</strong>60 - 120 pcs/min</li>
+                    <li><strong>Control System:</strong>PLC & Touch Screen</li>
+                    <li><strong>Mold:</strong>Customizable Logo/Shape</li>
                 </ul>
+            </div>
+            <div class="product-video">
+                <iframe src="https://youtube.com" title="automatic soap cutter" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- 设备 3 -->
+        <div class="product-section">
+            <div class="product-info">
+                <h3>3. Soap Mixing & Milling System</h3>
+                <p>High-shear sigma mixer and heavy three-roll mill for perfect chemical blending and soap base refinement before extrusion.</p>
+                <ul class="specs">
+                    <li><strong>Mixer Capacity:</strong>100 - 500 kg/batch</li>
+                    <li><strong>Roll Diameter:</strong>260 mm / 400 mm</li>
+                    <li><strong>Feature:</strong>Uniform mixing & fine refining</li>
+                </ul>
+            </div>
+            <div class="product-video" style="background:#2d3748; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1em;">
+                <span>Video Demonstration Coming Soon</span>
             </div>
         </div>
 
         <div class="contact-section">
             <h2>Contact Us for a Free Quote & Catalog</h2>
             <p>Get in touch with our engineering team directly via WhatsApp or Email for prices and specifications.</p>
-            
-            <!-- 这里已经完美替换成了您真正的外贸联络号码 -->
             <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
-            
             <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉️ Email: jasunmachinery@gmail.com</a>
         </div>
     </div>
@@ -93,3 +111,4 @@
 
 </body>
 </html>
+    
