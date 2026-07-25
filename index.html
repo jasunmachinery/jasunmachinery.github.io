@@ -108,3 +108,4 @@
             let imgDiv = document.createElement('div');
             imgDiv.className = 'product-image-container';
             if(device.pic && device.pic !== "") {
+请谨慎使用此类代码。imgDiv.innerHTML = <img src="${device.pic}" alt="${device.name}">;} else {imgDiv.innerHTML = <span style="font-size: 1.4em; font-weight: bold; color: #64748b;">${device.name} Photo</span> <span style="font-size: 1.1em; color: #94a3b8; margin-top: 10px;">Upload Image via GitHub</span>;}section.appendChild(infoDiv);section.appendChild(imgDiv);targetBox.appendChild(section);});
