@@ -13,16 +13,14 @@
         .btn-whatsapp { display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; }
         .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #2b5a9e; }
         .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; align-items: center; gap: 8px; }
-        .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; }
+        .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; cursor: pointer; transition: color 0.2s; }
+        .languages-links a:hover, .languages-links a.active { color: #e53e3e; text-decoration: underline; }
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
         .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center; }
         .intro h2 { color: #2b6cb0; margin-top: 0; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 auto 20px auto; text-align: left; }
-        
-        /* 任务二：12页高清产品目录平铺样式 🌟 */
         .pdf-images-container { width: 100%; max-width: 1400px; margin: 40px auto; text-align: center; }
-        .pdf-images-container h3 { color: #333; margin-bottom: 25px; font-size: 24px; font-weight: bold; }
-        .catalog-poster { width: 160%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+        .catalog-poster { width: 150%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
         .machinery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
         .machine-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
         .machine-card:hover { transform: translateY(-5px); }
@@ -37,76 +35,80 @@
 </head>
 <body>
 
-    <header>
-        <h1>Kaifeng Jasun Industry Co., Ltd.</h1>
-        <p>Professional Soap Making Machinery Experts</p>
+    <header id="web-header">
+        <h1 id="txt-title">Kaifeng Jasun Industry Co., Ltd.</h1>
+        <p id="txt-subtitle">Professional Soap Making Machinery Experts</p>
     </header>
 
     <div class="top-contact">
-        <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
-        <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
+        <a href="https://wa.me" target="_blank" class="btn-whatsapp" id="txt-wa">💬 Chat on WhatsApp</a>
+        <a href="mailto:jasunmachinery@gmail.com" class="email-link" id="txt-mail">✉ Email: jasunmachinery@gmail.com</a>
         
-        <!-- 任务一：完全对齐+大字号的纯本国原生小语种 -->
         <span class="languages-links">
             Language:
-            <a href="/es/">Español</a> |
-            <a href="/fr/">Français</a> |
-            <a href="/ar/">العربية</a> |
-            <a href="/ru/">Русский</a>
+            <a onclick="switchLanguage('en')" id="lang-en" class="active">English</a> |
+            <a onclick="switchLanguage('es')" id="lang-es">Español</a> |
+            <a onclick="switchLanguage('fr')" id="lang-fr">Français</a> |
+            <a onclick="switchLanguage('ar')" id="lang-ar">العربية</a> |
+            <a onclick="switchLanguage('ru')" id="lang-ru">Русский</a>
         </span>
     </div>
 
     <div class="container">
         <div class="intro">
-            <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
-            <p>Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
+            <h2 id="txt-intro-title">Reliable Industrial Soap Machinery Manufacturer</h2>
+            <p id="txt-intro-desc">Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
             
-            <!-- 任务二：12页高清肥皂设备图纸无缝平铺全景呈现舱 🌟 -->
-            <div class="pdf-images-container">
-                <img src="automatic-soap-machine_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
-                <img src="automatic-soap-machine_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
-                <img src="automatic-soap-machine_Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
-                <img src="automatic-soap-machine_Page4.jpg" alt="Catalog Page 4" class="catalog-poster">
-                <img src="automatic-soap-machine_Page5.jpg" alt="Catalog Page 5" class="catalog-poster">
-                <img src="automatic-soap-machine_Page6.jpg" alt="Catalog Page 6" class="catalog-poster">
-                <img src="automatic-soap-machine_Page7.jpg" alt="Catalog Page 7" class="catalog-poster">
-                <img src="automatic-soap-machine_Page8.jpg" alt="Catalog Page 8" class="catalog-poster">
-                <img src="automatic-soap-machine_Page9.jpg" alt="Catalog Page 9" class="catalog-poster">
-                <img src="automatic-soap-machine_Page10.jpg" alt="Catalog Page 10" class="catalog-poster">
-                <img src="automatic-soap-machine_Page11.jpg" alt="Catalog Page 11" class="catalog-poster">
-                <img src="automatic-soap-machine_Page12.jpg" alt="Catalog Page 12" class="catalog-poster">
+            <div class="pdf-images-container" id="catalog-images-gallery">
+                <!-- 12张图将由引擎智能吐出 -->
             </div>
         </div>
 
-        <!-- 核心动力舱：这里将由下方的脚本自动拉出完整的 15 款大型双栏卡片 -->
         <div id="machinery-matrix-box"></div>
 
         <div class="contact-section">
-            <h2>Contact Us for a Free Quote & Catalog</h2>
-            <p>Get in touch with our engineering team directly via WhatsApp or Email for prices and specifications.</p>
-            <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
-            <a href="mailto:jasunmachinery@gmail.com" class="email-link" style="color: #fff; margin-left: 20px;">✉ Email: jasunmachinery@gmail.com</a>
+            <h2 id="txt-footer-title">Contact Us for a Free Quote & Catalog</h2>
+            <p id="txt-footer-desc">Get in touch with our engineering team directly via WhatsApp or Email for prices and specifications.</p>
+            <a href="https://wa.me" target="_blank" class="btn-whatsapp" id="txt-wa-bottom">💬 Chat on WhatsApp</a>
+            <a href="mailto:jasunmachinery@gmail.com" class="email-link" style="color: #fff; margin-left: 20px;" id="txt-mail-bottom">✉ Email: jasunmachinery@gmail.com</a>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 Jasun Machinery. All Rights Reserved. | Dedicated to Soap Making Technology.
+        &copy; 2026 Jasun Machinery. <span id="txt-rights">All Rights Reserved. | Dedicated to Soap Making Technology.</span>
     </footer>
 
-    <!-- 设备中央数据库与动态渲染引擎（已彻底修复语法和反引号错误） 🌟 -->
+    <!-- 五国核心数据库与联动切换控制中枢系统 🌟 -->
     <script>
-        const myDevices = [
-            { name: "1. Soap Saponification System", desc: "Reaction tank with steam heating for boiling oils and fats into pure soap base.", img: "https://unsplash.com" },
-            { name: "2. Vacuum Spray Dryer Line", desc: "Transforms liquid soap base into dry soap noodles under vacuum and flash drying.", img: "https://unsplash.com" },
-            { name: "3. Soap Mixer (Blender)", desc: "Heavy-duty paddle mixer to blend soap noodles with pigments, perfumes, and additives.", img: "https://unsplash.com" },
-            { name: "4. Three-Roll Mill Machine", desc: "Refines soap mass through triple rollers to ensure extreme smoothness and homogenization.", img: "https://unsplash.com" },
-            { name: "5. Vacuum Plodder (Extruder)", desc: "Dual-stage vacuum extruder to compress and extrude continuous dense soap bars.", img: "https://unsplash.com" },
-            { name: "6. Automatic Soap Cutting Machine", desc: "High-speed mechanical tracking cutter to slice extruded soap bars into uniform blocks.", img: "https://unsplash.com" },
-            { name: "7. Laundry Soap Stamping Press", desc: "Specialized mold press for forming laundry soaps with deep logo embossing.", img: "https://unsplash.com" },
-            { name: "8. Toilet Soap Stamper Line", desc: "High-efficiency rotary press to mold smooth, premium shaped toilet and beauty soaps.", img: "https://unsplash.com" },
-            { name: "9. Soap Pillow Packing Machine", desc: "Horizontal flow wrapper for sealing single soap bars into neat plastic film pouches.", img: "https://unsplash.com" },
-            { name: "10. Pleat Wrapping Machine", desc: "Elegant circular pleat wrapper for luxury hotel soaps with central sticker labeling.", img: "https://unsplash.com" },
-            { name: "11. Soap Cartoning Machine", desc: "Automatic carton opening, soap pushing, and box sealing packaging equipment.", img: "https://unsplash.com" },
-            { name: "12. Liquid Soap Mixing Tank", desc: "Stainless steel jacketed reactor with agitator for hand sanitizers and liquid detergents.", img: "https://unsplash.com" },
-            { name: "13. Liquid Soap Filling Machine", desc: "Piston-driven multi-nozzle automatic volumetric filler for bottles and jars.", img: "https://unsplash.com" },
-            { name: "14. Semi-Auto Small Soap Kit", desc: "Affordable benchtop stamper and cutter set for handmade soap startup labs.", img: "https://unsplash.com" },
+        // 核心翻译文本数据库
+        const dict = {
+            en: {
+                title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "Professional Soap Making Machinery Experts",
+                wa: "💬 Chat on WhatsApp", introTitle: "Reliable Industrial Soap Machinery Manufacturer",
+                introDesc: "Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.",
+                footTitle: "Contact Us for a Free Quote & Catalog", footDesc: "Get in touch with our engineering team directly via WhatsApp or Email for prices and specifications.",
+                rights: "All Rights Reserved. | Dedicated to Soap Making Technology."
+            },
+            es: {
+                title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "Expertos Profesionales en Maquinaria para Fabricación de Jabón",
+                wa: "💬 Chat en WhatsApp", introTitle: "Fabricante Confiable de Maquinaria Industrial para Jabón",
+                introDesc: "Fundada en 2005, Kaifeng Jasun Industry Co., Ltd. se especializa en maquinaria profesional para la fabricación de jabón y líneas de producción completas. Con más de dos décadas de experiencia industrial, nos dedicamos a proporcionar a los fabricantes globales de jabón maquinaria de procesamiento de alto rendimiento, desde la saponificación hasta el envasado final del jabón. Nuestras máquinas se han exportado a más de 50 países y regiones, incluidos países desarrollados como Estados Unidos.",
+                footTitle: "Contáctenos para una Cotización y Catálogo Gratis", footDesc: "Póngase en contacto con nuestro equipo de ingeniería directamente a través de WhatsApp o correo electrónico para precios y especificaciones.",
+                rights: "Todos los derechos reservados. | Dedicados a la tecnología de fabricación de jabón."
+            },
+            fr: {
+                title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "Experts Professionnels en Machines de Fabrication de Savon",
+                wa: "💬 Discuter sur WhatsApp", introTitle: "Fabricant Fiable de Machines Industrielles pour le Savon",
+                introDesc: "Fondée en 2005, Kaifeng Jasun Industry Co., Ltd. est spécialisée dans les machines professionnelles de fabrication de savon et les lignes de production complètes. Avec plus de deux décennies d'expertise industrielle, nous nous engageons à fournir des équipements de traitement de savon à haute performance, de la saponification à l'emballage fini. Nos machines ont été exportées dans plus de 50 pays y compris les États-Unis.",
+                footTitle: "Contactez-nous pour un devis et un catalogue gratuits", footDesc: "Contactez notre équipe d'ingénierie par WhatsApp ou par e-mail pour obtenir les prix et les spécifications.",
+                rights: "Tous droits réservés. | Dédié à la technologie de fabrication du savon."
+            },
+            ar: {
+                title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "خبراء متخصصون في آلات تصنيع الصابون",
+                wa: "💬 الدردشة على الواتساب", introTitle: "مصنع موثوق لآلات الصابون الصناعية",
+                introDesc: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات تصنيع الصابون الاحترافية وخطوط الإنتاج الكاملة. مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء من التصبن إلى عبوة الصابون النهائية. تم تصدير أجهزتنا إلى أكثر de 50 دولة ومنطقة، بما في ذلك الدول المتقدمة مثل الولايات المتحدة.",
+                footTitle: "اتصل بنا للحصول على عرض أسعار وكتالوج مجاني", footDesc: "تواصل مع فريقنا الهندسي مباشرة عبر الواتساب أو البريد الإلكتروني للحصول على الأسعار والمواصفات.",
+                rights: "جميع الحقوق محفوظة. | مخصص لتكنولوجيا صناعة الصابون."
+            },
+            ru: {
+                title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "Профессиональное оборудование для производства мыла",
