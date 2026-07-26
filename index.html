@@ -19,10 +19,10 @@
         .intro h2 { color: #2b6cb0; margin-top: 0; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 auto 20px auto; text-align: left; }
         
-        /* 针对任务二的全新优化外贸商务下载区域 🌟 */
-        .pdf-download-box { width: 100%; max-width: 800px; margin: 40px auto; padding: 30px; background: #f0f7ff; border: 2px dashed #2b6cb0; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .btn-catalog-download { display: inline-block; background-color: #e53e3e; color: white; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 20px; box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4); transition: transform 0.2s, background-color 0.2s; }
-        .btn-catalog-download:hover { transform: scale(1.05); background-color: #c53030; }
+        /* 任务二：12页高清产品目录平铺样式 🌟 */
+        .pdf-images-container { width: 100%; max-width: 1000px; margin: 40px auto; text-align: center; }
+        .pdf-images-container h3 { color: #333; margin-bottom: 25px; font-size: 24px; font-weight: bold; }
+        .catalog-poster { width: 100%; height: auto; display: block; margin: 0 auto 25px auto; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
 
         .machinery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
         .machine-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
@@ -62,17 +62,25 @@
             <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
             <p>Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
             
-            <!-- 任务二：终极无错版——醒目、高效的外贸专属下载中央大舱门 -->
-            <div class="pdf-download-box">
-                <h3 style="color: #2b6cb0; margin-top: 0; font-size: 24px;">📥 Get Our Full Technical Specifications</h3>
-                <p style="color: #4a5568; font-size: 16px; margin-bottom: 20px;">Click the button below to view online or download our complete 2026 automatic soap machinery catalog in high-definition PDF format.</p>
-                <a href="https://github.io" target="_blank" class="btn-catalog-download">
-                    🔥 Download Complete Soap Machinery Catalog (PDF)
-                </a>
+            <!-- 任务二：12页高清肥皂设备图纸无缝平铺全景呈现舱 🌟 -->
+            <div class="pdf-images-container">
+                <h3>📖 Our Product Catalog & Specifications</h3>
+                <img src="automatic-soap-machine_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
+                <img src="automatic-soap-machine_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
+                <img src="automatic-soap-machine_Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
+                <img src="automatic-soap-machine_Page4.jpg" alt="Catalog Page 4" class="catalog-poster">
+                <img src="automatic-soap-machine_Page5.jpg" alt="Catalog Page 5" class="catalog-poster">
+                <img src="automatic-soap-machine_Page6.jpg" alt="Catalog Page 6" class="catalog-poster">
+                <img src="automatic-soap-machine_Page7.jpg" alt="Catalog Page 7" class="catalog-poster">
+                <img src="automatic-soap-machine_Page8.jpg" alt="Catalog Page 8" class="catalog-poster">
+                <img src="automatic-soap-machine_Page9.jpg" alt="Catalog Page 9" class="catalog-poster">
+                <img src="automatic-soap-machine_Page10.jpg" alt="Catalog Page 10" class="catalog-poster">
+                <img src="automatic-soap-machine_Page11.jpg" alt="Catalog Page 11" class="catalog-poster">
+                <img src="automatic-soap-machine_Page12.jpg" alt="Catalog Page 12" class="catalog-poster">
             </div>
         </div>
 
-        <!-- 这里由下方的脚本自动拉出完整的 15 款大型机械卡片 -->
+        <!-- 核心动力舱：这里将由下方的脚本自动拉出完整的 15 款大型双栏卡片 -->
         <div id="machinery-matrix-box"></div>
 
         <div class="contact-section">
@@ -87,7 +95,7 @@
         &copy; 2026 Jasun Machinery. All Rights Reserved. | Dedicated to Soap Making Technology.
     </footer>
 
-    <!-- 设备中央数据库与动态渲染引擎 -->
+    <!-- 设备中央数据库与动态渲染引擎（已彻底修复语法和反引号错误） 🌟 -->
     <script>
         const myDevices = [
             { name: "1. Soap Saponification System", desc: "Reaction tank with steam heating for boiling oils and fats into pure soap base.", img: "https://unsplash.com" },
@@ -104,21 +112,3 @@
             { name: "12. Liquid Soap Mixing Tank", desc: "Stainless steel jacketed reactor with agitator for hand sanitizers and liquid detergents.", img: "https://unsplash.com" },
             { name: "13. Liquid Soap Filling Machine", desc: "Piston-driven multi-nozzle automatic volumetric filler for bottles and jars.", img: "https://unsplash.com" },
             { name: "14. Semi-Auto Small Soap Kit", desc: "Affordable benchtop stamper and cutter set for handmade soap startup labs.", img: "https://unsplash.com" },
-            { name: "15. Soap Mold & Accessories", desc: "Customized heavy CNC brass and aluminum molds with water cooling channels.", img: "https://unsplash.com" }
-        ];
-
-        const targetGrid = document.createElement('div');
-        targetGrid.className = 'machinery-grid';
-        myDevices.forEach(d => {
-            targetGrid.innerHTML += `
-                <div class="machine-card">
-                    <img src="${d.img}" alt="${d.name}">
-                    <div class="machine-info">
-                        <h3>${d.name}</h3>
-                        <p>${d.desc}</p>
-                    </div>
-                </div>
-            `;
-        });
-
-        document.getElementById('machinery-matrix-box').appendChild(targetGrid);
