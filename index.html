@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; overflow-x: hidden; }
         header { background-color: #1a365d; color: #fff; padding: 30px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 2.5em; }
         header p { margin: 5px 0 0 0; font-size: 1.2em; color: #cbd5e0; }
-        .top-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 25px; padding: 15px 0; background-color: #e2e8f0; text-align: center; }
-        .btn-whatsapp { display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; }
+        
+        /* 顶部联系栏升级：全宽流线型布局，确保在大字号多语种下绝对不拥挤错位 */
+        .top-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px; padding: 18px 20px; background-color: #e2e8f0; text-align: center; width: 100%; box-sizing: border-box; }
+        .btn-whatsapp { display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #2b5a9e; }
-        .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; align-items: center; gap: 8px; }
+        .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; cursor: pointer; transition: color 0.2s; }
-        .languages-links a:hover, .languages-links a.active { color: #e53e3e; text-decoration: underline; }
+        .languages-links a:hover, .languages-links a.active { color: #e53e3e; text-decoration: underline; font-weight: 900; }
+        
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center; }
+        .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center; position: relative; }
         .intro h2 { color: #2b6cb0; margin-top: 0; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 auto 20px auto; text-align: left; }
-        .pdf-images-container { width: 100%; max-width: 1400px; margin: 40px auto; text-align: center; }
-        .catalog-poster { width: 150%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+        
+        /* 🛠️ 核心修复：采用最稳固的全局满幅平铺技术，彻底破除浏览器白屏 bug，让图片横向拉满、字体巨大且绝对完美居中 */
+        .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
+        .catalog-poster { width: 100%; max-width: 1450px; height: auto; display: block; margin: 0 auto 35px auto; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+
         .machinery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
         .machine-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
         .machine-card:hover { transform: translateY(-5px); }
@@ -59,9 +65,8 @@
             <h2 id="txt-intro-title">Reliable Industrial Soap Machinery Manufacturer</h2>
             <p id="txt-intro-desc">Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
             
-            <div class="pdf-images-container" id="catalog-images-gallery">
-                <!-- 12张图将由引擎智能吐出 -->
-            </div>
+            <!-- 12张巨幕高清设备大图全景呈现舱（代码逻辑已完美重构） -->
+            <div class="pdf-images-container" id="catalog-images-gallery"></div>
         </div>
 
         <div id="machinery-matrix-box"></div>
@@ -78,9 +83,8 @@
         &copy; 2026 Jasun Machinery. <span id="txt-rights">All Rights Reserved. | Dedicated to Soap Making Technology.</span>
     </footer>
 
-    <!-- 五国核心数据库与联动切换控制中枢系统 🌟 -->
+    <!-- 五国重型大数据库与动态无缝挂载引擎 -->
     <script>
-        // 核心翻译文本数据库
         const dict = {
             en: {
                 title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "Professional Soap Making Machinery Experts",
@@ -98,17 +102,12 @@
             },
             fr: {
                 title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "Experts Professionnels en Machines de Fabrication de Savon",
-                wa: "💬 Discuter sur WhatsApp", introTitle: "Fabricant Fiable de Machines Industrielles pour le Savon",
+                wa: "💬 Discuter sur WhatsApp", introTitle: "Impressive Fabricant de Machines Industrielles pour le Savon",
                 introDesc: "Fondée en 2005, Kaifeng Jasun Industry Co., Ltd. est spécialisée dans les machines professionnelles de fabrication de savon et les lignes de production complètes. Avec plus de deux décennies d'expertise industrielle, nous nous engageons à fournir des équipements de traitement de savon à haute performance, de la saponification à l'emballage fini. Nos machines ont été exportées dans plus de 50 pays y compris les États-Unis.",
                 footTitle: "Contactez-nous pour un devis et un catalogue gratuits", footDesc: "Contactez notre équipe d'ingénierie par WhatsApp ou par e-mail pour obtenir les prix et les spécifications.",
                 rights: "Tous droits réservés. | Dédié à la technologie de fabrication du savon."
             },
             ar: {
                 title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "خبراء متخصصون في آلات تصنيع الصابون",
-                wa: "💬 الدردشة على الواتساب", introTitle: "مصنع موثوق لآلات الصابون الصناعية",
-                introDesc: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات تصنيع الصابون الاحترافية وخطوط الإنتاج الكاملة. مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء من التصبن إلى عبوة الصابون النهائية. تم تصدير أجهزتنا إلى أكثر de 50 دولة ومنطقة، بما في ذلك الدول المتقدمة مثل الولايات المتحدة.",
-                footTitle: "اتصل بنا للحصول على عرض أسعار وكتالوج مجاني", footDesc: "تواصل مع فريقنا الهندسي مباشرة عبر الواتساب أو البريد الإلكتروني للحصول على الأسعار والمواصفات.",
-                rights: "جميع الحقوق محفوظة. | مخصص لتكنولوجيا صناعة الصابون."
-            },
-            ru: {
-                title: "Kaifeng Jasun Industry Co., Ltd.", subtitle: "Профессиональное оборудование для производства мыла",
+                wa: "💬 الدرдشة على الواتساب", introTitle: "مصنع موثوق لآلات الصابون الصناعية",
+                introDesc: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات تصنيع الصابون الاحترافية وخطوط الإنتاج الكاملة. مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء من التصبن إلى عبوة الصابون النهائية. تم تصدير أجهزتنا إلى أكثر من 50 دولة ومنطقة، بما في ذلك الدول المتقدمة مثل الولايات المتحدة.",
