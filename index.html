@@ -23,18 +23,9 @@
         .intro h2 { color: #2b6cb0; margin-top: 0; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 auto 20px auto; text-align: left; }
         
+        /* 150% 巨幕级全景平铺与中轴线绝对对齐黑科技 */
         .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
         .catalog-poster { width: 150%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
-
-        .machinery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
-        .machine-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
-        .machine-card:hover { transform: translateY(-5px); }
-        .machine-card img { width: 100%; height: 220px; object-fit: cover; }
-        .machine-info { padding: 20px; text-align: left; }
-        .machine-info h3 { margin: 0 0 10px 0; color: #2b6cb0; font-size: 1.15em; }
-        .machine-info p { margin: 0 0 8px 0; color: #4a5568; font-size: 0.95em; line-height: 1.4; }
-        
-        .lang-badge { display: inline-block; background-color: #edf2f7; color: #4a5568; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-right: 5px; }
 
         .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; }
         .contact-section h2 { margin-top: 0; }
@@ -52,11 +43,12 @@
         <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
         
+        <!-- 顶部标签完美的纯净跳转通道 -->
         <span class="languages-links">
-            <a href="#lang-sec-es">Español</a> |
-            <a href="#lang-sec-fr">Français</a> |
-            <a href="#lang-sec-ar">العربية</a> |
-            <a href="#lang-sec-ru">Русский</a>
+            <a href="#lang-catalog-head">Español</a> |
+            <a href="#lang-catalog-head">Français</a> |
+            <a href="#lang-catalog-head">العربية</a> |
+            <a href="#lang-catalog-head">Русский</a>
         </span>
     </div>
 
@@ -65,7 +57,8 @@
             <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
             <p>Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
             
-            <div class="pdf-images-container">
+            <!-- 纯正 HTML 强行亮起层：12张英文高清大图以 150% 的震撼尺寸直接平铺在正中央 -->
+            <div class="pdf-images-container" id="lang-catalog-head">
                 <img src="automatic-soap-machine_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
                 <img src="automatic-soap-machine_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
                 <img src="automatic-soap-machine_Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
@@ -81,48 +74,16 @@
             </div>
         </div>
 
-        <h2 style="text-align: center; color: #2b6cb0; margin-top: 50px; font-size: 2em;" id="lang-sec-es">Our Professional Soap Machineries</h2>
-        
-        <div class="machinery-grid">
-            <div class="machine-card">
-                <img src="https://unsplash.com" alt="Soap Saponification System">
-                <div class="machine-info">
-                    <h3>1. Soap Saponification System</h3>
-                    <p><span class="lang-badge">EN</span> Reaction tank with steam heating for boiling oils and fats into pure soap base.</p>
-                    <p><span class="lang-badge">ES</span> Tanque de reaccion con calentamiento de vapor para hervir aceites y grasas.</p>
-                    <p><span class="lang-badge">FR</span> Cuve de reaction avec chauffage a la vapeur pour bouillir les huiles et les graisses.</p>
-                    <p><span class="lang-badge">AR</span> خزان تفاعل مع تسخين بالبخار لغلي الزيوت والدهون إلى قاعدة صابون نقية.</p>
-                    <p><span class="lang-badge">RU</span> Реактор с паровым нагревом для варки масел и жиров в чистую мыльную основу.</p>
-                </div>
-            </div>
+        <div class="contact-section">
+            <h2>Contact Us for a Free Quote & Catalog</h2>
+            <p>Get in touch with our engineering team directly via WhatsApp or Email for prices and specifications.</p>
+            <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
+            <a href="mailto:jasunmachinery@gmail.com" class="email-link" style="color: #fff; margin-left: 20px;">✉ Email: jasunmachinery@gmail.com</a>
+        </div>
+    </div>
 
-            <div class="machine-card">
-                <img src="https://unsplash.com" alt="Vacuum Spray Dryer Line">
-                <div class="machine-info">
-                    <h3>2. Vacuum Spray Dryer Line</h3>
-                    <p><span class="lang-badge">EN</span> Transforms liquid soap base into dry soap noodles under vacuum and flash drying.</p>
-                    <p><span class="lang-badge">ES</span> Transforma la base de jabon liquido en fideos de jabon seco bajo vacio.</p>
-                    <p><span class="lang-badge">FR</span> Transforme la base de savon liquide en bondillons de savon sec sous vide.</p>
-                    <p><span class="lang-badge">AR</span> يحول قاعدة الصابون السائل إلى حبيبات صابون جافة تحت الفراغ والتجفيف السريع.</p>
-                    <p><span class="lang-badge">RU</span> Превращает жидкую мыльную основу в сухую мыльную стружку в вакууме.</p>
-                </div>
-            </div>
-
-            <div class="machine-card">
-                <img src="https://unsplash.com" alt="Soap Mixer (Blender)">
-                <div class="machine-info">
-                    <h3>3. Soap Mixer (Blender)</h3>
-                    <p><span class="lang-badge">EN</span> Heavy-duty paddle mixer to blend soap noodles with pigments, perfumes, and additives.</p>
-                    <p><span class="lang-badge">ES</span> Mezclador de paletas de alta resistencia para mezclar fideos de jabon con perfumes.</p>
-                    <p><span class="lang-badge">FR</span> Melangeur a pales ultra-robuste pour melanger les bondillons de savon avec des parfums.</p>
-                    <p><span class="lang-badge">AR</span> خلاط شفرات ثقيل لخلط حبيبات الصابون مع الأصباغ والعطور والمواد المضافة.</p>
-                    <p><span class="lang-badge">RU</span> Мощный лопастной смеситель для смешивания мыльной стружки с красителями и отдушками.</p>
-                </div>
-            </div>
-
-            <div class="machine-card">
-                <img src="https://unsplash.com" alt="Three-Roll Mill Machine">
-                <div class="machine-info">
-                    <h3>4. Three-Roll Mill Machine</h3>
-                    <p><span class="lang-badge">EN</span> Refines soap mass through triple rollers to ensure extreme smoothness and homogenization.</p>
-                    <p><span class="lang-badge">ES</span> Refina la masa de jabon a traves de rodillos triples para garantizar suavidad.</p>
+    <footer>
+        &copy; 2026 Jasun Machinery. All Rights Reserved. | Dedicated to Soap Making Technology.
+    </footer>
+</body>
+</html>
