@@ -18,15 +18,15 @@
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { color: #e53e3e; text-decoration: underline; }
         
-        /* 【容器强行右靠】加入强力右侧内边距，挤压整个版面使其剧烈向右平移 */
-        .container { max-width: 1200px; margin: 30px 0 30px auto; padding: 0 5% 0 20px; text-align: right; width: 100%; box-sizing: border-box; }
+        /* 【中轴线绝对黄金对称】取消所有方向侧重，让整个网页的核心内容不管什么语言都稳居正中央 */
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; text-align: right; width: 100%; box-sizing: border-box; }
         .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: right; width: 100%; box-sizing: border-box; }
         .intro h2 { color: #2b6cb0; margin-top: 0; text-align: right; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 0 20px auto; text-align: right; line-height: 1.8; }
         
-        /* 【核心强行向右轰炸区】采用绝对向右浮动与右侧对齐，确保大图完全贴死右边屏幕 */
-        .pdf-images-container { width: 100%; margin: 40px 0; text-align: right; display: block; float: right; clear: both; }
-        .catalog-poster { width: 100%; max-width: 100%; height: auto; display: block; margin-right: 0; margin-left: auto; margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+        /* 【拒绝偏色黑科技】采用现代标准的 Flex 对齐布局，确保 100% 宽度的长图完美对称分布，两边留白完全一致 */
+        .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; clear: both; }
+        .catalog-poster { width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto 35px auto; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
 
         .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; width: 100%; box-sizing: border-box; clear: both; }
         .contact-section h2 { margin-top: 0; }
@@ -60,7 +60,7 @@
             <div class="pdf-images-container" id="lang-catalog-head">
                 <img src="automatic-soap-machine-ar_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
-                <!-- 这里已经同步为您保留了刚刚修改的最新双下划线图片，确保第三张图正常显示 -->
+                <!-- 保持您的最新双下划线图完美对接 -->
                 <img src="automatic-soap-machine-ar__Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page4.jpg" alt="Catalog Page 4" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page5.jpg" alt="Catalog Page 5" class="catalog-poster">
