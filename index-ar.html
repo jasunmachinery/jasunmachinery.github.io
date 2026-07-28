@@ -23,9 +23,9 @@
         .intro h2 { color: #2b6cb0; margin-top: 0; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 auto 20px auto; text-align: right; line-height: 1.8; }
         
-        /* 150% 全景平铺样式 */
-        .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
-        .catalog-poster { width: 150%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+        /* 【核心修复区】专为阿拉伯语（RTL）定制的150%超大图纸完美轴线居中排版 */
+        .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; clear: both; }
+        .catalog-poster { width: 150%; max-width: 150%; height: auto; display: block; margin: 0 auto 35px auto; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
 
         .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; }
         .contact-section h2 { margin-top: 0; }
@@ -56,7 +56,6 @@
             <h2>مصنع موثوق لآلات تصنيع الصابون الصناعي</h2>
             <p>تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات تصنيع الصابون المهنية وخطوط الإنتاج الكاملة. مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء بدءًا من التصبن وحتى التغليف النهائي للصابون. تم تصدير أجهزتنا إلى أكثر من 50 دولة ومنطقة، بما في ذلك الدول المتقدمة مثل الولايات المتحدة الأمريكية.</p>
             
-            <!-- 9张阿拉伯语高清大图精准平铺（严格匹配您之前准备好的完美文件名） -->
             <div class="pdf-images-container" id="lang-catalog-head">
                 <img src="automatic-soap-machine-ar_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
