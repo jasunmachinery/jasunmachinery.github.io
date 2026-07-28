@@ -23,7 +23,7 @@
         .intro h2 { color: #2b6cb0; margin-top: 0; text-align: right; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 0 20px auto; text-align: right; line-height: 1.8; }
         
-        /* 【最终终极对齐黑科技】强制清空所有容易导致跑偏的方向属性，通过 left 50% 配合平移，在底层数学逻辑上封死往左或往右偏移的可能，实现完美大尺寸绝对中央居中 */
+        /* 【125% 黄金缩放与绝对中轴居中机制】 */
         .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
         .catalog-poster { width: 125%; max-width: 125%; height: auto; display: block; position: relative; left: 50%; right: auto; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; margin-left: 0; margin-right: 0; }
 
@@ -59,7 +59,6 @@
             <div class="pdf-images-container" id="lang-catalog-head">
                 <img src="automatic-soap-machine-ar_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
-                <!-- 依旧完美保留双下划线的正确第 3 张图 -->
                 <img src="automatic-soap-machine-ar__Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page4.jpg" alt="Catalog Page 4" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page5.jpg" alt="Catalog Page 5" class="catalog-poster">
