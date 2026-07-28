@@ -20,15 +20,15 @@
         
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; text-align: right; width: 100%; box-sizing: border-box; }
         
-        /* 【核心修改区：让绿框文字向左平移扩张】 */
-        /* 赋予文字绿框和底下大图完全一样的135%超宽比例与平移技术，使其左侧和右侧边缘完全与大图锁死对齐 */
-        .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: right; width: 135%; max-width: 135%; position: relative; left: 50%; transform: translateX(-50%); box-sizing: border-box; }
+        /* 【向右平移核心修正区】 */
+        /* 通过改变平移系数（改为向右平移-20%），让文字绿白框整体往右侧屏幕拉回，把左边漏掉的内容露出来 */
+        .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: right; width: 135%; max-width: 135%; position: relative; left: 50%; transform: translateX(-20%); box-sizing: border-box; }
         .intro h2 { color: #2b6cb0; margin-top: 0; text-align: right; }
         .intro p { font-size: 1.1em; color: #4a5568; width: 100%; margin: 0; text-align: right; line-height: 1.8; }
         
-        /* 保持大图 135% 完美大尺寸与中央对齐 */
+        /* 图片容器与大图也同步应用向右平移拉回参数（translateX(-20%)），确保它与上方的文字白框左侧和右侧完美对齐 */
         .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
-        .catalog-poster { width: 135%; max-width: 135%; height: auto; display: block; position: relative; left: 50%; right: auto; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; margin-left: 0; margin-right: 0; }
+        .catalog-poster { width: 135%; max-width: 135%; height: auto; display: block; position: relative; left: 50%; right: auto; transform: translateX(-20%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; margin-left: 0; margin-right: 0; }
 
         .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; width: 100%; box-sizing: border-box; clear: both; }
         .contact-section h2 { margin-top: 0; }
@@ -56,13 +56,11 @@
     </div>
 
     <div class="container">
-        <!-- 上方绿框文字部分（已完美向左平移、扩张比例） -->
         <div class="intro">
-            <h2>مصنع موثوق لآلات تصنيع الصابون الصناعي</h2>
+            <h2>مصنع موثوق لآلات تصниع الصابون الصناعي</h2>
             <p>تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات تصنيع الصابون المهنية وخطوط الإنتاج الكاملة. مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء بدءًا من التصبن وحتى التغليف النهائي للصابون. تم تصدير أجهزتنا إلى أكثر من 50 دولة ومنطقة، بما في ذلك الدول المتقدمة مثل الولايات المتحدة الأمريكية.</p>
         </div>
 
-        <!-- 下方 135% 高清大图部分 -->
         <div class="pdf-images-container" id="lang-catalog-head">
             <img src="automatic-soap-machine-ar_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
             <img src="automatic-soap-machine-ar_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
