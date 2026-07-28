@@ -18,14 +18,14 @@
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { color: #e53e3e; text-decoration: underline; }
         
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center; }
-        .intro h2 { color: #2b6cb0; margin-top: 0; }
-        .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 auto 20px auto; text-align: right; line-height: 1.8; }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; text-align: right; }
+        .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: right; }
+        .intro h2 { color: #2b6cb0; margin-top: 0; text-align: right; }
+        .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 0 20px auto; text-align: right; line-height: 1.8; }
         
-        /* 【核心修复区】专为阿拉伯语（RTL）定制的150%超大图纸完美轴线居中排版 */
-        .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; clear: both; }
-        .catalog-poster { width: 150%; max-width: 150%; height: auto; display: block; margin: 0 auto 35px auto; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+        /* 【终极强行向右修正区】强行取消左移，让150%宽度的巨幅图纸死死贴住右边，自然向左延伸 */
+        .pdf-images-container { width: 100%; margin: 40px 0; text-align: right; display: block; clear: both; }
+        .catalog-poster { width: 150%; max-width: 150%; height: auto; display: block; margin-right: 0; margin-left: auto; margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
 
         .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; }
         .contact-section h2 { margin-top: 0; }
