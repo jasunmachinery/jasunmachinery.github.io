@@ -18,18 +18,19 @@
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { color: #e53e3e; text-decoration: underline; }
         
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; text-align: right; }
-        .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: right; }
+        /* 【容器强行右靠】加入强力右侧内边距，挤压整个版面使其剧烈向右平移 */
+        .container { max-width: 1200px; margin: 30px 0 30px auto; padding: 0 5% 0 20px; text-align: right; width: 100%; box-sizing: border-box; }
+        .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: right; width: 100%; box-sizing: border-box; }
         .intro h2 { color: #2b6cb0; margin-top: 0; text-align: right; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 0 20px auto; text-align: right; line-height: 1.8; }
         
-        /* 【终极强行向右修正区】强行取消左移，让150%宽度的巨幅图纸死死贴住右边，自然向左延伸 */
-        .pdf-images-container { width: 100%; margin: 40px 0; text-align: right; display: block; clear: both; }
-        .catalog-poster { width: 150%; max-width: 150%; height: auto; display: block; margin-right: 0; margin-left: auto; margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+        /* 【核心强行向右轰炸区】采用绝对向右浮动与右侧对齐，确保大图完全贴死右边屏幕 */
+        .pdf-images-container { width: 100%; margin: 40px 0; text-align: right; display: block; float: right; clear: both; }
+        .catalog-poster { width: 100%; max-width: 100%; height: auto; display: block; margin-right: 0; margin-left: auto; margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
 
-        .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; }
+        .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; width: 100%; box-sizing: border-box; clear: both; }
         .contact-section h2 { margin-top: 0; }
-        footer { text-align: center; padding: 20px; color: #718096; font-size: 0.9em; margin-top: 40px; border-top: 1px solid #e2e8f0; direction: ltr; }
+        footer { text-align: center; padding: 20px; color: #718096; font-size: 0.9em; margin-top: 40px; border-top: 1px solid #e2e8f0; direction: ltr; clear: both; }
     </style>
 </head>
 <body>
@@ -59,6 +60,7 @@
             <div class="pdf-images-container" id="lang-catalog-head">
                 <img src="automatic-soap-machine-ar_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
+                <!-- 这里已经同步为您保留了刚刚修改的最新双下划线图片，确保第三张图正常显示 -->
                 <img src="automatic-soap-machine-ar__Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page4.jpg" alt="Catalog Page 4" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page5.jpg" alt="Catalog Page 5" class="catalog-poster">
