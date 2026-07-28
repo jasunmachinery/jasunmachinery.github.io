@@ -18,15 +18,14 @@
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { color: #e53e3e; text-decoration: underline; }
         
-        /* 【中轴线绝对黄金对称】取消所有方向侧重，让整个网页的核心内容不管什么语言都稳居正中央 */
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; text-align: right; width: 100%; box-sizing: border-box; }
         .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: right; width: 100%; box-sizing: border-box; }
         .intro h2 { color: #2b6cb0; margin-top: 0; text-align: right; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 0 20px auto; text-align: right; line-height: 1.8; }
         
-        /* 【拒绝偏色黑科技】采用现代标准的 Flex 对齐布局，确保 100% 宽度的长图完美对称分布，两边留白完全一致 */
-        .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; clear: both; }
-        .catalog-poster { width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto 35px auto; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+        /* 【巨幕居中黑科技】将图片宽度安全放大到 125%，并通过负外边距确保它从正中轴线向两侧完美、均匀地扩张，彻底解决留白过多问题 */
+        .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
+        .catalog-poster { width: 125%; max-width: 125%; height: auto; display: block; position: relative; left: 50%; margin-left: -12.5%; margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
 
         .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; width: 100%; box-sizing: border-box; clear: both; }
         .contact-section h2 { margin-top: 0; }
@@ -55,12 +54,12 @@
     <div class="container">
         <div class="intro">
             <h2>مصنع موثوق لآلات تصنيع الصابون الصناعي</h2>
-            <p>تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات تصنيع الصابون المهنية وخطوط الإنتاج الكاملة. مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء بدءًا من التصبن وحتى التغليف النهائي للصابون. تم تصدير أجهزتنا إلى أكثر من 50 دولة ومنطقة، بما في ذلك الدول المتقدمة مثل الولايات المتحدة الأمريكية.</p>
+            <p>تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات تصنيع الصابون المهنية وخطوط الإنتاج الكاملة. مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء بدءًا من التصبن وحتى التغليف النهائي للصابون. تم تصدير أجهزتنا إلى أكثر من 50 دولة ومنطقة، بما inلذلك الدول المتقدمة مثل الولايات المتحدة الأمريكية.</p>
             
             <div class="pdf-images-container" id="lang-catalog-head">
                 <img src="automatic-soap-machine-ar_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
-                <!-- 保持您的最新双下划线图完美对接 -->
+                <!-- 依然为您保留了双下划线的正确第三张图 -->
                 <img src="automatic-soap-machine-ar__Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page4.jpg" alt="Catalog Page 4" class="catalog-poster">
                 <img src="automatic-soap-machine-ar_Page5.jpg" alt="Catalog Page 5" class="catalog-poster">
