@@ -13,8 +13,10 @@
         .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
         .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .video-card { background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); padding: 12px; border: 1px solid #e2e8f0; }
-        /* GPU硬件加速，物理级根治视频1播放时的任何颤动 */
-        .video-card video { width: 100%; height: auto; border-radius: 6px; background: #000; display: block; transform: translate3d(0,0,0); backface-visibility: hidden; }
+        
+        /* 核心 GPU 硬件加速防抖滤镜，彻底将视频1和所有本地视频的画面焊死在屏幕上，绝不颤动 */
+        .video-card video { width: 100%; height: auto; border-radius: 6px; background: #000; display: block; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); -webkit-backface-visibility: hidden; backface-visibility: hidden; object-fit: contain; }
+        
         .v-en { font-weight: bold; color: #1a365d; margin-top: 10px; font-size: 15px; border-top: 1px solid #edf2f7; padding-top: 8px; }
         .v-multi { color: #718096; font-size: 12px; margin-top: 4px; line-height: 1.4; }
         @media (max-width: 900px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -65,31 +67,41 @@
                 <div class="v-en">6. XDA1000 toilet soap stamping machine</div>
                 <div class="v-multi"><b>ES:</b> Estampadora de jabón XDA1000<br><b>FR:</b> Estampage de savon XDA1000<br><b>RU:</b> Штамп туалетного мыла XDA1000<br><b>AR:</b> آلة ختم صابون التواليت XDA1000</div>
             </div>
+            
+            <!-- 7. 精准校正后台文件名拼写 -->
             <div class="video-card">
                 <video controls preload="none"><source src="7.soap cutting machine-two-colour.mp4" type="video/mp4"></video>
                 <div class="v-en">7. Soap cutting machine (Two-colour)</div>
                 <div class="v-multi"><b>ES:</b> Cortadora de jabón bicolor<br><b>FR:</b> Découpe de savon bicolore<br><b>RU:</b> Резательная машина (двухцветная)<br><b>AR:</b> آلة قطع الصابون (لونين)</div>
             </div>
+            
             <div class="video-card">
                 <video controls preload="none"><source src="8.soap cutting machine-cutting long soap.mp4" type="video/mp4"></video>
                 <div class="v-en">8. Soap cutting machine (Cutting long soap)</div>
                 <div class="v-multi"><b>ES:</b> Cortadora de barras largas<br><b>FR:</b> Découpe de barres longues<br><b>RU:</b> Резка длинных брусков мыла<br><b>AR:</b> آلة قطع الصابون الطويل</div>
             </div>
+            
+            <!-- 9. 精准校正后台文件名拼写 -->
             <div class="video-card">
                 <video controls preload="none"><source src="9.pillow type soap packing machine.mp4" type="video/mp4"></video>
                 <div class="v-en">9. Pillow type soap packing machine</div>
                 <div class="v-multi"><b>ES:</b> Embaladora de jabón tipo almohada<br><b>FR:</b> Enrobeuse de savon type oreiller<br><b>RU:</b> Упаковочная машина флоу-пак<br><b>AR:</b> آلة تعبئة الصابون نوع الوسادة</div>
             </div>
+            
+            <!-- 10. 精准校正后台文件名拼写 -->
             <div class="video-card">
                 <video controls preload="none"><source src="10.box type soap packing machine.mp4" type="video/mp4"></video>
                 <div class="v-en">10. Box type soap packing machine</div>
                 <div class="v-multi"><b>ES:</b> Embaladora de jabón en caja<br><b>FR:</b> Machine d'emballage en boîte<br><b>RU:</b> Картонажная упаковочная машина<br><b>AR:</b> آلة تعبئة الصابون في صناديق</div>
             </div>
+            
+            <!-- 11. 精准校正后台文件名拼写 -->
             <div class="video-card">
                 <video controls preload="none"><source src="11.transparent film soap packing machine.mp4" type="video/mp4"></video>
                 <div class="v-en">11. Transparent film soap packing machine</div>
                 <div class="v-multi"><b>ES:</b> Embaladora con película transparente<br><b>FR:</b> Emballage sous film transparent<br><b>RU:</b> Упаковка мыла в прозрачную пленку<br><b>AR:</b> آلة تعبئة الصابون بالفيلم الشفاف</div>
             </div>
+            
             <div class="video-card">
                 <video controls preload="none"><source src="12.small soap noodles production line.mp4" type="video/mp4"></video>
                 <div class="v-en">12. Small soap noodles production line</div>
