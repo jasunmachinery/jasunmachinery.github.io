@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaifeng Jasun Industry Co., Ltd. - Soap Machinery Live Video Showroom</title>
+    <title>Kaifeng Jasun Industry Co., Ltd. - Soap Machinery Video Showroom</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; overflow-x: hidden; }
         header { background-color: #1a365d; color: #fff; padding: 30px 20px; text-align: center; }
@@ -16,24 +16,19 @@
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { color: #e53e3e; text-decoration: underline; }
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .video-showroom-title { color: #1a365d; text-align: center; font-size: 2.2em; font-weight: bold; margin: 30px 0 10px 0; }
-        .video-showroom-subtitle { text-align: center; color: #718096; font-size: 1.1em; margin-bottom: 40px; }
-        
         .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
-        .video-card { background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 15px; border: 1px solid #e2e8f0; transition: transform 0.2s; text-align: left; }
-        .video-card:hover { transform: translateY(-5px); }
+        .video-card { background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 15px; border: 1px solid #e2e8f0; text-align: left; }
+        .video-card:hover { transform: translateY(-5px); transition: transform 0.2s; }
         
-        /* 【核心防抖静止黑科技】强制启用GPU独立图层渲染，物理级根治视频播放时的任何像素抖动和颤动 */
-        .video-card video { width: 100%; height: auto; border-radius: 6px; background-color: #000; display: block; transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+        /* 核心 GPU 硬件防抖静止命令，彻底杜绝视频播放颤动与黑屏不加载问题 */
+        .video-card video { width: 100%; height: auto; border-radius: 6px; background-color: #000; display: block; transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); backface-visibility: hidden; }
         
         .video-label-en { font-weight: bold; color: #1a365d; margin-top: 12px; font-size: 16px; border-top: 1px solid #edf2f7; padding-top: 10px; }
         .video-label-multi { color: #718096; font-size: 13px; margin-top: 5px; line-height: 1.4; }
         @media (max-width: 900px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { .video-grid { grid-template-columns: 1fr; } }
         .btn-back-container { text-align: center; margin: 40px 0; }
-        .btn-back-home { display: inline-block; background-color: #1a365d; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background 0.2s; }
-        .btn-back-home:hover { background-color: #2b6cb0; }
-        footer { text-align: center; padding: 20px; color: #718096; font-size: 0.9em; margin-top: 40px; border-top: 1px solid #e2e8f0; }
+        .btn-back-home { display: inline-block; background-color: #1a365d; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -49,61 +44,68 @@
         </span>
     </div>
     <div class="container">
-        <div class="video-showroom-title">🎥 Live Soap Machinery Running Video Showroom</div>
-        <div class="video-showroom-subtitle">Watch our professional industrial soap production lines and machinery in action. Click any video to play.</div>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #1a365d; font-size: 2.2em; font-weight: bold; margin: 0;">🎥 Live Soap Machinery Running Video Showroom</h2>
+            <p style="color: #718096; font-size: 1.1em; margin: 10px 0 0 0;">Watch our professional industrial soap production lines in action.</p>
+        </div>
+        
         <div class="video-grid">
             <div class="video-card">
-                <video controls preload="none"><source src="1.small toilet soap production line.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="1.small toilet soap production line.mp4" type="video/mp4"></video>
                 <div class="video-label-en">1. Small toilet soap production line</div>
                 <div class="video-label-multi"><b>ES:</b> Línea pequeña de jabón de tocador<br><b>FR:</b> Petite ligne de savon de toilette<br><b>RU:</b> Малая линия туалетного мыла<br><b>AR:</b> خط إنتاج صابون التواليت الصغير</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="2.large toilet soap production line.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="2.large toilet soap production line.mp4" type="video/mp4"></video>
                 <div class="video-label-en">2. Large toilet soap production line</div>
                 <div class="video-label-multi"><b>ES:</b> Línea grande de jabón de tocador<br><b>FR:</b> Grande ligne de savon de toilette<br><b>RU:</b> Крупная линия туалетного мыла<br><b>AR:</b> خط إنتاج صابون التواليت الكبير</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="3.mini hotel soap production line.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="3.mini hotel soap production line.mp4" type="video/mp4"></video>
                 <div class="video-label-en">3. Mini hotel soap production line</div>
                 <div class="video-label-multi"><b>ES:</b> Mini línea de jabón de hotel<br><b>FR:</b> Mini ligne de savon d'hôtel<br><b>RU:</b> Мини-линия отельного мыла<br><b>AR:</b> خط إنتاج صابون الفنادق الصغير</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="4.laundry soap production line.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="4.laundry soap production line.mp4" type="video/mp4"></video>
                 <div class="video-label-en">4. Laundry soap production line</div>
                 <div class="video-label-multi"><b>ES:</b> Línea de jabón de lavar<br><b>FR:</b> Ligne de savon de ménage<br><b>RU:</b> Линия хозяйственного мыла<br><b>AR:</b> خط إنتاج صابون الغسيل</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="5.xd120 toilet soap stamping machine.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="5.xd120 toilet soap stamping machine.mp4" type="video/mp4"></video>
                 <div class="video-label-en">5. XD120 toilet soap stamping machine</div>
-                <div class="video-label-multi"><b>ES:</b> Estampadora de jabón XD120<br><b>FR:</b> Estampage de savon XD120<br><b>RU:</b> Штамп туалетного мыла XD120<br><b>AR:</b> آلة ختم صابون التواليت XD120</div>
+                <div class="video-label-multi"><b>ES:</b> Estampadora de jabón XD120<br><b>FR:</b> Estampage de savon XD120<br><b>RU:</b> Штамп tuалетного мыла XD120<br><b>AR:</b> آلة ختم صابون التواليت XD120</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="6.xda1000 toilet soap stamping machine.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="6.xda1000 toilet soap stamping machine.mp4" type="video/mp4"></video>
                 <div class="video-label-en">6. XDA1000 toilet soap stamping machine</div>
                 <div class="video-label-multi"><b>ES:</b> Estampadora de jabón XDA1000<br><b>FR:</b> Estampage de savon XDA1000<br><b>RU:</b> Штамп туалетного мыла XDA1000<br><b>AR:</b> آلة ختم صابون التواليت XDA1000</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="7.soap cutting machine-two-colour.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="7.soap cutting machine-two-colour.mp4" type="video/mp4"></video>
                 <div class="video-label-en">7. Soap cutting machine (Two-colour)</div>
                 <div class="video-label-multi"><b>ES:</b> Cortadora de jabón bicolor<br><b>FR:</b> Découpe de savon bicolore<br><b>RU:</b> Резательная машина (двухцветная)<br><b>AR:</b> آلة قطع الصابون (لونين)</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="8.soap cutting machine-cutting long soap.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="8.soap cutting machine-cutting long soap.mp4" type="video/mp4"></video>
                 <div class="video-label-en">8. Soap cutting machine (Cutting long soap)</div>
                 <div class="video-label-multi"><b>ES:</b> Cortadora de barras largas<br><b>FR:</b> Découpe de barres longues<br><b>RU:</b> Резка длинных брусков мыла<br><b>AR:</b> آلة قطع الصابون الطويل</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="9.pillow type soap packing machine.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="9.pillow type soap packing machine.mp4" type="video/mp4"></video>
                 <div class="video-label-en">9. Pillow type soap packing machine</div>
                 <div class="video-label-multi"><b>ES:</b> Embaladora de jabón tipo almohada<br><b>FR:</b> Enrobeuse de savon type oreiller<br><b>RU:</b> Упаковочная машина флоу-пак<br><b>AR:</b> آلة تعبئة الصابون نوع الوسادة</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="10.box type soap packing machine.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="10.box type soap packing machine.mp4" type="video/mp4"></video>
                 <div class="video-label-en">10. Box type soap packing machine</div>
                 <div class="video-label-multi"><b>ES:</b> Embaladora de jabón en caja<br><b>FR:</b> Machine d'emballage en boîte<br><b>RU:</b> Картонажная упаковочная машина<br><b>AR:</b> آلة تعبئة الصابون في صناديق</div>
             </div>
             <div class="video-card">
-                <video controls preload="none"><source src="11.transparent film soap packing machine.mp4?v=2026" type="video/mp4"></video>
+                <video controls preload="none"><source src="11.transparent film soap packing machine.mp4" type="video/mp4"></video>
                 <div class="video-label-en">11. Transparent film soap packing machine</div>
-
-                ES: Embaladora con película transparenteFR: Emballage sous film transparentRU: Упаковка мыла в прозрачную пленкуAR: آلة تعبئة الصابون بالفيلم الشفاف
+                <div class="video-label-multi"><b>ES:</b> Embaladora con película transparente<br><b>FR:</b> Emballage sous film transparent<br><b>RU:</b> Упаковка мыла в прозрачную пленку<br><b>AR:</b> آلة تعبئة الصابون بالفيلم الشفاف</div>
+            </div>
+            <div class="video-card">
+                <video controls preload="none"><source src="12.small soap noodles production line.mp4" type="video/mp4"></video>
+                <div class="video-label-en">12. Small soap noodles production line</div>
+ES: Línea pequeña de virutas de jabónFR: Petite ligne de bonds de savonRU: Малая линия производства мыльной стружкиAR: خط إنتاج رقائق الصابون الصغير
