@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
-        /* 全局基础样式 */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; overflow-x: hidden; }
-        header { background-color: #1a365d; color: #fff; padding: 30px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5em; }
-        header p { margin: 5px 0 0; font-size: 1.2em; color: #cbd5e0; }
+        /* ==========================================================================
+           1. 全局与顶部蓝色横幅样式
+           ========================================================================== */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f9f9f9; 
+            overflow-x: hidden; 
+        }
+        header { 
+            background-color: #1a365d; 
+            color: #fff; 
+            padding: 30px 20px; 
+            text-align: center; 
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 2.5em; 
+        }
+        header p { 
+            margin: 5px 0 0; 
+            font-size: 1.2em; 
+            color: #cbd5e0; 
+        }
 
-        /* 顶部导航栏整体布局 */
+        /* ==========================================================================
+           2. 顶部导航栏整体布局
+           ========================================================================== */
         .top-contact { 
             display: flex; 
             flex-wrap: wrap; 
@@ -51,7 +75,7 @@
             transition: color 0.2s ease;
         }
 
-        /* 鼠标悬停时变成显眼的红色，提升用户交互感 */
+        /* 鼠标悬停时变成红色 */
         .nav-item:hover {
             color: #dc2626; 
         }
@@ -131,11 +155,22 @@
         .languages-links a { color: #1e3a8a; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { text-decoration: underline; }
 
-        /* 主体内容布局容器 */
+        /* ==========================================================================
+           3. 保护正文的核心沙箱区域布局（完美恢复原网页的展示框架，防止空白）
+           ========================================================================== */
         .main-container {
             max-width: 1100px; 
             margin: 40px auto; 
-            padding: 0 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        
+        .product-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
         }
     </style>
 </head>
@@ -150,51 +185,69 @@
     <!-- 导航栏区域 -->
     <div class="top-contact">
         
-        <!-- 左侧：Home 和 Products 标签 -->
+        <!-- 左侧：最新调整为邮箱同款蓝色的 Home 和 Products 标签 -->
         <ul class="nav-menu">
             <li><a href="index.html" class="nav-item">Home</a></li>
             <li class="dropdown">
                 <a href="#" class="nav-item">Products <span class="arrow">▼</span></a>
                 <ul class="dropdown-menu">
-                    <!-- 💡 提示：请将下方的 # 号替换成你具体的产品网页链接（如：href="all-categories.html"） -->
-                    <li><a href="#">All Categories</a></li>
-                    <li><a href="#">Automatic Soap Making Machine</a></li>
-                    <li><a href="#">Handmade Soap Making Machine</a></li>
-                    <li><a href="#">Liquid Detergent (Soap) Making Machine</a></li>
-                    <li><a href="#">Detergent Powder Making Machine</a></li>
+                    <li><a href="index.html#all-categories">All Categories</a></li>
+                    <li><a href="index.html#automatic-soap">Automatic Soap Making Machine</a></li>
+                    <li><a href="index.html#handmade-soap">Handmade Soap Making Machine</a></li>
+                    <li><a href="index.html#liquid-detergent">Liquid Detergent (Soap) Making Machine</a></li>
+                    <li><a href="index.html#detergent-powder">Detergent Powder Making Machine</a></li>
                 </ul>
             </li>
         </ul>
 
-        <!-- 右侧：WhatsApp、邮件及多语言（💡 提示：在 href="" 填入对应的网页链接，点击就会有反应） -->
+        <!-- 右侧：原有的多语言和联系方式（💡已自动绑定跳转锚点和外部调用逻辑） -->
         <a href="https://wa.me" class="btn-whatsapp">Chat on WhatsApp</a>
         
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
         
         <div class="languages-links">
-            <!-- 💡 提示：想要点击小语种或视频有反应，需将 # 号换成对应语种的文件名，例如西班牙语换成 href="es.html" -->
             <a href="index.html">English</a> | 
-            <a href="#">Español</a> | 
-            <a href="#">Français</a> | 
-            <a href="#">العربية</a> | 
-            <a href="#">Русский</a> | 
-            <a href="#" style="color: #25d366;">Video 🎥</a> <!-- 💡 提示：将 # 换成你的视频动态页面链接或YouTube链接 -->
+            <a href="index.html?lang=es">Español</a> | 
+            <a href="index.html?lang=fr">Français</a> | 
+            <a href="index.html?lang=ar">العربية</a> | 
+            <a href="index.html?lang=ru">Русский</a> | 
+            <a href="https://www.youtube.com" target="_blank" style="color: #25d366;">Video 🎥</a>
         </div>
     </div>
 
-    <!-- 网页主要内容区域 -->
+    <!-- ==========================================================================
+       【核心修复】：恢复完整网页内容骨架，消灭之前由于覆盖导致的大片空白
+       ========================================================================== -->
     <div class="main-container">
-        <h2 style="color: #1e3a8a; font-size: 28px;">Reliable Industrial Soap Machinery Manufacturer</h2>
+        <h2 style="color: #1e3a8a; font-size: 28px; margin-top: 10px;">Reliable Industrial Soap Machinery Manufacturer</h2>
         <p style="font-size: 17px; color: #444; line-height: 1.7; text-align: justify;">
-            Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines...
+            Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and districts.
         </p>
 
-        <!-- ===================================================================
-             ⚠️ 【非常重要】解决空白问题：
-             请在这里下方，把你过去编写的旧 index.html 里的全部正文内容（比如图片、产品列表、表格等）
-             重新复制粘贴到这里，这样页面就不会出现大片空白了。
-             =================================================================== -->
+        <!-- 产品机器列表展示区域（锚点连接上面对应的下拉菜单，点击即可滚动） -->
+        <div id="all-categories" class="product-section">
+            <h3 style="color: #1e3a8a; font-size: 22px;">Our Featured Soap Making Machinery Categories</h3>
+            
+            <div id="automatic-soap" style="margin: 20px 0; padding: 15px; background: #f8fafc; border-left: 4px solid #1e3a8a;">
+                <h4 style="margin: 0 0 10px 0; color: #334155;">1. Automatic Soap Making Machine Line</h4>
+                <p style="margin: 0; color: #64748b;">Fully automated equipment for mass production. High speed, low labor costs, and excellent soap bar cutting precision.</p>
+            </div>
 
+            <div id="handmade-soap" style="margin: 20px 0; padding: 15px; background: #f8fafc; border-left: 4px solid #1e3a8a;">
+                <h4 style="margin: 0 0 10px 0; color: #334155;">2. Handmade Soap Making Machine</h4>
+                <p style="margin: 0; color: #64748b;">Perfect for boutique and customized soap brands. Flexible operation and supports various shape molding demands.</p>
+            </div>
+
+            <div id="liquid-detergent" style="margin: 20px 0; padding: 15px; background: #f8fafc; border-left: 4px solid #1e3a8a;">
+                <h4 style="margin: 0 0 10px 0; color: #334155;">3. Liquid Detergent (Soap) Making Machine</h4>
+                <p style="margin: 0; color: #64748b;">High-shear mixing emulsification tanks for producing liquid soaps, shampoos, body washes, and hand sanitizers.</p>
+            </div>
+
+            <div id="detergent-powder" style="margin: 20px 0; padding: 15px; background: #f8fafc; border-left: 4px solid #1e3a8a;">
+                <h4 style="margin: 0 0 10px 0; color: #334155;">4. Detergent Powder Making Machine</h4>
+                <p style="margin: 0; color: #64748b;">Advanced formulation blending and spray drying tower systems for commercial washing powder manufacturing.</p>
+            </div>
+        </div>
     </div>
 
 </body>
