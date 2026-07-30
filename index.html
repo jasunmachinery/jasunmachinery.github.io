@@ -88,7 +88,9 @@
         // 切换语种的函数
         function switchLanguage(lang) {
             document.querySelectorAll('.languages-links a').forEach(a => a.classList.remove('active-lang'));
-            if(event) event.target.classList.add('active-lang');
+            if(window.event && window.event.target) {
+                window.event.target.classList.add('active-lang');
+            }
 
             document.getElementById('side-title').innerText = i18nData[lang].title;
             document.getElementById('menu-txt-1').innerText = i18nData[lang].m1;
@@ -120,5 +122,3 @@
                 img.src = `${machineKey}_Page${i}.jpg`; 
                 img.alt = `${machineKey} Page ${i}`;
                 img.onerror = function() { this.style.display = 'none'; };
-                streamBox.appendChild(img);
-            }
