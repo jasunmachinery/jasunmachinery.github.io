@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
-        /* 全局基础与横幅布局 */
+        /* ==========================================================================
+           1. 全局基础与横幅布局
+           ========================================================================== */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             line-height: 1.6; 
@@ -24,26 +26,27 @@
         header h1 { margin: 0; font-size: 2.5em; }
         header p { margin: 5px 0 0; font-size: 1.2em; color: #cbd5e0; }
 
-        /* 顶部导航栏整体布局 */
+        /* ==========================================================================
+           2. 导航栏整体布局（【修改】：增加左侧内边距，实现整体向右平移对齐效果）
+           ========================================================================== */
         .top-contact { 
             display: flex; 
             flex-wrap: wrap; 
             align-items: center; 
             justify-content: flex-start; 
             gap: 25px; 
-            padding: 15px 30px; 
+            padding: 15px 30px 15px 330px; /* 💡 关键：将左边距从30px加大到330px，使整行组件向右靠拢对齐 */
             background-color: #e2e8f0; 
             border-bottom: 1px solid #cbd5e0;
         }
 
-        /* Products 标签（已彻底删除 Home 标签） */
+        /* Products 顶部下拉菜单标签 */
         .nav-menu { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 20px; }
         .nav-menu > li { position: relative; }
         .nav-item { text-decoration: none; color: #1e3a8a; font-weight: bold; font-size: 18px; padding: 8px 12px; display: flex; align-items: center; transition: color 0.2s; }
         .nav-item:hover { color: #dc2626; }
         .arrow { font-size: 11px; margin-left: 5px; color: #1e3a8a; }
 
-        /* Products 顶部下拉菜单 */
         .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: #ffffff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); list-style: none; padding: 6px 0; margin: 5px 0 0 0; min-width: 320px; z-index: 999; border-radius: 4px; border: 1px solid #cbd5e0; }
         .dropdown-menu li a { color: #333333; padding: 10px 20px; text-decoration: none; display: block; font-size: 15px; text-align: left; transition: background 0.2s, color 0.2s; }
         .dropdown-menu li a:hover { background-color: #f1f5f9; color: #dc2626; }
@@ -57,7 +60,9 @@
         .languages-links a { color: #1e3a8a; text-decoration: none; }
         .languages-links a:hover { text-decoration: underline; }
 
-        /* 顶端标语绝对居中 */
+        /* ==========================================================================
+           3. 标语绝对居中
+           ========================================================================== */
         .centered-title-wrapper {
             width: 100%;
             text-align: center;
@@ -71,7 +76,9 @@
             display: inline-block;
         }
 
-        /* 网页主体布局：左右两侧分栏 */
+        /* ==========================================================================
+           4. 网页主体分栏布局与 PDF/Video 框架
+           ========================================================================== */
         .web-body-layout {
             max-width: 1400px;
             margin: 20px auto 50px auto;
@@ -80,7 +87,7 @@
             gap: 30px; 
         }
 
-        /* 【左边小面积区域】：4个产品切换标签 */
+        /* 左边小面积分类菜单 */
         .left-sidebar-menu {
             flex: 0 0 280px; 
             background-color: #ffffff;
@@ -118,36 +125,49 @@
             padding-left: 25px; 
         }
 
-        /* 【右边大面积区域】：不再是写死的文字，而是一个占绝对面积的 PDF 容器 */
+        /* 右边大面积展示区 */
         .right-main-content {
             flex: 1; 
             background-color: #ffffff;
             border: 1px solid #cbd5e0;
             border-radius: 6px;
-            padding: 15px;
+            padding: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
         }
-        
-        /* 简介文本保留在顶部 */
-        .intro-text {
-            font-size: 16px;
-            color: #475569;
-            line-height: 1.6;
-            text-align: justify;
-            margin: 10px 15px 20px 15px;
-        }
 
-        /* 💡 核心：嵌入 PDF 的内联框架样式 */
-        .pdf-viewer-frame {
+        /* 💡 核心：右侧动态加载展示容器（支持 PDF、视频页面或文本切换） */
+        .display-frame-container {
+            position: relative;
             width: 100%;
-            height: 800px; /* 控制右侧 PDF 显示的高度，可根据需要调整 */
+            height: 850px; /* 设置显示区域高度 */
             border: none;
             border-radius: 4px;
-            background-color: #f1f5f9;
+            background-color: #ffffff;
         }
+
+        /* 默认主页欢迎区域样式（用于彻底代替 404 报错页面） */
+        .welcome-fallback-view {
+            padding: 30px;
+            text-align: center;
+        }
+        .welcome-fallback-view h3 { color: #1e3a8a; font-size: 24px; margin-bottom: 20px; }
+        .welcome-fallback-view p { font-size: 17px; color: #475569; line-height: 1.8; text-align: justify; }
     </style>
+    <script>
+        // 💡 智能脚本：点击左侧或菜单时，隐藏默认文字，调出并展示 PDF 框架
+        function loadContent(url) {
+            var welcomeBox = document.getElementById('welcome-view');
+            var frameBox = document.getElementById('main-display-frame');
+            
+            if(welcomeBox) welcomeBox.style.display = 'none'; // 隐藏默认图文
+            if(frameBox) {
+                frameBox.style.display = 'block'; // 显示框架
+                frameBox.src = url; // 更改框架加载的地址（PDF或视频网页）
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -157,22 +177,21 @@
         <p>Professional Soap Making Machinery Experts</p>
     </header>
 
-    <!-- 导航栏区域（已彻底删除左上角 Home 标签） -->
+    <!-- 导航栏区域（已整体向右平移对齐） -->
     <div class="top-contact">
         <ul class="nav-menu">
             <li class="dropdown">
                 <a href="#" class="nav-item">Products <span class="arrow">▼</span></a>
                 <ul class="dropdown-menu">
-                    <!-- 💡 这里的链接同步绑定右侧的 PDF 框架，点击可直接切换 -->
-                    <li><a href="automatic-soap.pdf" target="pdf-display-frame">Automatic Soap Making Machine</a></li>
-                    <li><a href="handmade-soap.pdf" target="pdf-display-frame">Handmade Soap Making Machine</a></li>
-                    <li><a href="liquid-detergent.pdf" target="pdf-display-frame">Liquid Detergent (Soap) Making Machine</a></li>
-                    <li><a href="detergent-powder.pdf" target="pdf-display-frame">Detergent Powder Making Machine</a></li>
+                    <!-- 💡 点击下拉项，同样触发右侧展示区更新 -->
+                    <li><a href="javascript:void(0);" onclick="loadContent('automatic-soap.pdf')">Automatic Soap Making Machine</a></li>
+                    <li><a href="javascript:void(0);" onclick="loadContent('handmade-soap.pdf')">Handmade Soap Making Machine</a></li>
+                    <li><a href="javascript:void(0);" onclick="loadContent('liquid-detergent.pdf')">Liquid Detergent (Soap) Making Machine</a></li>
+                    <li><a href="javascript:void(0);" onclick="loadContent('detergent-powder.pdf')">Detergent Powder Making Machine</a></li>
                 </ul>
             </li>
         </ul>
 
-        <!-- 右侧通讯链接 -->
         <a href="https://wa.me" class="btn-whatsapp">Chat on WhatsApp</a>
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
         
@@ -182,7 +201,8 @@
             <a href="index.html?lang=fr">Français</a> | 
             <a href="index.html?lang=ar">العربية</a> | 
             <a href="index.html?lang=ru">Русский</a> | 
-            <a href="https://youtube.com" target="_blank" style="color: #25d366;">Video 🎥</a>
+            <!-- 💡 【修改2】：修复Video点击，现在点击会在右侧无缝展示您自己的视频页面，不跳出网站 -->
+            <a href="javascript:void(0);" onclick="loadContent('video.html')" style="color: #25d366; cursor: pointer;">Video 🎥</a>
         </div>
     </div>
 
@@ -194,30 +214,18 @@
     <!-- 主体双栏排版 -->
     <div class="web-body-layout">
         
-        <!-- 【左侧小面积栏】：点击任何一个，右侧就会自动无缝切换对应的 PDF -->
+        <!-- 左侧小面积菜单栏 -->
         <aside class="left-sidebar-menu">
             <div class="sidebar-title">Categories</div>
             <ul>
-                <li><a href="automatic-soap.pdf" target="pdf-display-frame">Automatic Soap Making Machine</a></li>
-                <li><a href="handmade-soap.pdf" target="pdf-display-frame">Handmade Soap Making Machine</a></li>
-                <li><a href="liquid-detergent.pdf" target="pdf-display-frame">Liquid Detergent (Soap) Making Machine</a></li>
-                <li><a href="detergent-powder.pdf" target="pdf-display-frame">Detergent Powder Making Machine</a></li>
+                <!-- 💡 绑定点击事件，把对应的 PDF 文件名传进去 -->
+                <li><a href="javascript:void(0);" onclick="loadContent('automatic-soap.pdf')">Automatic Soap Making Machine</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('handmade-soap.pdf')">Handmade Soap Making Machine</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('liquid-detergent.pdf')">Liquid Detergent (Soap) Making Machine</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('detergent-powder.pdf')">Detergent Powder Making Machine</a></li>
             </ul>
         </aside>
 
-        <!-- 【右侧绝对大面积主网页】：点击左侧时，PDF 将直接在下方框架内优雅展示 -->
+        <!-- 右侧绝对大面积主网页展示区 -->
         <main class="right-main-content">
-            <p class="intro-text">
-                Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries.
-            </p>
-
-            <!-- ⚠️ 【核心组件】：这就是您的 PDF 动态展示区。
-                 这里的 src="automatic-soap.pdf" 是网页打开时默认加载展示的第一个 PDF。
-                 请确保把下方的文件名替换为您在 GitHub 上实际上传的 PDF 文件名。 -->
-            <iframe name="pdf-display-frame" src="automatic-soap.pdf" class="pdf-viewer-frame"></iframe>
-        </main>
-
-    </div>
-
-</body>
-</html>
+            
