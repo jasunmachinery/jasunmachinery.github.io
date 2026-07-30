@@ -27,7 +27,7 @@
         header p { margin: 5px 0 0; font-size: 1.2em; color: #cbd5e0; }
 
         /* ==========================================================================
-           2. 导航栏整体布局（【修改】：增加左侧内边距，实现整体向右平移对齐效果）
+           2. 导航栏整体布局（已彻底删除顶端 Products 和 Home 标签）
            ========================================================================== */
         .top-contact { 
             display: flex; 
@@ -35,30 +35,19 @@
             align-items: center; 
             justify-content: flex-start; 
             gap: 25px; 
-            padding: 15px 30px 15px 330px; /* 💡 关键：将左边距从30px加大到330px，使整行组件向右靠拢对齐 */
+            padding: 15px 30px 15px 330px; /* 保持向右平移对齐 */
             background-color: #e2e8f0; 
             border-bottom: 1px solid #cbd5e0;
         }
 
-        /* Products 顶部下拉菜单标签 */
-        .nav-menu { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 20px; }
-        .nav-menu > li { position: relative; }
-        .nav-item { text-decoration: none; color: #1e3a8a; font-weight: bold; font-size: 18px; padding: 8px 12px; display: flex; align-items: center; transition: color 0.2s; }
-        .nav-item:hover { color: #dc2626; }
-        .arrow { font-size: 11px; margin-left: 5px; color: #1e3a8a; }
-
-        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: #ffffff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); list-style: none; padding: 6px 0; margin: 5px 0 0 0; min-width: 320px; z-index: 999; border-radius: 4px; border: 1px solid #cbd5e0; }
-        .dropdown-menu li a { color: #333333; padding: 10px 20px; text-decoration: none; display: block; font-size: 15px; text-align: left; transition: background 0.2s, color 0.2s; }
-        .dropdown-menu li a:hover { background-color: #f1f5f9; color: #dc2626; }
-        .dropdown:hover .dropdown-menu { display: block; }
-
-        /* 右侧原件：WhatsApp、Email、Languages */
+        /* 统一右侧原件样式 */
         .btn-whatsapp { display: inline-flex; align-items: center; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; }
         .btn-whatsapp::before { content: "💬"; margin-right: 8px; }
         .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #1e3a8a; }
         .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-        .languages-links a { color: #1e3a8a; text-decoration: none; }
+        .languages-links a { color: #1e3a8a; text-decoration: none; cursor: pointer; }
         .languages-links a:hover { text-decoration: underline; }
+        .languages-links a.active-lang { color: #dc2626; }
 
         /* ==========================================================================
            3. 标语绝对居中
@@ -77,7 +66,7 @@
         }
 
         /* ==========================================================================
-           4. 网页主体分栏布局与 PDF/Video 框架
+           4. 网页主体双栏分栏布局
            ========================================================================== */
         .web-body-layout {
             max-width: 1400px;
@@ -89,7 +78,7 @@
 
         /* 左边小面积分类菜单 */
         .left-sidebar-menu {
-            flex: 0 0 280px; 
+            flex: 0 0 320px; /* 轻微加宽以容纳多语种较长文本 */
             background-color: #ffffff;
             border: 1px solid #cbd5e0;
             border-radius: 6px;
@@ -117,115 +106,106 @@
             line-height: 1.3;
             border-bottom: 1px solid #f1f5f9;
             transition: all 0.2s;
+            cursor: pointer;
         }
         .left-sidebar-menu ul li:last-child a { border-bottom: none; }
-        .left-sidebar-menu ul li a:hover {
+        .left-sidebar-menu ul li a:hover, .left-sidebar-menu ul li a.active-menu {
             background-color: #f8fafc;
             color: #dc2626;
             padding-left: 25px; 
         }
 
-        /* 右边大面积展示区 */
+        /* 右边大面积动态展示区 */
         .right-main-content {
             flex: 1; 
             background-color: #ffffff;
             border: 1px solid #cbd5e0;
             border-radius: 6px;
-            padding: 20px;
+            padding: 25px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
         }
 
-        /* 💡 核心：右侧动态加载展示容器（支持 PDF、视频页面或文本切换） */
-        .display-frame-container {
-            position: relative;
-            width: 100%;
-            height: 850px; /* 设置显示区域高度 */
-            border: none;
-            border-radius: 4px;
-            background-color: #ffffff;
-        }
-
-        /* 默认主页欢迎区域样式（用于彻底代替 404 报错页面） */
+        /* 默认欢迎文本区域 */
         .welcome-fallback-view {
-            padding: 30px;
-            text-align: center;
+            padding: 10px 10px 30px 10px;
         }
-        .welcome-fallback-view h3 { color: #1e3a8a; font-size: 24px; margin-bottom: 20px; }
+        .welcome-fallback-view h3 { color: #1e3a8a; font-size: 24px; margin-bottom: 20px; text-align: center; }
         .welcome-fallback-view p { font-size: 17px; color: #475569; line-height: 1.8; text-align: justify; }
-    </style>
-    <script>
-        // 💡 智能脚本：点击左侧或菜单时，隐藏默认文字，调出并展示 PDF 框架
-        function loadContent(url) {
-            var welcomeBox = document.getElementById('welcome-view');
-            var frameBox = document.getElementById('main-display-frame');
-            
-            if(welcomeBox) welcomeBox.style.display = 'none'; // 隐藏默认图文
-            if(frameBox) {
-                frameBox.style.display = 'block'; // 显示框架
-                frameBox.src = url; // 更改框架加载的地址（PDF或视频网页）
-            }
+        
+        /* 💡 核心组件：图片流式滚动展示区域（丝滑代替404页面和普通PDF插件） */
+        .image-stream-container {
+            display: none; /* 默认隐藏，点击时调出 */
+            width: 100%;
+            max-height: 1000px; /* 设置垂直滚动轴限制高度 */
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: #f1f5f9;
+            box-sizing: border-box;
         }
-    </script>
-</head>
-<body>
+        .image-stream-container img {
+            width: 100%; /* 图片宽度自适应撑满右侧 */
+            height: auto;
+            display: block;
+            margin-bottom: 15px; /* 图片与图片之间的间距 */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+        .image-stream-container img:last-child { margin-bottom: 0; }
+    </style>
 
-    <!-- 顶部蓝色横幅 -->
-    <header>
-        <h1>Kaifeng Jasun Industry Co., Ltd.</h1>
-        <p>Professional Soap Making Machinery Experts</p>
-    </header>
-
-    <!-- 导航栏区域（已整体向右平移对齐） -->
-    <div class="top-contact">
-        <ul class="nav-menu">
-            <li class="dropdown">
-                <a href="#" class="nav-item">Products <span class="arrow">▼</span></a>
-                <ul class="dropdown-menu">
-                    <!-- 💡 点击下拉项，同样触发右侧展示区更新 -->
-                    <li><a href="javascript:void(0);" onclick="loadContent('automatic-soap.pdf')">Automatic Soap Making Machine</a></li>
-                    <li><a href="javascript:void(0);" onclick="loadContent('handmade-soap.pdf')">Handmade Soap Making Machine</a></li>
-                    <li><a href="javascript:void(0);" onclick="loadContent('liquid-detergent.pdf')">Liquid Detergent (Soap) Making Machine</a></li>
-                    <li><a href="javascript:void(0);" onclick="loadContent('detergent-powder.pdf')">Detergent Powder Making Machine</a></li>
-                </ul>
-            </li>
-        </ul>
-
-        <a href="https://wa.me" class="btn-whatsapp">Chat on WhatsApp</a>
-        <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
-        
-        <div class="languages-links">
-            <a href="index.html">English</a> | 
-            <a href="index.html?lang=es">Español</a> | 
-            <a href="index.html?lang=fr">Français</a> | 
-            <a href="index.html?lang=ar">العربية</a> | 
-            <a href="index.html?lang=ru">Русский</a> | 
-            <!-- 💡 【修改2】：修复Video点击，现在点击会在右侧无缝展示您自己的视频页面，不跳出网站 -->
-            <a href="javascript:void(0);" onclick="loadContent('video.html')" style="color: #25d366; cursor: pointer;">Video 🎥</a>
-        </div>
-    </div>
-
-    <!-- 顶端标语绝对居中 -->
-    <div class="centered-title-wrapper">
-        <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
-    </div>
-
-    <!-- 主体双栏排版 -->
-    <div class="web-body-layout">
-        
-        <!-- 左侧小面积菜单栏 -->
-        <aside class="left-sidebar-menu">
-            <div class="sidebar-title">Categories</div>
-            <ul>
-                <!-- 💡 绑定点击事件，把对应的 PDF 文件名传进去 -->
-                <li><a href="javascript:void(0);" onclick="loadContent('automatic-soap.pdf')">Automatic Soap Making Machine</a></li>
-                <li><a href="javascript:void(0);" onclick="loadContent('handmade-soap.pdf')">Handmade Soap Making Machine</a></li>
-                <li><a href="javascript:void(0);" onclick="loadContent('liquid-detergent.pdf')">Liquid Detergent (Soap) Making Machine</a></li>
-                <li><a href="javascript:void(0);" onclick="loadContent('detergent-powder.pdf')">Detergent Powder Making Machine</a></li>
-            </ul>
-        </aside>
-
-        <!-- 右侧绝对大面积主网页展示区 -->
-        <main class="right-main-content">
-            
+    <script>
+        // ==========================================================================
+        // 核心翻译数据：管理各个语种下，左侧标签的本地化文本展示
+        // ==========================================================================
+        const i18nData = {
+            en: {
+                title: "Categories",
+                m1: "Automatic Soap Making Machine",
+                m2: "Handmade Soap Making Machine",
+                m3: "Liquid Detergent (Soap) Making Machine",
+                m4: "Detergent Powder Making Machine",
+                welcomeTitle: "Welcome to Kaifeng Jasun Industry Co., Ltd.",
+                welcomeTxt: "Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and districts.",
+                guideTxt: "⬅️ Please click on the product categories on the left side to view detailed specifications and technical catalogs."
+            },
+            es: {
+                title: "Categorías",
+                m1: "Máquina Automática para Hacer Jabón",
+                m2: "Máquina de Jabón Hecho a Mano",
+                m3: "Máquina para Detergente Líquido (Jabón)",
+                m4: "Máquina de Detergente en Polvo",
+                welcomeTitle: "Bienvenido a Kaifeng Jasun Industry Co., Ltd.",
+                welcomeTxt: "Fundada en 2005, Kaifeng Jasun Industry Co., Ltd. se especializa en maquinaria profesional para la fabricación de jabón y líneas de producción completas. Con más de dos décadas de experiencia industrial, estamos dedicados a proporcionar a los fabricantes globales de jabón maquinaria de procesamiento de alto rendimiento.",
+                guideTxt: "⬅️ Haga clic en las categorías de productos a la izquierda para ver las especificaciones detalladas."
+            },
+            fr: {
+                title: "Catégories",
+                m1: "Machine Automatique de Fabrication de Savon",
+                m2: "Machine à Savon Fait Main",
+                m3: "Machine de Détergent Liquide (Savon)",
+                m4: "Machine de Détergent en Poudre",
+                welcomeTitle: "Bienvenue chez Kaifeng Jasun Industry Co., Ltd.",
+                welcomeTxt: "Fondée en 2005, Kaifeng Jasun Industry Co., Ltd. est spécialisée dans les machines professionnelles de fabrication de savon et les lignes de production complètes. Nous nous engageons à fournir des équipements performants.",
+                guideTxt: "⬅️ Veuillez cliquer sur les catégories de produits à gauche pour voir les catalogues techniques."
+            },
+            ar: {
+                title: "الفئات",
+                m1: "آلة صنع الصابون الأوتوماتيكية",
+                m2: "آلة صنع الصابون اليدوي",
+                m3: "آلة صنع المنظفات السائلة (الصابون)",
+                m4: "آلة صنع مسحوق الغسيل",
+                welcomeTitle: "مرحبًا بكم في شركة Kaifeng Jasun Industry Co., Ltd.",
+                welcomeTxt: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات صنع الصابون المهنية وخطوط الإنتاج الكاملة.",
+                guideTxt: "⬅️ يرجى النقر على فئات المنتجات على الجانب الأيسر لعرض الكتالوجات الفنية."
+            },
+            ru: {
+                title: "Категории",
+                m1: "Автоматическая машина для производства мыла",
+                m2: "Машина для производства мыла ручной работы",
+                m3: "Машина для жидкого моющего средства (мыла)",
+                m4: "Машина для стирального порошка",
+                welcomeTitle: "Добро пожаловать в Kaifeng Jasun Industry Co., Ltd.",
