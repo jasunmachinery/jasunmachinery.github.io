@@ -5,207 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
-        /* ==========================================================================
-           1. 全局基础与横幅布局
-           ========================================================================== */
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f8fafc; 
-            overflow-x: hidden; 
-        }
-        header { 
-            background-color: #1a365d; 
-            color: #fff; 
-            padding: 30px 20px; 
-            text-align: center; 
-        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f8fafc; }
+        header { background-color: #1a365d; color: #fff; padding: 30px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 2.5em; }
         header p { margin: 5px 0 0; font-size: 1.2em; color: #cbd5e0; }
 
-        /* ==========================================================================
-           2. 导航栏整体布局（已彻底删除顶端 Products 和 Home 标签）
-           ========================================================================== */
+        /* 顶部导航栏整体布局（已彻底删除了 Products & Home 标签，整行向右平移对齐） */
         .top-contact { 
-            display: flex; 
-            flex-wrap: wrap; 
-            align-items: center; 
-            justify-content: flex-start; 
-            gap: 25px; 
-            padding: 15px 30px 15px 330px; /* 保持向右平移对齐 */
-            background-color: #e2e8f0; 
-            border-bottom: 1px solid #cbd5e0;
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 25px; 
+            padding: 15px 30px 15px 330px; background-color: #e2e8f0; border-bottom: 1px solid #cbd5e0;
         }
-
-        /* 统一右侧原件样式 */
         .btn-whatsapp { display: inline-flex; align-items: center; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; }
-        .btn-whatsapp::before { content: "💬"; margin-right: 8px; }
+        .btn-whatsapp::before { content: "💬 "; }
         .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #1e3a8a; }
-        .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+        .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; align-items: center; gap: 8px; }
         .languages-links a { color: #1e3a8a; text-decoration: none; cursor: pointer; }
         .languages-links a:hover { text-decoration: underline; }
         .languages-links a.active-lang { color: #dc2626; }
 
-        /* ==========================================================================
-           3. 标语绝对居中
-           ========================================================================== */
-        .centered-title-wrapper {
-            width: 100%;
-            text-align: center;
-            padding: 30px 20px 10px 20px;
-            box-sizing: border-box;
-        }
-        .centered-title-wrapper h2 {
-            color: #1e3a8a;
-            font-size: 32px;
-            margin: 0 auto;
-            display: inline-block;
-        }
+        /* 顶端标语绝对居中，两边留白相同 */
+        .centered-title-wrapper { width: 100%; text-align: center; padding: 30px 20px 10px 20px; box-sizing: border-box; }
+        .centered-title-wrapper h2 { color: #1e3a8a; font-size: 32px; margin: 0 auto; display: inline-block; }
 
-        /* ==========================================================================
-           4. 网页主体双栏分栏布局
-           ========================================================================== */
-        .web-body-layout {
-            max-width: 1400px;
-            margin: 20px auto 50px auto;
-            padding: 0 20px;
-            display: flex;
-            gap: 30px; 
-        }
+        /* 网页主体：双栏经典布局 */
+        .web-body-layout { max-width: 1400px; margin: 20px auto 50px auto; padding: 0 20px; display: flex; gap: 30px; }
 
-        /* 左边小面积分类菜单 */
-        .left-sidebar-menu {
-            flex: 0 0 320px; /* 轻微加宽以容纳多语种较长文本 */
-            background-color: #ffffff;
-            border: 1px solid #cbd5e0;
-            border-radius: 6px;
-            padding: 15px 0;
-            height: fit-content;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .sidebar-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #1e3a8a;
-            padding: 0 20px 12px 20px;
-            margin: 0 0 10px 0;
-            border-bottom: 2px solid #e2e8f0;
-            text-transform: uppercase;
-        }
+        /* 左边小面积分类菜单（宽度固定，支持多语种自动本地化） */
+        .left-sidebar-menu { flex: 0 0 320px; background-color: #ffffff; border: 1px solid #cbd5e0; border-radius: 6px; padding: 15px 0; height: fit-content; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-title { font-size: 16px; font-weight: bold; color: #1e3a8a; padding: 0 20px 12px 20px; margin: 0 0 10px 0; border-bottom: 2px solid #e2e8f0; text-transform: uppercase; }
         .left-sidebar-menu ul { list-style: none; padding: 0; margin: 0; }
-        .left-sidebar-menu ul li a {
-            display: block;
-            padding: 12px 20px;
-            color: #475569;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.3;
-            border-bottom: 1px solid #f1f5f9;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
+        .left-sidebar-menu ul li a { display: block; padding: 12px 20px; color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; line-height: 1.3; border-bottom: 1px solid #f1f5f9; transition: all 0.2s; cursor: pointer; }
         .left-sidebar-menu ul li:last-child a { border-bottom: none; }
-        .left-sidebar-menu ul li a:hover, .left-sidebar-menu ul li a.active-menu {
-            background-color: #f8fafc;
-            color: #dc2626;
-            padding-left: 25px; 
-        }
+        .left-sidebar-menu ul li a:hover, .left-sidebar-menu ul li a.active-menu { background-color: #f8fafc; color: #dc2626; padding-left: 25px; }
 
-        /* 右边大面积动态展示区 */
-        .right-main-content {
-            flex: 1; 
-            background-color: #ffffff;
-            border: 1px solid #cbd5e0;
-            border-radius: 6px;
-            padding: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* 默认欢迎文本区域 */
-        .welcome-fallback-view {
-            padding: 10px 10px 30px 10px;
-        }
+        /* 右边绝对大面积（占 90% 宽度）展示区 */
+        .right-main-content { flex: 1; background-color: #ffffff; border: 1px solid #cbd5e0; border-radius: 6px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; flex-direction: column; }
+        .welcome-fallback-view { padding: 10px 10px 30px 10px; }
         .welcome-fallback-view h3 { color: #1e3a8a; font-size: 24px; margin-bottom: 20px; text-align: center; }
         .welcome-fallback-view p { font-size: 17px; color: #475569; line-height: 1.8; text-align: justify; }
         
-        /* 💡 核心组件：图片流式滚动展示区域（丝滑代替404页面和普通PDF插件） */
-        .image-stream-container {
-            display: none; /* 默认隐藏，点击时调出 */
-            width: 100%;
-            max-height: 1000px; /* 设置垂直滚动轴限制高度 */
-            overflow-y: auto;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            padding: 10px;
-            background-color: #f1f5f9;
-            box-sizing: border-box;
-        }
-        .image-stream-container img {
-            width: 100%; /* 图片宽度自适应撑满右侧 */
-            height: auto;
-            display: block;
-            margin-bottom: 15px; /* 图片与图片之间的间距 */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            background-color: #fff;
-        }
+        /* 核心组件：图片流滚动展示盒 */
+        .image-stream-container { display: none; width: 100%; max-height: 1000px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 4px; padding: 10px; background-color: #f1f5f9; box-sizing: border-box; }
+        .image-stream-container img { width: 100%; height: auto; display: block; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); background-color: #fff; }
         .image-stream-container img:last-child { margin-bottom: 0; }
     </style>
 
     <script>
-        // ==========================================================================
-        // 核心翻译数据：管理各个语种下，左侧标签的本地化文本展示
-        // ==========================================================================
+        // 管理各个语种下，左侧及首页面板的本地化文本展示
         const i18nData = {
             en: {
-                title: "Categories",
-                m1: "Automatic Soap Making Machine",
-                m2: "Handmade Soap Making Machine",
-                m3: "Liquid Detergent (Soap) Making Machine",
-                m4: "Detergent Powder Making Machine",
+                title: "Categories", m1: "Automatic Soap Making Machine", m2: "Handmade Soap Making Machine", m3: "Liquid Detergent (Soap) Making Machine", m4: "Detergent Powder Making Machine",
                 welcomeTitle: "Welcome to Kaifeng Jasun Industry Co., Ltd.",
                 welcomeTxt: "Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and districts.",
                 guideTxt: "⬅️ Please click on the product categories on the left side to view detailed specifications and technical catalogs."
             },
             es: {
-                title: "Categorías",
-                m1: "Máquina Automática para Hacer Jabón",
-                m2: "Máquina de Jabón Hecho a Mano",
-                m3: "Máquina para Detergente Líquido (Jabón)",
-                m4: "Máquina de Detergente en Polvo",
+                title: "Categorías", m1: "Máquina Automática para Hacer Jabón", m2: "Máquina de Jabón Hecho a Mano", m3: "Máquina para Detergente Líquido (Jabón)", m4: "Máquina de Detergente en Polvo",
                 welcomeTitle: "Bienvenido a Kaifeng Jasun Industry Co., Ltd.",
                 welcomeTxt: "Fundada en 2005, Kaifeng Jasun Industry Co., Ltd. se especializa en maquinaria profesional para la fabricación de jabón y líneas de producción completas. Con más de dos décadas de experiencia industrial, estamos dedicados a proporcionar a los fabricantes globales de jabón maquinaria de procesamiento de alto rendimiento.",
                 guideTxt: "⬅️ Haga clic en las categorías de productos a la izquierda para ver las especificaciones detalladas."
             },
             fr: {
-                title: "Catégories",
-                m1: "Machine Automatique de Fabrication de Savon",
-                m2: "Machine à Savon Fait Main",
-                m3: "Machine de Détergent Liquide (Savon)",
-                m4: "Machine de Détergent en Poudre",
+                title: "Catégories", m1: "Machine Automatique de Fabrication de Savon", m2: "Machine à Savon Fait Main", m3: "Machine de Détergent Liquide (Savon)", m4: "Machine de Détergent en Poudre",
                 welcomeTitle: "Bienvenue chez Kaifeng Jasun Industry Co., Ltd.",
-                welcomeTxt: "Fondée en 2005, Kaifeng Jasun Industry Co., Ltd. est spécialisée dans les machines professionnelles de fabrication de savon et les lignes de production complètes. Nous nous engageons à fournir des équipements performants.",
+                welcomeTxt: "Fondée en 2005, Kaifeng Jasun Industry Co., Ltd. est spécialisée dans les machines professionnelles de fabrication de savon et les lignes de production complètes. Nous nous engageons à fournir des équipements de traitement du savon performants.",
                 guideTxt: "⬅️ Veuillez cliquer sur les catégories de produits à gauche pour voir les catalogues techniques."
             },
             ar: {
-                title: "الفئات",
-                m1: "آلة صنع الصابون الأوتوماتيكية",
-                m2: "آلة صنع الصابون اليدوي",
-                m3: "آلة صنع المنظفات السائلة (الصابون)",
-                m4: "آلة صنع مسحوق الغسيل",
+                title: "الفئات", m1: "آلة صنع الصابون الأوتوماتيكية", m2: "آلة صنع الصابون اليدوي", m3: "آلة صنع المنظفات السائلة (الصابون)", m4: "آلة صنع مسحوق الغسيل",
                 welcomeTitle: "مرحبًا بكم في شركة Kaifeng Jasun Industry Co., Ltd.",
-                welcomeTxt: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات صنع الصابون المهنية وخطوط الإنتاج الكاملة.",
+                welcomeTxt: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات صنع الصابون المهنية وخطوط الإنتاج الكاملة. نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء.",
                 guideTxt: "⬅️ يرجى النقر على فئات المنتجات على الجانب الأيسر لعرض الكتالوجات الفنية."
             },
             ru: {
-                title: "Категории",
-                m1: "Автоматическая машина для производства мыла",
-                m2: "Машина для производства мыла ручной работы",
-                m3: "Машина для жидкого моющего средства (мыла)",
-                m4: "Машина для стирального порошка",
+                title: "Категории", m1: "Автоматическая машина для производства мыла", m2: "Машина для производства мыла ручной работы", m3: "Машина для жидкого моющего средства (мыла)", m4: "Машина для стирального порошка",
                 welcomeTitle: "Добро пожаловать в Kaifeng Jasun Industry Co., Ltd.",
+                welcomeTxt: "Основанная в 2005 году, компания Kaifeng Jasun Industry Co., Ltd. специализируется на профессиональном оборудовании для производства мыла и комплектных производственных линиях. Мы стремимся предоставлять производителям мыла по всему миру высокопроизводительное оборудование.",
+                guideTxt: "⬅️ Пожалуйста, нажмите на категории продуктов слева, чтобы просмотреть технические каталоги."
+            }
+        };
+
+        // 切换语种的函数
+        function switchLanguage(lang) {
+            document.querySelectorAll('.languages-links a').forEach(a => a.classList.remove('active-lang'));
+            if(event) event.target.classList.add('active-lang');
+
+            document.getElementById('side-title').innerText = i18nData[lang].title;
+            document.getElementById('menu-txt-1').innerText = i18nData[lang].m1;
+            document.getElementById('menu-txt-2').innerText = i18nData[lang].m2;
+            document.getElementById('menu-txt-3').innerText = i18nData[lang].m3;
+            document.getElementById('menu-txt-4').innerText = i18nData[lang].m4;
+            
+            document.getElementById('wel-title').innerText = i18nData[lang].welcomeTitle;
+            document.getElementById('wel-txt').innerText = i18nData[lang].welcomeTxt;
+            document.getElementById('gui-txt').innerText = i18nData[lang].guideTxt;
+
+            document.getElementById('welcome-view').style.display = 'block';
+            document.getElementById('image-stream-box').style.display = 'none';
+            document.querySelectorAll('.left-sidebar-menu ul li a').forEach(a => a.classList.remove('active-menu'));
+        }
+
+        // 自动读取并垂直排列展示已上传的 Page1 ~ Page12 图片流
+        function loadMachineImages(machineKey, totalPages, element) {
+            document.querySelectorAll('.left-sidebar-menu ul li a').forEach(a => a.classList.remove('active-menu'));
+            element.classList.add('active-menu');
+
+            document.getElementById('welcome-view').style.display = 'none';
+            const streamBox = document.getElementById('image-stream-box');
+            streamBox.style.display = 'block';
+            streamBox.innerHTML = ''; 
+
+            for (let i = 1; i <= totalPages; i++) {
+                const img = document.createElement('img');
+                img.src = `${machineKey}_Page${i}.jpg`; 
+                img.alt = `${machineKey} Page ${i}`;
+                img.onerror = function() { this.style.display = 'none'; };
+                streamBox.appendChild(img);
+            }
