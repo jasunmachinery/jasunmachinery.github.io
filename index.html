@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
-        /* ==========================================================================
-           1. 全局基础与横幅布局
-           ========================================================================== */
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f8fafc; }
         header { background-color: #1a365d; color: #fff; padding: 30px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 2.5em; }
         header p { margin: 5px 0 0; font-size: 1.2em; color: #cbd5e0; }
 
-        /* 顶部导航栏整体布局（电脑端增加 330px 左边距以实现向右平移对齐效果） */
+        /* 顶部导航栏整体布局（整行向右平移对齐） */
         .top-contact { 
             display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 25px; 
             padding: 15px 30px 15px 330px; background-color: #e2e8f0; border-bottom: 1px solid #cbd5e0;
@@ -21,7 +18,7 @@
         .btn-whatsapp { display: inline-flex; align-items: center; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; }
         .btn-whatsapp::before { content: "💬 "; }
         .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #1e3a8a; }
-        .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; align-items: center; gap: 8px; }
         .languages-links a { color: #1e3a8a; text-decoration: none; cursor: pointer; }
         .languages-links a:hover { text-decoration: underline; }
         .languages-links a.active-lang { color: #dc2626; }
@@ -33,7 +30,7 @@
         /* 网页主体：双栏经典布局 */
         .web-body-layout { max-width: 1400px; margin: 20px auto 50px auto; padding: 0 20px; display: flex; gap: 30px; }
 
-        /* 左边小面积分类菜单（宽度固定，支持多语种自动本地化） */
+        /* 💡【新核心布局】：4个标签移动到标语正下方，宽度撑满且美化 */
         .left-sidebar-menu { flex: 0 0 320px; background-color: #ffffff; border: 1px solid #cbd5e0; border-radius: 6px; padding: 15px 0; height: fit-content; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
         .sidebar-title { font-size: 16px; font-weight: bold; color: #1e3a8a; padding: 0 20px 12px 20px; margin: 0 0 10px 0; border-bottom: 2px solid #e2e8f0; text-transform: uppercase; }
         .left-sidebar-menu ul { list-style: none; padding: 0; margin: 0; }
@@ -41,7 +38,7 @@
         .left-sidebar-menu ul li:last-child a { border-bottom: none; }
         .left-sidebar-menu ul li a:hover, .left-sidebar-menu ul li a.active-menu { background-color: #f8fafc; color: #dc2626; padding-left: 25px; }
 
-        /* 右边绝对大面积（占 90% 宽度）展示区 */
+        /* 右边绝对大面积展示区 */
         .right-main-content { flex: 1; background-color: #ffffff; border: 1px solid #cbd5e0; border-radius: 6px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; flex-direction: column; }
         .welcome-fallback-view { padding: 10px 10px 30px 10px; }
         .welcome-fallback-view h3 { color: #1e3a8a; font-size: 24px; margin-bottom: 20px; text-align: center; }
@@ -52,87 +49,76 @@
         .image-stream-container img { width: 100%; height: auto; display: block; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); background-color: #fff; }
         .image-stream-container img:last-child { margin-bottom: 0; }
 
-        /* ==========================================================================
-           🌟 核心升级：专门针对手机移动端屏幕的智能适配样式
-           ========================================================================== */
+        /* 移动端手机屏幕的智能适配样式 */
         @media screen and (max-width: 768px) {
-            header { padding: 20px 10px; }
-            header h1 { font-size: 1.8em; }
-            header p { font-size: 1em; }
-
-            /* 1. 修复手机顶部变形：在手机上取消 330px 巨额边距，改为居中整齐排列 */
-            .top-contact { 
-                padding: 15px; 
-                justify-content: center; 
-                flex-direction: column; 
-                gap: 15px; 
-            }
+            .top-contact { padding: 15px; justify-content: center; flex-direction: column; gap: 15px; }
             .btn-whatsapp, .email-link, .languages-links { font-size: 16px; justify-content: center; text-align: center; }
-
-            /* 2. 修复手机标语换行问题：调小字号使其一行展示 */
             .centered-title-wrapper h2 { font-size: 20px; padding: 10px; }
-
-            /* 3. 修复手机排版重叠：将左右分栏改为垂直上下分栏 */
-            .web-body-layout { 
-                flex-direction: column; 
-                padding: 0 10px; 
-                gap: 20px; 
-            }
-
-            /* 4. 左侧菜单在手机上自动变成宽度 100% 的顶部选择栏 */
-            .left-sidebar-menu { 
-                flex: none; 
-                width: 100%; 
-                box-sizing: border-box;
-            }
-
-            /* 5. 右侧图片展示区在手机上横向 100% 充满屏幕，不再被挤扁 */
-            .right-main-content { 
-                padding: 10px; 
-                box-sizing: border-box;
-            }
+            .web-body-layout { flex-direction: column; padding: 0 10px; gap: 20px; }
+            .left-sidebar-menu { flex: none; width: 100%; box-sizing: border-box; }
+            .right-main-content { padding: 10px; box-sizing: border-box; }
             .image-stream-container { max-height: 700px; padding: 5px; }
-            .welcome-fallback-view h3 { font-size: 18px; }
-            .welcome-fallback-view p { font-size: 15px; }
         }
     </style>
 
     <script>
-        // 管理各个语种下，左侧及首页面板的本地化文本展示
+        // 5国全语种对照数据库：确保点击顶端语种时，标签、标题、正文同步精准翻译
         const i18nData = {
             en: {
                 title: "Categories", m1: "Automatic Soap Making Machine", m2: "Handmade Soap Making Machine", m3: "Liquid Detergent (Soap) Making Machine", m4: "Detergent Powder Making Machine",
                 welcomeTitle: "Welcome to Kaifeng Jasun Industry Co., Ltd.",
                 welcomeTxt: "Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and districts.",
-                guideTxt: "⬅️ Please click on the product categories on the left side to view detailed specifications and technical catalogs."
+                guideTxt: "⬅️ Please click on the product categories above to view detailed specifications and technical catalogs."
             },
             es: {
                 title: "Categorías", m1: "Máquina Automática para Hacer Jabón", m2: "Máquina de Jabón Hecho a Mano", m3: "Máquina para Detergente Líquido (Jabón)", m4: "Máquina de Detergente en Polvo",
                 welcomeTitle: "Bienvenido a Kaifeng Jasun Industry Co., Ltd.",
                 welcomeTxt: "Fundada en 2005, Kaifeng Jasun Industry Co., Ltd. se especializa en maquinaria profesional para la fabricación de jabón y líneas de producción completas. Con más de dos décadas de experiencia industrial, estamos dedicados a proporcionar a los fabricantes globales de jabón maquinaria de procesamiento de alto rendimiento.",
-                guideTxt: "⬅️ Haga clic en las categorías de productos a la izquierda para ver las especificaciones detalladas."
+                guideTxt: "⬅️ Haga clic en las categorías de productos de arriba para ver las especificaciones detalladas."
             },
             fr: {
                 title: "Catégories", m1: "Machine Automatique de Fabrication de Savon", m2: "Machine à Savon Fait Main", m3: "Machine de Détergent Liquide (Savon)", m4: "Machine de Détergent en Poudre",
                 welcomeTitle: "Bienvenue chez Kaifeng Jasun Industry Co., Ltd.",
                 welcomeTxt: "Fondée en 2005, Kaifeng Jasun Industry Co., Ltd. est spécialisée dans les machines professionnelles de fabrication de savon et les lignes de production complètes. Nous nous engageons à fournir des équipements de traitement du savon performants.",
-                guideTxt: "⬅️ Veuillez cliquer sur les catégories de produits à gauche pour voir les catalogues techniques."
+                guideTxt: "⬅️ Veuillez cliquer sur les catégories de produits ci-dessus pour voir les catalogues techniques."
             },
             ar: {
                 title: "الفئات", m1: "آلة صنع الصابون الأوتوماتيكية", m2: "آلة صنع الصابون اليدوي", m3: "آلة صنع المنظفات السائلة (الصابون)", m4: "آلة صنع مسحوق الغسيل",
                 welcomeTitle: "مرحبًا بكم في شركة Kaifeng Jasun Industry Co., Ltd.",
-                welcomeTxt: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات صنع الصابون المهنية وخطوط الإنتاج الكاملة. نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء.",
-                guideTxt: "⬅️ يرجى النقر على فئات المنتجات على الجانب الأيسر لعرض الكتالوجات الفنية."
+                welcomeTxt: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. 在 عام 2005، وهي متخصصة في آلات صنع الصابون المهنية وخطوط الإنتاج الكاملة. نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء.",
+                guideTxt: "⬅️ يرجى النقر على فئات المنتجات في الأعلى لعرض الكتالوجات الفنية."
             },
             ru: {
                 title: "Категории", m1: "Автоматическая машина для производства мыла", m2: "Машина для производства мыла ручной работы", m3: "Машина для жидкого моющего средства (мыла)", m4: "Машина для стирального порошка",
                 welcomeTitle: "Добро пожаловать в Kaifeng Jasun Industry Co., Ltd.",
                 welcomeTxt: "Основанная в 2005 году, компания Kaifeng Jasun Industry Co., Ltd. специализируется на профессиональном оборудовании для производства мыла и комплектных производственных линиях. Мы стремимся предоставлять производителям мыла по всему миру высокопроизводительное оборудование.",
-                guideTxt: "⬅️ Пожалуйста, нажмите на категории продуктов слева, чтобы просмотреть технические каталоги."
+                guideTxt: "⬅️ Пожалуйста, нажмите на категории продуктов выше, чтобы просмотреть технические каталоги."
             }
         };
 
-        // 切换语种的函数
-        function switchLanguage(lang) {
+        let currentLangSuffix = ''; 
+        let currentMaxPages = 12; 
+        let currentMachineKey = 'automatic-soap-machine';
+
+        // 切换语种的核心函数：完美翻译正文、标语及移动后的 4 个标签，杜绝白板
+        function switchLanguage(lang, element) {
             document.querySelectorAll('.languages-links a').forEach(a => a.classList.remove('active-lang'));
-            if(window.event && window.event.target) {
+            if(element) element.classList.add('active-lang');
+
+            // 联动映射您文件里的特殊小语种命名规则（如 -es_Page1, -fr_Page1 等）
+            if (lang === 'en') { currentLangSuffix = ''; } 
+            else { currentLangSuffix = '-' + lang; }
+
+            // 翻译标签与欢迎文字
+            document.getElementById('side-title').innerText = i18nData[lang].title;
+            document.getElementById('menu-txt-1').innerText = i18nData[lang].m1;
+            document.getElementById('menu-txt-2').innerText = i18nData[lang].m2;
+            document.getElementById('menu-txt-3').innerText = i18nData[lang].m3;
+            document.getElementById('menu-txt-4').innerText = i18nData[lang].m4;
+            
+            document.getElementById('wel-title').innerText = i18nData[lang].welcomeTitle;
+            document.getElementById('wel-txt').innerText = i18nData[lang].welcomeTxt;
+            document.getElementById('gui-txt').innerText = i18nData[lang].guideTxt;
+
+            // 回到初始主页面板，避免直接白板
+            document.getElementById('welcome-view').style.display = 'block';
