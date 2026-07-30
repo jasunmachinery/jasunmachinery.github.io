@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
-        /* ==========================================================================
-           1. 全局基础与横幅布局（还原主页原有初印象）
-           ========================================================================== */
+        /* 全局基础与横幅布局 */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             line-height: 1.6; 
@@ -38,7 +36,7 @@
             border-bottom: 1px solid #cbd5e0;
         }
 
-        /* Home & Products 标签（更改为邮箱同款蓝色） */
+        /* Products 标签（已彻底删除 Home 标签） */
         .nav-menu { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 20px; }
         .nav-menu > li { position: relative; }
         .nav-item { text-decoration: none; color: #1e3a8a; font-weight: bold; font-size: 18px; padding: 8px 12px; display: flex; align-items: center; transition: color 0.2s; }
@@ -59,10 +57,7 @@
         .languages-links a { color: #1e3a8a; text-decoration: none; }
         .languages-links a:hover { text-decoration: underline; }
 
-        /* ==========================================================================
-           2. 核心调整样式：标题完全居中 + 左右两栏经典布局
-           ========================================================================== */
-        /* 核心要求：顶端标语绝对居中，左右留白相同 */
+        /* 顶端标语绝对居中 */
         .centered-title-wrapper {
             width: 100%;
             text-align: center;
@@ -78,16 +73,16 @@
 
         /* 网页主体布局：左右两侧分栏 */
         .web-body-layout {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 20px auto 50px auto;
             padding: 0 20px;
             display: flex;
-            gap: 30px; /* 左右两栏的间距 */
+            gap: 30px; 
         }
 
-        /* 【左边小面积区域】：从上到下整齐排列的 4 个机器标签 */
+        /* 【左边小面积区域】：4个产品切换标签 */
         .left-sidebar-menu {
-            flex: 0 0 280px; /* 限制左侧栏小面积固定宽度 */
+            flex: 0 0 280px; 
             background-color: #ffffff;
             border: 1px solid #cbd5e0;
             border-radius: 6px;
@@ -117,70 +112,67 @@
             transition: all 0.2s;
         }
         .left-sidebar-menu ul li:last-child a { border-bottom: none; }
-        /* 鼠标悬停左侧分类时变成标志性的红字浅灰底 */
         .left-sidebar-menu ul li a:hover {
             background-color: #f8fafc;
             color: #dc2626;
-            padding-left: 25px; /* 轻微右移特效 */
+            padding-left: 25px; 
         }
 
-        /* 【右边大面积区域】：至少占 70%-90% 的详情主页面 */
+        /* 【右边大面积区域】：不再是写死的文字，而是一个占绝对面积的 PDF 容器 */
         .right-main-content {
-            flex: 1; /* 自动撑满并占据右侧绝大部分面积 */
+            flex: 1; 
             background-color: #ffffff;
             border: 1px solid #cbd5e0;
             border-radius: 6px;
-            padding: 35px;
+            padding: 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
         }
-        .right-main-content p.intro-text {
-            font-size: 17px;
+        
+        /* 简介文本保留在顶部 */
+        .intro-text {
+            font-size: 16px;
             color: #475569;
-            line-height: 1.8;
+            line-height: 1.6;
             text-align: justify;
-            margin-top: 0;
-            margin-bottom: 35px;
+            margin: 10px 15px 20px 15px;
         }
 
-        /* 具体机器介绍板块的样式设计 */
-        .machine-detail-card {
-            padding: 25px;
-            background-color: #f8fafc;
-            border-left: 5px solid #1e3a8a;
+        /* 💡 核心：嵌入 PDF 的内联框架样式 */
+        .pdf-viewer-frame {
+            width: 100%;
+            height: 800px; /* 控制右侧 PDF 显示的高度，可根据需要调整 */
+            border: none;
             border-radius: 4px;
-            margin-bottom: 30px;
-            scroll-margin-top: 20px; /* 点击锚点滚动时的顶部间距保护 */
+            background-color: #f1f5f9;
         }
-        .machine-detail-card h3 { margin: 0 0 12px 0; color: #1a365d; font-size: 20px; }
-        .machine-detail-card p { margin: 0; color: #515f72; font-size: 15px; }
     </style>
 </head>
 <body>
 
-    <!-- 顶部蓝色横幅（原样保留） -->
+    <!-- 顶部蓝色横幅 -->
     <header>
         <h1>Kaifeng Jasun Industry Co., Ltd.</h1>
         <p>Professional Soap Making Machinery Experts</p>
     </header>
 
-    <!-- 导航栏区域 -->
+    <!-- 导航栏区域（已彻底删除左上角 Home 标签） -->
     <div class="top-contact">
-        <!-- 左侧：Home 和 Products 顶部下拉标签 -->
         <ul class="nav-menu">
-            <li><a href="index.html" class="nav-item">Home</a></li>
             <li class="dropdown">
                 <a href="#" class="nav-item">Products <span class="arrow">▼</span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="index.html#all-categories">All Categories</a></li>
-                    <li><a href="index.html#automatic-soap">Automatic Soap Making Machine</a></li>
-                    <li><a href="index.html#handmade-soap">Handmade Soap Making Machine</a></li>
-                    <li><a href="index.html#liquid-detergent">Liquid Detergent (Soap) Making Machine</a></li>
-                    <li><a href="index.html#detergent-powder">Detergent Powder Making Machine</a></li>
+                    <!-- 💡 这里的链接同步绑定右侧的 PDF 框架，点击可直接切换 -->
+                    <li><a href="automatic-soap.pdf" target="pdf-display-frame">Automatic Soap Making Machine</a></li>
+                    <li><a href="handmade-soap.pdf" target="pdf-display-frame">Handmade Soap Making Machine</a></li>
+                    <li><a href="liquid-detergent.pdf" target="pdf-display-frame">Liquid Detergent (Soap) Making Machine</a></li>
+                    <li><a href="detergent-powder.pdf" target="pdf-display-frame">Detergent Powder Making Machine</a></li>
                 </ul>
             </li>
         </ul>
 
-        <!-- 右侧原有的通讯链接 -->
+        <!-- 右侧通讯链接 -->
         <a href="https://wa.me" class="btn-whatsapp">Chat on WhatsApp</a>
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
         
@@ -194,35 +186,38 @@
         </div>
     </div>
 
-    <!-- 3. 【核心改动】：网页顶端标语绝对居中，两边留白完全相同 -->
+    <!-- 顶端标语绝对居中 -->
     <div class="centered-title-wrapper">
         <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
     </div>
 
-    <!-- 4. 【核心改动】：新设计的双栏完美排版 -->
-    <div id="all-categories" class="web-body-layout">
+    <!-- 主体双栏排版 -->
+    <div class="web-body-layout">
         
-        <!-- 【左侧小面积栏】：垂直排列的 4 大机器标签（各语种通用此结构） -->
+        <!-- 【左侧小面积栏】：点击任何一个，右侧就会自动无缝切换对应的 PDF -->
         <aside class="left-sidebar-menu">
             <div class="sidebar-title">Categories</div>
             <ul>
-                <li><a href="#automatic-soap">Automatic Soap Making Machine</a></li>
-                <li><a href="#handmade-soap">Handmade Soap Making Machine</a></li>
-                <li><a href="#liquid-detergent">Liquid Detergent (Soap) Making Machine</a></li>
-                <li><a href="#detergent-powder">Detergent Powder Making Machine</a></li>
+                <li><a href="automatic-soap.pdf" target="pdf-display-frame">Automatic Soap Making Machine</a></li>
+                <li><a href="handmade-soap.pdf" target="pdf-display-frame">Handmade Soap Making Machine</a></li>
+                <li><a href="liquid-detergent.pdf" target="pdf-display-frame">Liquid Detergent (Soap) Making Machine</a></li>
+                <li><a href="detergent-powder.pdf" target="pdf-display-frame">Detergent Powder Making Machine</a></li>
             </ul>
         </aside>
 
-        <!-- 【右侧绝对大面积主网页】：占比达 75% 以上，呈现最完整的正文信息 -->
+        <!-- 【右侧绝对大面积主网页】：点击左侧时，PDF 将直接在下方框架内优雅展示 -->
         <main class="right-main-content">
             <p class="intro-text">
-                Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and districts.
+                Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries.
             </p>
 
-            <!-- 各分类机器的详细技术和规格展示内容块 -->
-            <div id="automatic-soap" class="machine-detail-card">
-                <h3>Automatic Soap Making Machine Line</h3>
-                <p>Fully automated equipment designed for industrial-scale mass production. Features high speed, precision electronic PLC controls, low labor requirements, and excellent soap bar cutting accuracy to optimize your plant's output.</p>
-            </div>
+            <!-- ⚠️ 【核心组件】：这就是您的 PDF 动态展示区。
+                 这里的 src="automatic-soap.pdf" 是网页打开时默认加载展示的第一个 PDF。
+                 请确保把下方的文件名替换为您在 GitHub 上实际上传的 PDF 文件名。 -->
+            <iframe name="pdf-display-frame" src="automatic-soap.pdf" class="pdf-viewer-frame"></iframe>
+        </main>
 
-            <div id="handmade-soap" class="machine-detail-card">
+    </div>
+
+</body>
+</html>
