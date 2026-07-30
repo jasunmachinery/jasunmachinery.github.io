@@ -6,7 +6,7 @@
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
         /* ==========================================================================
-           1. 全局与顶部蓝色横幅样式
+           1. 全局基础与横幅布局（还原主页原有初印象）
            ========================================================================== */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -14,7 +14,7 @@
             color: #333; 
             margin: 0; 
             padding: 0; 
-            background-color: #f9f9f9; 
+            background-color: #f8fafc; 
             overflow-x: hidden; 
         }
         header { 
@@ -23,19 +23,10 @@
             padding: 30px 20px; 
             text-align: center; 
         }
-        header h1 { 
-            margin: 0; 
-            font-size: 2.5em; 
-        }
-        header p { 
-            margin: 5px 0 0; 
-            font-size: 1.2em; 
-            color: #cbd5e0; 
-        }
+        header h1 { margin: 0; font-size: 2.5em; }
+        header p { margin: 5px 0 0; font-size: 1.2em; color: #cbd5e0; }
 
-        /* ==========================================================================
-           2. 顶部导航栏整体布局
-           ========================================================================== */
+        /* 顶部导航栏整体布局 */
         .top-contact { 
             display: flex; 
             flex-wrap: wrap; 
@@ -44,139 +35,129 @@
             gap: 25px; 
             padding: 15px 30px; 
             background-color: #e2e8f0; 
-            text-align: center; 
-            width: 100%;
-            box-sizing: border-box;
+            border-bottom: 1px solid #cbd5e0;
         }
 
-        /* 左侧 Home 和 Products 导航菜单 */
-        .nav-menu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+        /* Home & Products 标签（更改为邮箱同款蓝色） */
+        .nav-menu { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 20px; }
+        .nav-menu > li { position: relative; }
+        .nav-item { text-decoration: none; color: #1e3a8a; font-weight: bold; font-size: 18px; padding: 8px 12px; display: flex; align-items: center; transition: color 0.2s; }
+        .nav-item:hover { color: #dc2626; }
+        .arrow { font-size: 11px; margin-left: 5px; color: #1e3a8a; }
 
-        .nav-menu > li {
-            position: relative; 
-        }
+        /* Products 顶部下拉菜单 */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: #ffffff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); list-style: none; padding: 6px 0; margin: 5px 0 0 0; min-width: 320px; z-index: 999; border-radius: 4px; border: 1px solid #cbd5e0; }
+        .dropdown-menu li a { color: #333333; padding: 10px 20px; text-decoration: none; display: block; font-size: 15px; text-align: left; transition: background 0.2s, color 0.2s; }
+        .dropdown-menu li a:hover { background-color: #f1f5f9; color: #dc2626; }
+        .dropdown:hover .dropdown-menu { display: block; }
 
-        /* 【修改1】Home 和 Products 字体颜色改为与 Email 一致的蓝色 (#1e3a8a) */
-        .nav-item {
-            text-decoration: none;
-            color: #1e3a8a; 
-            font-weight: bold;
-            font-size: 18px;
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            transition: color 0.2s ease;
-        }
-
-        /* 鼠标悬停时变成红色 */
-        .nav-item:hover {
-            color: #dc2626; 
-        }
-
-        .arrow {
-            font-size: 11px;
-            margin-left: 5px;
-            color: #1e3a8a;
-        }
-        .dropdown:hover .arrow {
-            color: #dc2626;
-        }
-
-        /* Products 下拉菜单样式 */
-        .dropdown-menu {
-            display: none; 
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #ffffff;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
-            list-style: none;
-            padding: 6px 0;
-            margin: 5px 0 0 0;
-            min-width: 320px; 
-            z-index: 999;
-            border-radius: 4px;
-            border: 1px solid #cbd5e0;
-        }
-
-        .dropdown-menu li {
-            width: 100%;
-        }
-
-        .dropdown-menu li a {
-            color: #333333;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: block;
-            font-size: 15px;
-            text-align: left;
-            font-weight: normal;
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-
-        .dropdown-menu li a:hover {
-            background-color: #f1f5f9;
-            color: #dc2626; 
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        /* 右侧原组件样式 */
-        .btn-whatsapp { 
-            display: inline-flex; 
-            align-items: center; 
-            background-color: #25d366; 
-            color: white; 
-            padding: 10px 20px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            font-weight: bold; 
-            font-size: 18px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .btn-whatsapp::before {
-            content: "💬";
-            margin-right: 8px;
-        }
-
+        /* 右侧原件：WhatsApp、Email、Languages */
+        .btn-whatsapp { display: inline-flex; align-items: center; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; }
+        .btn-whatsapp::before { content: "💬"; margin-right: 8px; }
         .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #1e3a8a; }
-        
         .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-        .languages-links a { color: #1e3a8a; text-decoration: none; font-size: 18px; transition: color 0.2s; }
+        .languages-links a { color: #1e3a8a; text-decoration: none; }
         .languages-links a:hover { text-decoration: underline; }
 
         /* ==========================================================================
-           3. 保护正文的核心沙箱区域布局（完美恢复原网页的展示框架，防止空白）
+           2. 核心调整样式：标题完全居中 + 左右两栏经典布局
            ========================================================================== */
-        .main-container {
-            max-width: 1100px; 
-            margin: 40px auto; 
-            padding: 20px;
+        /* 核心要求：顶端标语绝对居中，左右留白相同 */
+        .centered-title-wrapper {
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px 10px 20px;
+            box-sizing: border-box;
+        }
+        .centered-title-wrapper h2 {
+            color: #1e3a8a;
+            font-size: 32px;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        /* 网页主体布局：左右两侧分栏 */
+        .web-body-layout {
+            max-width: 1300px;
+            margin: 20px auto 50px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 30px; /* 左右两栏的间距 */
+        }
+
+        /* 【左边小面积区域】：从上到下整齐排列的 4 个机器标签 */
+        .left-sidebar-menu {
+            flex: 0 0 280px; /* 限制左侧栏小面积固定宽度 */
             background-color: #ffffff;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
-            border-radius: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 15px 0;
+            height: fit-content;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-        
-        .product-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e3a8a;
+            padding: 0 20px 12px 20px;
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
         }
+        .left-sidebar-menu ul { list-style: none; padding: 0; margin: 0; }
+        .left-sidebar-menu ul li a {
+            display: block;
+            padding: 12px 20px;
+            color: #475569;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.3;
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.2s;
+        }
+        .left-sidebar-menu ul li:last-child a { border-bottom: none; }
+        /* 鼠标悬停左侧分类时变成标志性的红字浅灰底 */
+        .left-sidebar-menu ul li a:hover {
+            background-color: #f8fafc;
+            color: #dc2626;
+            padding-left: 25px; /* 轻微右移特效 */
+        }
+
+        /* 【右边大面积区域】：至少占 70%-90% 的详情主页面 */
+        .right-main-content {
+            flex: 1; /* 自动撑满并占据右侧绝大部分面积 */
+            background-color: #ffffff;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 35px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .right-main-content p.intro-text {
+            font-size: 17px;
+            color: #475569;
+            line-height: 1.8;
+            text-align: justify;
+            margin-top: 0;
+            margin-bottom: 35px;
+        }
+
+        /* 具体机器介绍板块的样式设计 */
+        .machine-detail-card {
+            padding: 25px;
+            background-color: #f8fafc;
+            border-left: 5px solid #1e3a8a;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            scroll-margin-top: 20px; /* 点击锚点滚动时的顶部间距保护 */
+        }
+        .machine-detail-card h3 { margin: 0 0 12px 0; color: #1a365d; font-size: 20px; }
+        .machine-detail-card p { margin: 0; color: #515f72; font-size: 15px; }
     </style>
 </head>
 <body>
 
-    <!-- 顶部蓝色横幅 -->
+    <!-- 顶部蓝色横幅（原样保留） -->
     <header>
         <h1>Kaifeng Jasun Industry Co., Ltd.</h1>
         <p>Professional Soap Making Machinery Experts</p>
@@ -184,8 +165,7 @@
 
     <!-- 导航栏区域 -->
     <div class="top-contact">
-        
-        <!-- 左侧：最新调整为邮箱同款蓝色的 Home 和 Products 标签 -->
+        <!-- 左侧：Home 和 Products 顶部下拉标签 -->
         <ul class="nav-menu">
             <li><a href="index.html" class="nav-item">Home</a></li>
             <li class="dropdown">
@@ -200,9 +180,8 @@
             </li>
         </ul>
 
-        <!-- 右侧：原有的多语言和联系方式（💡已自动绑定跳转锚点和外部调用逻辑） -->
+        <!-- 右侧原有的通讯链接 -->
         <a href="https://wa.me" class="btn-whatsapp">Chat on WhatsApp</a>
-        
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
         
         <div class="languages-links">
@@ -211,44 +190,39 @@
             <a href="index.html?lang=fr">Français</a> | 
             <a href="index.html?lang=ar">العربية</a> | 
             <a href="index.html?lang=ru">Русский</a> | 
-            <a href="https://www.youtube.com" target="_blank" style="color: #25d366;">Video 🎥</a>
+            <a href="https://youtube.com" target="_blank" style="color: #25d366;">Video 🎥</a>
         </div>
     </div>
 
-    <!-- ==========================================================================
-       【核心修复】：恢复完整网页内容骨架，消灭之前由于覆盖导致的大片空白
-       ========================================================================== -->
-    <div class="main-container">
-        <h2 style="color: #1e3a8a; font-size: 28px; margin-top: 10px;">Reliable Industrial Soap Machinery Manufacturer</h2>
-        <p style="font-size: 17px; color: #444; line-height: 1.7; text-align: justify;">
-            Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and districts.
-        </p>
-
-        <!-- 产品机器列表展示区域（锚点连接上面对应的下拉菜单，点击即可滚动） -->
-        <div id="all-categories" class="product-section">
-            <h3 style="color: #1e3a8a; font-size: 22px;">Our Featured Soap Making Machinery Categories</h3>
-            
-            <div id="automatic-soap" style="margin: 20px 0; padding: 15px; background: #f8fafc; border-left: 4px solid #1e3a8a;">
-                <h4 style="margin: 0 0 10px 0; color: #334155;">1. Automatic Soap Making Machine Line</h4>
-                <p style="margin: 0; color: #64748b;">Fully automated equipment for mass production. High speed, low labor costs, and excellent soap bar cutting precision.</p>
-            </div>
-
-            <div id="handmade-soap" style="margin: 20px 0; padding: 15px; background: #f8fafc; border-left: 4px solid #1e3a8a;">
-                <h4 style="margin: 0 0 10px 0; color: #334155;">2. Handmade Soap Making Machine</h4>
-                <p style="margin: 0; color: #64748b;">Perfect for boutique and customized soap brands. Flexible operation and supports various shape molding demands.</p>
-            </div>
-
-            <div id="liquid-detergent" style="margin: 20px 0; padding: 15px; background: #f8fafc; border-left: 4px solid #1e3a8a;">
-                <h4 style="margin: 0 0 10px 0; color: #334155;">3. Liquid Detergent (Soap) Making Machine</h4>
-                <p style="margin: 0; color: #64748b;">High-shear mixing emulsification tanks for producing liquid soaps, shampoos, body washes, and hand sanitizers.</p>
-            </div>
-
-            <div id="detergent-powder" style="margin: 20px 0; padding: 15px; background: #f8fafc; border-left: 4px solid #1e3a8a;">
-                <h4 style="margin: 0 0 10px 0; color: #334155;">4. Detergent Powder Making Machine</h4>
-                <p style="margin: 0; color: #64748b;">Advanced formulation blending and spray drying tower systems for commercial washing powder manufacturing.</p>
-            </div>
-        </div>
+    <!-- 3. 【核心改动】：网页顶端标语绝对居中，两边留白完全相同 -->
+    <div class="centered-title-wrapper">
+        <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
     </div>
 
-</body>
-</html>
+    <!-- 4. 【核心改动】：新设计的双栏完美排版 -->
+    <div id="all-categories" class="web-body-layout">
+        
+        <!-- 【左侧小面积栏】：垂直排列的 4 大机器标签（各语种通用此结构） -->
+        <aside class="left-sidebar-menu">
+            <div class="sidebar-title">Categories</div>
+            <ul>
+                <li><a href="#automatic-soap">Automatic Soap Making Machine</a></li>
+                <li><a href="#handmade-soap">Handmade Soap Making Machine</a></li>
+                <li><a href="#liquid-detergent">Liquid Detergent (Soap) Making Machine</a></li>
+                <li><a href="#detergent-powder">Detergent Powder Making Machine</a></li>
+            </ul>
+        </aside>
+
+        <!-- 【右侧绝对大面积主网页】：占比达 75% 以上，呈现最完整的正文信息 -->
+        <main class="right-main-content">
+            <p class="intro-text">
+                Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and districts.
+            </p>
+
+            <!-- 各分类机器的详细技术和规格展示内容块 -->
+            <div id="automatic-soap" class="machine-detail-card">
+                <h3>Automatic Soap Making Machine Line</h3>
+                <p>Fully automated equipment designed for industrial-scale mass production. Features high speed, precision electronic PLC controls, low labor requirements, and excellent soap bar cutting accuracy to optimize your plant's output.</p>
+            </div>
+
+            <div id="handmade-soap" class="machine-detail-card">
