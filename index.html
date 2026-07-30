@@ -27,10 +27,10 @@
         .centered-title-wrapper { width: 100%; text-align: center; padding: 30px 20px 10px 20px; box-sizing: border-box; }
         .centered-title-wrapper h2 { color: #1e3a8a; font-size: 32px; margin: 0 auto; display: inline-block; }
 
-        /* 网页主体：双栏经典布局 */
+        /* 💡 核心修复：重新建立双栏经典布局容器，彻底消灭白板 */
         .web-body-layout { max-width: 1400px; margin: 20px auto 50px auto; padding: 0 20px; display: flex; gap: 30px; }
 
-        /* 💡【新核心布局】：4个标签移动到标语正下方，宽度撑满且美化 */
+        /* 左边小面积分类菜单（宽度固定，支持多语种自动本地化） */
         .left-sidebar-menu { flex: 0 0 320px; background-color: #ffffff; border: 1px solid #cbd5e0; border-radius: 6px; padding: 15px 0; height: fit-content; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
         .sidebar-title { font-size: 16px; font-weight: bold; color: #1e3a8a; padding: 0 20px 12px 20px; margin: 0 0 10px 0; border-bottom: 2px solid #e2e8f0; text-transform: uppercase; }
         .left-sidebar-menu ul { list-style: none; padding: 0; margin: 0; }
@@ -85,7 +85,7 @@
             ar: {
                 title: "الفئات", m1: "آلة صنع الصابون الأوتوماتيكية", m2: "آلة صنع الصابون اليدوي", m3: "آلة صنع المنظفات السائلة (الصابون)", m4: "آلة صنع مسحوق الغسيل",
                 welcomeTitle: "مرحبًا بكم في شركة Kaifeng Jasun Industry Co., Ltd.",
-                welcomeTxt: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. 在 عام 2005، وهي متخصصة في آلات صنع الصابون المهنية وخطوط الإنتاج الكاملة. نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء.",
+                welcomeTxt: "تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات صنع الصابون المهنية وخطوط الإنتاج الكاملة. نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء.",
                 guideTxt: "⬅️ يرجى النقر على فئات المنتجات في الأعلى لعرض الكتالوجات الفنية."
             },
             ru: {
@@ -100,12 +100,12 @@
         let currentMaxPages = 12; 
         let currentMachineKey = 'automatic-soap-machine';
 
-        // 切换语种的核心函数：完美翻译正文、标语及移动后的 4 个标签，杜绝白板
+        // 切换语种的函数：完美翻译正文、标语及 4 个标签，杜绝白板
         function switchLanguage(lang, element) {
             document.querySelectorAll('.languages-links a').forEach(a => a.classList.remove('active-lang'));
             if(element) element.classList.add('active-lang');
 
-            // 联动映射您文件里的特殊小语种命名规则（如 -es_Page1, -fr_Page1 等）
+            // 联动映射语言后缀
             if (lang === 'en') { currentLangSuffix = ''; } 
             else { currentLangSuffix = '-' + lang; }
 
@@ -120,5 +120,6 @@
             document.getElementById('wel-txt').innerText = i18nData[lang].welcomeTxt;
             document.getElementById('gui-txt').innerText = i18nData[lang].guideTxt;
 
-            // 回到初始主页面板，避免直接白板
+            // 回到初始主页面板
             document.getElementById('welcome-view').style.display = 'block';
+            document.getElementById('image-stream-box').style.display = 'none';
