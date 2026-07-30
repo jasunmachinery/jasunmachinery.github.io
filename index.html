@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
-        /* 保留并优化您原有的全局基础样式 */
+        /* 全局基础样式 */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; overflow-x: hidden; }
         header { background-color: #1a365d; color: #fff; padding: 30px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 2.5em; }
         header p { margin: 5px 0 0; font-size: 1.2em; color: #cbd5e0; }
 
-        /* ==========================================================================
-           【核心改动】优化后的顶部导航栏布局，确保新标签在左边，老内容在右边
-           ========================================================================== */
+        /* 顶部导航栏整体布局 */
         .top-contact { 
             display: flex; 
             flex-wrap: wrap; 
             align-items: center; 
-            justify-content: flex-start; /* 改为靠左对齐，方便标签排列 */
+            justify-content: flex-start; 
             gap: 25px; 
             padding: 15px 30px; 
             background-color: #e2e8f0; 
@@ -27,7 +25,7 @@
             box-sizing: border-box;
         }
 
-        /* 1. 新增：左侧 Home 和 Products 导航菜单样式 */
+        /* 左侧 Home 和 Products 导航菜单 */
         .nav-menu {
             list-style: none;
             margin: 0;
@@ -38,13 +36,13 @@
         }
 
         .nav-menu > li {
-            position: relative; /* 为下拉菜单绝对定位提供基准 */
+            position: relative; 
         }
 
-        /* 导航主按钮字样（红色、加粗） */
+        /* 【修改1】Home 和 Products 字体颜色改为与 Email 一致的蓝色 (#1e3a8a) */
         .nav-item {
             text-decoration: none;
-            color: #dc2626; /* 还原图片中的红色 */
+            color: #1e3a8a; 
             font-weight: bold;
             font-size: 18px;
             padding: 8px 12px;
@@ -53,18 +51,23 @@
             transition: color 0.2s ease;
         }
 
+        /* 鼠标悬停时变成显眼的红色，提升用户交互感 */
         .nav-item:hover {
-            color: #991b1b;
+            color: #dc2626; 
         }
 
         .arrow {
             font-size: 11px;
             margin-left: 5px;
+            color: #1e3a8a;
+        }
+        .dropdown:hover .arrow {
+            color: #dc2626;
         }
 
-        /* 2. 新增：Products 下拉菜单核心样式 */
+        /* Products 下拉菜单样式 */
         .dropdown-menu {
-            display: none; /* 默认隐藏 */
+            display: none; 
             position: absolute;
             top: 100%;
             left: 0;
@@ -73,7 +76,7 @@
             list-style: none;
             padding: 6px 0;
             margin: 5px 0 0 0;
-            min-width: 320px; /* 确保长文本分类不换行 */
+            min-width: 320px; 
             z-index: 999;
             border-radius: 4px;
             border: 1px solid #cbd5e0;
@@ -83,7 +86,6 @@
             width: 100%;
         }
 
-        /* 下拉菜单里的子项分类链接 */
         .dropdown-menu li a {
             color: #333333;
             padding: 10px 20px;
@@ -95,24 +97,20 @@
             transition: background-color 0.2s ease, color 0.2s ease;
         }
 
-        /* 鼠标悬停在下拉子选项上的视觉动态效果 */
         .dropdown-menu li a:hover {
             background-color: #f1f5f9;
-            color: #2b5a9e; /* 悬停时变为您原本的蓝色 */
+            color: #dc2626; 
         }
 
-        /* 【核心联动】鼠标移入 Products 区域时，自动展示下拉列表 */
         .dropdown:hover .dropdown-menu {
             display: block;
         }
 
-        /* ==========================================================================
-           保留并修正您原有的右侧组件样式（WhatsApp、邮箱、语言）
-           ========================================================================== */
+        /* 右侧原组件样式 */
         .btn-whatsapp { 
             display: inline-flex; 
             align-items: center; 
-            background-color: #25d366; /* 修正为您样式表原定的 WhatsApp 绿 */
+            background-color: #25d366; 
             color: white; 
             padding: 10px 20px; 
             text-decoration: none; 
@@ -127,33 +125,38 @@
             margin-right: 8px;
         }
 
-        .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #2b5a9e; }
+        .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #1e3a8a; }
         
         .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-        .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
+        .languages-links a { color: #1e3a8a; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { text-decoration: underline; }
+
+        /* 主体内容布局容器 */
+        .main-container {
+            max-width: 1100px; 
+            margin: 40px auto; 
+            padding: 0 20px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- 1. 顶部蓝色横幅 -->
+    <!-- 顶部蓝色横幅 -->
     <header>
         <h1>Kaifeng Jasun Industry Co., Ltd.</h1>
         <p>Professional Soap Making Machinery Experts</p>
     </header>
 
-    <!-- 2. 导航栏区域 -->
+    <!-- 导航栏区域 -->
     <div class="top-contact">
         
-        <!-- 【新嵌入功能】：精准排在 WhatsApp 左边的 Home & Products 标签 -->
+        <!-- 左侧：Home 和 Products 标签 -->
         <ul class="nav-menu">
-            <!-- 1. Home 标签 -->
             <li><a href="index.html" class="nav-item">Home</a></li>
-            
-            <!-- 2. Products 标签（内置 5 个下拉子项） -->
             <li class="dropdown">
                 <a href="#" class="nav-item">Products <span class="arrow">▼</span></a>
                 <ul class="dropdown-menu">
+                    <!-- 💡 提示：请将下方的 # 号替换成你具体的产品网页链接（如：href="all-categories.html"） -->
                     <li><a href="#">All Categories</a></li>
                     <li><a href="#">Automatic Soap Making Machine</a></li>
                     <li><a href="#">Handmade Soap Making Machine</a></li>
@@ -163,27 +166,35 @@
             </li>
         </ul>
 
-        <!-- 【原有保留】：您网页原有的 WhatsApp、邮箱及多语言切换 -->
+        <!-- 右侧：WhatsApp、邮件及多语言（💡 提示：在 href="" 填入对应的网页链接，点击就会有反应） -->
         <a href="https://wa.me" class="btn-whatsapp">Chat on WhatsApp</a>
         
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
         
         <div class="languages-links">
-            <a href="#">English</a> | 
+            <!-- 💡 提示：想要点击小语种或视频有反应，需将 # 号换成对应语种的文件名，例如西班牙语换成 href="es.html" -->
+            <a href="index.html">English</a> | 
             <a href="#">Español</a> | 
             <a href="#">Français</a> | 
             <a href="#">العربية</a> | 
             <a href="#">Русский</a> | 
-            <a href="#" style="color: #25d366;">Video 🎥</a>
+            <a href="#" style="color: #25d366;">Video 🎥</a> <!-- 💡 提示：将 # 换成你的视频动态页面链接或YouTube链接 -->
         </div>
     </div>
 
-    <!-- 3. 主体内容展示（由于您的原截图下方被代码遮挡，此处保留基础骨架） -->
-    <div style="max-width: 1100px; margin: 40px auto; padding: 0 20px;">
-        <h2 style="color: #2b5a9e; font-size: 28px;">Reliable Industrial Soap Machinery Manufacturer</h2>
+    <!-- 网页主要内容区域 -->
+    <div class="main-container">
+        <h2 style="color: #1e3a8a; font-size: 28px;">Reliable Industrial Soap Machinery Manufacturer</h2>
         <p style="font-size: 17px; color: #444; line-height: 1.7; text-align: justify;">
             Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines...
         </p>
+
+        <!-- ===================================================================
+             ⚠️ 【非常重要】解决空白问题：
+             请在这里下方，把你过去编写的旧 index.html 里的全部正文内容（比如图片、产品列表、表格等）
+             重新复制粘贴到这里，这样页面就不会出现大片空白了。
+             =================================================================== -->
+
     </div>
 
 </body>
