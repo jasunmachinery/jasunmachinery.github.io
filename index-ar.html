@@ -6,104 +6,72 @@
     <title>Kaifeng Jasun Industry Co., Ltd. - الشركة المصنعة لآلات تصنيع الصابون الصناعي</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; overflow-x: hidden; text-align: center; }
-        
-        /* 1. 顶端抬头：强制内部元素垂直居中且水平对称对齐 */
         header { background-color: #1a365d; color: #fff; padding: 30px 20px; text-align: center; width: 100%; box-sizing: border-box; }
         header h1 { margin: 0; font-size: 2.5em; text-align: center; }
         header p { margin: 5px 0 0 0; font-size: 1.2em; color: #cbd5e0; text-align: center; }
-        
         .top-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px; padding: 18px 20px; background-color: #e2e8f0; text-align: center; width: 100%; box-sizing: border-box; direction: ltr; }
-        .btn-whatsapp { display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #2b5a9e; }
         
+        .btn-whatsapp { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; background: #25d366; color: white; padding: 6px 20px; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); line-height: 1.2; text-align: center; }
+        .btn-whatsapp span.txt-white { font-size: 18px; font-weight: bold; margin-bottom: 2px; display: block; }
+        .btn-whatsapp span.txt-red { color: #cc0000; font-size: 15px; font-weight: bold; display: block; }
+        
+        .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #2b5a9e; }
         .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { color: #e53e3e; text-decoration: underline; }
-        
-        /* 【中轴线绝对统一铁律】将页面核心文字和图片的容器宽度焊死在 1200px 最大视口内，通过 auto 自动外边距确保左侧和右侧留白绝对对称，形成完美的垂直中轴线 */
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; width: 100%; box-sizing: border-box; }
-        
-        /* 2. 中间文字白框：100% 贴合中轴线框架，文字全部进行美观的居中对称排版 */
         .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center !important; width: 100%; box-sizing: border-box; clear: both; }
         .intro h2 { color: #2b6cb0; margin-top: 0; text-align: center !important; }
         .intro p { font-size: 1.15em; color: #4a5568; width: 100%; margin: 0 auto; text-align: center !important; line-height: 2.2; }
-        
-        /* 3. 中间画面（设备目录大图）：移除所有极易跑偏的百分比平移，完全融入 100% 容器轨道，以绝对对称姿态精准对齐上方文字和下方联系方式 */
         .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
         .catalog-poster { width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto 35px auto !important; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
-
-        /* 4. 底端联系方式：彻底纠正原先乱入地球仪上方的bug，使其老老实实呆在整个容器最底部，并与顶端抬头、中间图册实现完美的中轴垂直重合 */
         .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; width: 100%; box-sizing: border-box; clear: both; display: block; }
         .contact-section h2 { margin-top: 0; text-align: center; }
-        .contact-section p { text-align: center; }
-        
+        .contact-section p { text-align: center; margin-bottom: 20px; }
         footer { text-align: center; padding: 20px; color: #718096; font-size: 0.9em; margin-top: 40px; border-top: 1px solid #e2e8f0; direction: ltr; clear: both; width: 100%; display: block; }
     </style>
 </head>
 <body>
-
-    <!-- 1. 顶端抬头（已实现绝对居中对称） -->
     <header>
         <h1>Kaifeng Jasun Industry Co., Ltd.</h1>
         <p>خبراء محترفون في آلات تصنيع الصابون</p>
     </header>
-
     <div class="top-contact">
-        <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 الدردشة عبر WhatsApp</a>
+        <a href="https://wa.me" target="_blank" class="btn-whatsapp">
+            <span class="txt-white">💬 الدردشة عبر WhatsApp</span>
+            <span class="txt-red">WhatsApp: +86-13937853263</span>
+        </a>
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ البريد الإلكتروني: jasunmachinery@gmail.com</a>
-        
         <span class="languages-links">
-            <a href="index.html">English</a> | 
-            <a href="index-es.html">Español</a> |
-            <a href="index-fr.html">Français</a> |
-            <a href="index-ar.html" style="font-weight: bold; color: #e53e3e;">العربية</a> |
-            <a href="index-ru.html">Русский</a> |
-            <a href="video.html" style="font-weight: bold; color: #25d366;">Video 🎥</a>
+            <a href="index.html">English</a> | <a href="index-es.html">Español</a> | <a href="index-fr.html">Français</a> | <a href="index-ar.html" style="font-weight: bold; color: #e53e3e;">العربية</a> | <a href="index-ru.html">Русский</a> | <a href="video.html" style="font-weight: bold; color: #25d366;">Video 🎥</a>
         </span>
     </div>
-
-    <!-- 统一中轴线容器大轨道 -->
     <div class="container">
-        
-        <!-- 2. 中间段落文字：已完美分为五行且强行居中对称 -->
         <div class="intro">
             <h2>مصنع موثوق لآلات تصنيع الصابون الصناعي</h2>
-            <p>
-                تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005،<br>
-                وهي متخصصة في آلات تصنيع الصابون المهنية وخطوط الإنتاج الكاملة.<br>
-                مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين<br>
-                بآلات معالجة الصابون عالية الأداء بدءًا من التصبن وحتى التغليف النهائي للصابون.<br>
-                تم تصدير أجهزتنا إلى أكثر من 50 دولة ومنطقة، بما في ذلك الدول المتقدمة مثل الولايات المتحدة الأمريكية.
-            </p>
+            <p>تأسست شركة Kaifeng Jasun Industry Co., Ltd. في عام 2005، وهي متخصصة في آلات تصنيع الصابون المهنية وخطوط الإنتاج الكاملة. مع أكثر من عقدين من الخبرة الصناعية، نحن ملتزمون بتزويد مصنعي الصابون العالميين بآلات معالجة الصابون عالية الأداء بدءًا من التصبن وحتى التغليف النهائي للصابون. تم تصدير أجهزتنا إلى أكثر من 50 دولة ومنطقة، بما في ذلك الدول المتقدمة مثل الولايات المتحدة الأمريكية.</p>
         </div>
-
-        <!-- 3. 中间画面：高清画册大图，已实现 100% 居中对称、绝不切边 -->
-        <div class="pdf-images-container" id="lang-catalog-head">
-            <img src="automatic-soap-machine-ar_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
-            <img src="automatic-soap-machine-ar_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
-            <img src="automatic-soap-machine-ar__Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
-            <img src="automatic-soap-machine-ar_Page4.jpg" alt="Catalog Page 4" class="catalog-poster">
-            <img src="automatic-soap-machine-ar_Page5.jpg" alt="Catalog Page 5" class="catalog-poster">
-            <img src="automatic-soap-machine-ar_Page6.jpg" alt="Catalog Page 6" class="catalog-poster">
-            <img src="automatic-soap-machine-ar_Page7.jpg" alt="Catalog Page 7" class="catalog-poster">
-            <img src="automatic-soap-machine-ar_Page8.jpg" alt="Catalog Page 8" class="catalog-poster">
-            <img src="automatic-soap-machine-ar_Page9.jpg" alt="Catalog Page 9" class="catalog-poster">
+        <div class="pdf-images-container">
+            <img src="automatic-soap-machine-ar_Page1.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine-ar_Page2.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine-ar__Page3.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine-ar_Page4.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine-ar_Page5.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine-ar_Page6.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine-ar_Page7.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine-ar_Page8.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine-ar_Page9.jpg" class="catalog-poster">
         </div>
-
-        <!-- 4. 底端联系方式：已彻底修复乱位bug，干净利落地在最底部中轴对称对齐 -->
         <div class="contact-section">
             <h2>اتصل بفريق الهندسة لدينا للحصول على عرض أسعار مجاني</h2>
             <p>تواصل مع فريقنا الهندسي مباشرة عبر WhatsApp أو البريد الإلكتروني لمعرفة الأسعار والمواصفات الفنية.</p>
-            <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 الدردشة عبر WhatsApp</a>
-            <a href="mailto:jasunmachinery@gmail.com" class="email-link" style="color: #fff; margin-right: 20px;">✉ البريد الإلكتروني: jasunmachinery@gmail.com</a>
+            <a href="https://wa.me" target="_blank" class="btn-whatsapp" style="margin: 0 auto 15px auto;">
+                <span class="txt-white">💬 الدردشة عبر WhatsApp</span>
+                <span class="txt-red">WhatsApp: +86-13937853263</span>
+            </a>
+            <p><a href="mailto:jasunmachinery@gmail.com" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 18px;">✉ البريد الإلكتروني: jasunmachinery@gmail.com</a></p>
         </div>
-        
     </div>
-
-    <!-- 5. 纯净的企业页脚 -->
-    <footer>
-        &copy; 2026 Jasun Machinery. جميع الحقوق محفوظة. | مخصص لتكنولوجيا صناعة الصابون.
-    </footer>
-
+    <footer>&copy; 2026 Jasun Machinery. جميع الحقوق محفوظة.</footer>
 </body>
 </html>
