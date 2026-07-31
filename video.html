@@ -7,7 +7,39 @@
     <style>
         body { font-family: sans-serif; line-height: 1.5; color: #333; margin: 0; background: #f9f9f9; }
         header { background: #1a365d; color: #fff; padding: 25px; text-align: center; }
-        .top-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 15px; background: #e2e8f0; font-size: 16px; font-weight: bold; }
+        .top-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 15px; background: #e2e8f0; font-size: 16px; font-weight: bold; align-items: center; }
+        
+        /* 🎯 核心高级按钮重塑：将绿色方块变为上下双行排版，字间距自动适应 */
+        .btn-whatsapp { 
+            display: inline-flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            background: #25d366; 
+            color: white; 
+            padding: 6px 20px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            line-height: 1.2;
+            text-align: center;
+        }
+        /* 白色字体整体向上移动微调 */
+        .btn-whatsapp span.txt-white {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 2px;
+            display: block;
+        }
+        /* 红色的电话号码：100% 严丝合缝嵌入绿色方块底端内部 */
+        .btn-whatsapp span.txt-red {
+            color: #cc0000;
+            font-size: 15px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #2b5a9e; }
         .languages-links a { color: #2b5a9e; text-decoration: none; margin: 0 4px; }
         .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
         .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
@@ -15,6 +47,8 @@
         .video-card video { width: 100%; height: auto; border-radius: 6px; background: #000; display: block; transform: translate3d(0,0,0); backface-visibility: hidden; }
         .v-en { font-weight: bold; color: #1a365d; margin-top: 10px; font-size: 15px; border-top: 1px solid #edf2f7; padding-top: 8px; }
         .v-multi { color: #718096; font-size: 12px; margin-top: 4px; line-height: 1.4; }
+        .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; }
+        .contact-section p { margin-bottom: 20px; font-size: 16px; }
         @media (max-width: 900px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { .video-grid { grid-template-columns: 1fr; } }
     </style>
@@ -25,107 +59,32 @@
         <p>Professional Soap Making Machinery Experts</p>
     </header>
     <div class="top-contact">
-        <a href="https://wa.me" target="_blank" style="background:#25d366;color:white;padding:8px 15px;text-decoration:none;border-radius:5px;">💬 Chat on WhatsApp</a>
-        <a href="mailto:jasunmachinery@gmail.com" style="color:#2b5a9e;text-decoration:none;">✉ jasunmachinery@gmail.com</a>
+        <!-- 顶部升级版高级双行按钮 -->
+        <a href="https://wa.me" target="_blank" class="btn-whatsapp">
+            <span class="txt-white">💬 Chat on WhatsApp</span>
+            <span class="txt-red">WhatsApp: +86-13937853263</span>
+        </a>
+        <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ jasunmachinery@gmail.com</a>
         <span class="languages-links">
             <a href="index.html">English</a>|<a href="index-es.html">Español</a>|<a href="index-fr.html">Français</a>|<a href="index-ar.html">العربية</a>|<a href="index-ru.html">Русский</a>|<a href="video.html" style="color:#e53e3e;">Video 🎥</a>
         </span>
     </div>
     <div class="container">
         <div class="video-grid">
-            <div class="video-card">
-                <video controls preload="none"><source src="1.small toilet soap production line.mp4" type="video/mp4"></video>
-                <div class="v-en">1. Small toilet soap production line</div>
-                <div class="v-multi"><b>ES:</b> Línea pequeña de jabón de tocador<br><b>FR:</b> Petite ligne de savon de toilette<br><b>RU:</b> Малая линия туалетного мыла<br><b>AR:</b> خط إنتاج صابون التواليت الصغير</div>
+            <div class="video-card"><video controls preload="none"><source src="1.small toilet soap production line.mp4" type="video/mp4"></video><div class="v-en">1. Small toilet soap production line</div><div class="v-multi"><b>ES:</b> Línea pequeña de jabón de tocador<br><b>FR:</b> Petite ligne de savon de toilette<br><b>RU:</b> Малая линия туалетного мыла<br><b>AR:</b> خط إنتاج صابون التواليت الصغير</div></div>
+            <div class="video-card"><video controls preload="none"><source src="2.large toilet soap production line.mp4" type="video/mp4"></video><div class="v-en">2. Large toilet soap production line</div><div class="v-multi"><b>ES:</b> Línea grande de jabón de tocador<br><b>FR:</b> Grande ligne de savon de toilette<br><b>RU:</b> Крупная линия туалетного мыла<br><b>AR:</b> خط إنتاج صابون التواليت الكبير</div></div>
+            <div class="video-card"><video controls preload="none"><source src="3.mini hotel soap production line.mp4" type="video/mp4"></video><div class="v-en">3. Mini hotel soap production line</div><div class="v-multi"><b>ES:</b> Mini línea de jabón de hotel<br><b>FR:</b> Mini ligne de savon d'hôtel<br><b>RU:</b> Мини-линия отельного мыла<br><b>AR:</b> خط إنتاج صابون الفنادق الصغير</div></div>
+            <div class="video-card"><video controls preload="none"><source src="4.laundry soap production line.mp4" type="video/mp4"></video><div class="v-en">4. Laundry soap production line</div><div class="v-multi"><b>ES:</b> Línea de jabón de lavar<br><b>FR:</b> Ligne de savon de ménage<br><b>RU:</b> Линия хозяйственного мыла<br><b>AR:</b> خط إنتاج صابون الغسيل</div></div>
+            <div class="video-card"><video controls preload="none"><source src="5.xd120 toilet soap stamping machine.mp4" type="video/mp4"></video><div class="v-en">5. XD120 toilet soap stamping machine</div><div class="v-multi"><b>ES:</b> Estampadora de jabón XD120<br><b>FR:</b> Estampage de savon XD120<br><b>RU:</b> Штамп туалетного мыла XD120<br><b>AR:</b> آلة ختم صابون التواليت XD120</div></div>
+            <div class="video-card"><video controls preload="none"><source src="6.xda1000 toilet soap stamping machine.mp4" type="video/mp4"></video><div class="v-en">6. XDA1000 toilet soap stamping machine</div><div class="v-multi"><b>ES:</b> Estampadora de jabón XDA1000<br><b>FR:</b> Estampage de savon XDA1000<br><b>RU:</b> Штамп туалетного мыла XDA1000<br><b>AR:</b> آلة ختم صابون التواليت XDA1000</div></div>
+            <div class="video-card"><video controls preload="none"><source src="7. Soap cutting machine (Two-colour).mp4" type="video/mp4"></video><div class="v-en">7. Soap cutting machine (Two-colour)</div><div class="v-multi"><b>ES:</b> Cortadora de jabón bicolor<br><b>FR:</b> Découpe de savon bicolore<br><b>RU:</b> Резательная машина (двухцветная)<br><b>AR:</b> آلة قطع الصابون (لونين)</div></div>
+            <div class="video-card"><video controls preload="none"><source src="8.soap cutting machine-cutting long soap.mp4" type="video/mp4"></video><div class="v-en">8. Soap cutting machine (Cutting long soap)</div><div class="v-multi"><b>ES:</b> Cortadora de barras largas<br><b>FR:</b> Découpe de barres longues<br><b>RU:</b> Резка длинных брусков мыла<br><b>AR:</b> آلة قطع الصابون الطويل</div></div>
+            <div class="video-card"><video controls preload="none"><source src="9. Pillow type soap packing machine.mp4" type="video/mp4"></video><div class="v-en">9. Pillow type soap packing machine</div><div class="v-multi"><b>ES:</b> Embaladora de jabón tipo almohada<br><b>FR:</b> Enrobeuse de savon type oreiller<br><b>RU:</b> Упаковочная машина флоу-пак<br><b>AR:</b> آلة تعبئة الصابون نوع الوسادة</div></div>
+            <div class="video-card"><video controls preload="none"><source src="10. Box type soap packing machine.mp4" type="video/mp4"></video><div class="v-en">10. Box type soap packing machine</div><div class="v-multi"><b>ES:</b> Embaladora de jabón en caja<br><b>FR:</b> Machine d'emballage en boîte<br><b>RU:</b> Картонажная упаковочная машина<br><b>AR:</b> آلة تعبئة الصابون في صناديق</div></div>
+            <div class="video-card"><video controls preload="none"><source src="11.paper soap packing machine.mp4" type="video/mp4"></video><div class="v-en">11. Paper soap packing machine</div><div class="v-multi"><b>ES:</b> Embaladora de jabón en papel<br><b>FR:</b> Machine d'emballage sous papier<br><b>RU:</b> Упаковка мыла в бумагу<br><b>AR:</b> آلة تعبئة الصابون بالورق</div></div>
+            <div class="video-card"><video controls preload="none"><source src="12.small soap noodles production line.mp4" type="video/mp4"></video><div class="v-en">12. Small soap noodles production line</div><div class="v-multi"><b>ES:</b> Línea pequeña de virutas de jabón<br><b>FR:</b> Petite ligne de bonds de savon<br><b>RU:</b> Малая линия мыльной стружки<br><b>AR:</b> خط إنتاج رقائق الصابون الصغير</div>
             </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="2.large toilet soap production line.mp4" type="video/mp4"></video>
-                <div class="v-en">2. Large toilet soap production line</div>
-                <div class="v-multi"><b>ES:</b> Línea grande de jabón de tocador<br><b>FR:</b> Grande ligne de savon de toilette<br><b>RU:</b> Крупная линия туалетного мыла<br><b>AR:</b> خط إنتاج صابون التواليت الكبير</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="3.mini hotel soap production line.mp4" type="video/mp4"></video>
-                <div class="v-en">3. Mini hotel soap production line</div>
-                <div class="v-multi"><b>ES:</b> Mini línea de jabón de hotel<br><b>FR:</b> Mini ligne de savon d'hôtel<br><b>RU:</b> Мини-линия отельного мыла<br><b>AR:</b> خط إنتاج صابون الفنادق الصغير</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="4.laundry soap production line.mp4" type="video/mp4"></video>
-                <div class="v-en">4. Laundry soap production line</div>
-                <div class="v-multi"><b>ES:</b> Línea de jabón de lavar<br><b>FR:</b> Ligne de savon de ménage<br><b>RU:</b> Линия хозяйственного мыла<br><b>AR:</b> خط إنتاج صابون الغسيل</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="5.xd120 toilet soap stamping machine.mp4" type="video/mp4"></video>
-                <div class="v-en">5. XD120 toilet soap stamping machine</div>
-                <div class="v-multi"><b>ES:</b> Estampadora de jabón XD120<br><b>FR:</b> Estampage de savon XD120<br><b>RU:</b> Штамп туалетного мыла XD120<br><b>AR:</b> آلة ختم صابون التواليت XD120</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="6.xda1000 toilet soap stamping machine.mp4" type="video/mp4"></video>
-                <div class="v-en">6. XDA1000 toilet soap stamping machine</div>
-                <div class="v-multi"><b>ES:</b> Estampadora de jabón XDA1000<br><b>FR:</b> Estampage de savon XDA1000<br><b>RU:</b> Штамп туалетного мыла XDA1000<br><b>AR:</b> آلة ختم صابون التواليت XDA1000</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="7. Soap cutting machine (Two-colour).mp4" type="video/mp4"></video>
-                <div class="v-en">7. Soap cutting machine (Two-colour)</div>
-                <div class="v-multi"><b>ES:</b> Cortadora de jabón bicolor<br><b>FR:</b> Découpe de savon bicolore<br><b>RU:</b> Резательная машина (двухцветная)<br><b>AR:</b> آلة قطع الصابون (لونين)</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="8.soap cutting machine-cutting long soap.mp4" type="video/mp4"></video>
-                <div class="v-en">8. Soap cutting machine (Cutting long soap)</div>
-                <div class="v-multi"><b>ES:</b> Cortadora de barras largas<br><b>FR:</b> Découpe de barres longues<br><b>RU:</b> Резка длинных брусков мыла<br><b>AR:</b> آلة قطع الصابون الطويل</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="9. Pillow type soap packing machine.mp4" type="video/mp4"></video>
-                <div class="v-en">9. Pillow type soap packing machine</div>
-                <div class="v-multi"><b>ES:</b> Embaladora de jabón tipo almohada<br><b>FR:</b> Enrobeuse de savon type oreiller<br><b>RU:</b> Упаковочная машина флоу-пак<br><b>AR:</b> آلة تعпئة الصابون نوع الوسادة</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="10. Box type soap packing machine.mp4" type="video/mp4"></video>
-                <div class="v-en">10. Box type soap packing machine</div>
-                <div class="v-multi"><b>ES:</b> Embaladora de jabón en caja<br><b>FR:</b> Machine d'emballage en boîte<br><b>RU:</b> Картонажная упаковочная машина<br><b>AR:</b> آلة تعبئة الصابون في صناديق</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="11.paper soap packing machine.mp4" type="video/mp4"></video>
-                <div class="v-en">11. Paper soap packing machine</div>
-                <div class="v-multi"><b>ES:</b> Embaladora de jabón en papel<br><b>FR:</b> Machine d'emballage sous papier<br><b>RU:</b> Упаковка мыла в бумагу<br><b>AR:</b> آلة تعبئة الصابون بالورق</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="12.small soap noodles production line.mp4" type="video/mp4"></video>
-                <div class="v-en">12. Small soap noodles production line</div>
-                <div class="v-multi"><b>ES:</b> Línea pequeña de virutas de jabón<br><b>FR:</b> Petite ligne de bonds de savon<br><b>RU:</b> Малая линия мыльной стружки<br><b>AR:</b> خط إنتاج رقائق الصابون الصغير</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="13.large saponification soap production line.mp4" type="video/mp4"></video>
-                <div class="v-en">13. Large saponification soap production line</div>
-                <div class="v-multi"><b>ES:</b> Línea grande de saponificación<br><b>FR:</b> Grande ligne de saponification<br><b>RU:</b> Крупная линия омыления мыла<br><b>AR:</b> خط إنتاج تصبين الصابون الكبير</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="14.stretch film soap packing machine.mp4" type="video/mp4"></video>
-                <div class="v-en">14. Stretch film soap packing machine</div>
-                <div class="v-multi"><b>ES:</b> Embaladora con película estirable<br><b>FR:</b> Emballage sous film étirable<br><b>RU:</b> Упаковочная машина в стретч-пленку<br><b>AR:</b> آلة تعبئة الصابون بفيلم التمدد</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="15.handmade soap double pipe soap cutter.mp4" type="video/mp4"></video>
-                <div class="v-en">15. Handmade soap double pipe soap cutter</div>
-                <div class="v-multi"><b>ES:</b> Cortadora artesanal de doble tubo<br><b>FR:</b> Coupe-savon à double tube<br><b>RU:</b> Двухтрубный резак для мыла ручной работы<br><b>AR:</b> قاطع صابون يدوي ثنائي الأнабиб</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="16.hydraulic toilet soap stamper.mp4" type="video/mp4"></video>
-                <div class="v-en">16. Hydraulic toilet soap stamper</div>
-                <div class="v-multi"><b>ES:</b> Estampadora hidráulica de jabón<br><b>FR:</b> Estampage hydraulique de savon<br><b>RU:</b> Гидравлический штамп туалетного мыла<br><b>AR:</b> آلة ختم صابون التواليت الهيدروليكية</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="17.pneumatic toilet soap stamper.mp4" type="video/mp4"></video>
-                <div class="v-en">17. Pneumatic toilet soap stamper</div>
-                <div class="v-multi"><b>ES:</b> Estampadora neumática de jabón<br><b>FR:</b> Estampage pneumatique de savon<br><b>RU:</b> Пневматический штамп туалетного мыла<br><b>AR:</b> آلة ختم صابون التواليت النيوماتيكية</div>
-            </div>
-            <div class="video-card">
-                <video controls preload="none"><source src="18.pneumatic soap cutter.mp4" type="video/mp4"></video>
-                <div class="v-en">18. Pneumatic soap cutter</div>
-                <div class="v-multi"><b>ES:</b> Cortadora neumática de jabón<br><b>FR:</b> Coupe-savon pneumatique<br><b>RU:</b> Пневматический резак для мыла<br><b>AR:</b> قاطع الصابون النيوماتيكي</div>
-            </div>
-        </div>
-        <div style="text-align:center; margin:30px 0;"><a href="index.html" style="background:#1a365d; color:white; padding:10px 25px; text-decoration:none; border-radius:5px; font-weight:bold;">Return to Catalog Home</a></div>
-    </div>
-    <footer style="text-align:center; padding:15px; color:#718096; font-size:13px; border-top:1px solid #edf2f7;">&copy; 2026 Jasun Machinery. All Rights Reserved.</footer>
-</body>
-</html>
+            <div class="video-card"><video controls preload="none"><source src="13.large saponification soap production line.mp4" type="video/mp4"></video><div class="v-en">13. Large saponification soap production line</div><div class="v-multi"><b>ES:</b> Línea grande de saponificación<br><b>FR:</b> Grande ligne de saponification<br><b>RU:</b> Крупная линия омыления мыла<br><b>AR:</b> خط إنتاج تصبين الصابون الكبير</div></div>
+            <div class="video-card"><video controls preload="none"><source src="14.stretch film soap packing machine.mp4" type="video/mp4"></video><div class="v-en">14. Stretch film soap packing machine</div><div class="v-multi"><b>ES:</b> Embaladora con película estirable<br><b>FR:</b> Emballage sous film étirable<br><b>RU:</b> Упаковочная машина в стретч-пленку<br><b>AR:</b> آلة تعبئة الصابون بفيلم التمدد</div></div>
+            <div class="video-card"><video controls preload="none"><source src="15.handmade soap double pipe soap cutter.mp4" type="video/mp4"></video><div class="v-en">15. Handmade soap double pipe soap cutter</div>
+            <div class="v-multi"><b>ES:</b> Cortadora artesanal de doble tubo<br><b>FR:</b> Coupe-savon à double tube<br><b>RU:</b> Двухтрубный резак для мыла ручной работы<br><b>AR:</b> قاطع صابون يدوي ثنائي الأنابيب</div></div>
