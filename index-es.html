@@ -24,15 +24,20 @@
         .process-container p { font-size: 1.1em; color: #4a5568; margin-bottom: 15px; width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
         .process-tip { background-color: #fff9e6; border-left: 4px solid #ffcc00; padding: 15px; border-radius: 4px; font-size: 15px; line-height: 1.6; color: #665200; font-weight: 500; margin-top: 20px; }
         .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
-        .catalog-poster { width: 125%; max-width: 125%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18 rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
+        .catalog-poster { width: 125%; max-width: 125%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
         .shipment-wrapper { width: 125%; max-width: 125%; height: auto; max-height: 750px; overflow: hidden; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; }
         .shipment-wrapper img { width: 100%; display: block; margin-bottom: -40px; }
-        .contact-section { background-color: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 50px; }
+        
+        /* 深度对齐英文版的深蓝色联系模块样式 */
+        .contact-section { background-color: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .contact-section h2 { font-size: 2em; margin-top: 0; margin-bottom: 15px; font-weight: bold; }
         .contact-section p { font-size: 1.2em; color: #cbd5e0; margin-bottom: 25px; }
-        .contact-section .btn-whatsapp-large { display: inline-block; background-color: #25d366; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 20px; margin-bottom: 25px; line-height: 1.4; }
+        .contact-section .btn-whatsapp-large { display: inline-block; background-color: #25d366; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: background-color 0.2s; margin-bottom: 25px; line-height: 1.4; }
+        .contact-section .btn-whatsapp-large:hover { background-color: #1ebd58; }
         .contact-section .btn-whatsapp-large span { display: block; font-size: 16px; font-weight: normal; margin-top: 3px; color: #eefdf4; }
         .contact-section .email-bottom { display: block; font-size: 20px; font-weight: bold; color: #fff; text-decoration: none; margin-top: 10px; }
+        .contact-section .email-bottom:hover { text-decoration: underline; }
+        
         footer { text-align: center; padding: 30px 20px; color: #718096; font-size: 0.95em; margin-top: 50px; border-top: 1px solid #e2e8f0; background-color: #fff; }
     </style>
 </head>
@@ -67,7 +72,6 @@
         
         <h2 style="color: #1a365d; font-size: 2.2em; text-align: center; margin-top: 40px; margin-bottom: 20px; font-weight: bold;">Línea Completa de Producción de Jabón: Desde la Saponificación hasta el Jabón Terminado</h2>
 
-        <!-- 精准调用 1 到 11 页全部西语版画册大图 -->
         <div class="pdf-images-container" id="lang-catalog-head">
             <img src="aotomatic-soap-machine-es_Page1.jpg" alt="Página 1" class="catalog-poster">
             <img src="aotomatic-soap-machine-es_Page2.jpg" alt="Página 2" class="catalog-poster">
@@ -81,10 +85,3 @@
             <img src="aotomatic-soap-machine-es_Page10.jpg" alt="Página 10" class="catalog-poster">
             
             <h3 style="color: #2b6cb0; font-size: 1.8em; margin-top: 30px; margin-bottom: 15px;">Embalaje y Envío de Equipos</h3>
-            <div class="shipment-wrapper">
-                <img src="aotomatic-soap-machine-es_Page11.jpg" alt="Embalaje y Envío">
-            </div>
-        </div>
-
-        <div class="contact-section">
-            <h2>Contáctenos para Obtener una Cotización y Catálogo Gratis</h2>
