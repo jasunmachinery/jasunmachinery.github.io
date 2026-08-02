@@ -32,13 +32,13 @@
         .pdf-images-container { width: 100%; margin: 30px 0; text-align: center; display: block; clear: both; }
         .catalog-poster { width: 125%; max-width: 125%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
         
-        /* 底部深蓝色联系区域 */
-        .footer-contact-box { background-color: #1a365d; color: white; padding: 35px 20px; border-radius: 6px; text-align: center; margin-top: 50px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .footer-contact-box h3 { margin-top: 0; font-size: 22px; font-weight: bold; margin-bottom: 10px; }
-        .footer-contact-box p { font-size: 15px; color: #cbd5e0; margin-bottom: 20px; }
-        .footer-whatsapp-btn { display: inline-block; background-color: #25d366; color: white; padding: 12px 28px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 18px; transition: background 0.2s; }
-        .footer-whatsapp-btn:hover { background-color: #1ebd59; }
-        .footer-email { margin-top: 15px; font-size: 16px; font-weight: bold; color: #fff; }
+        /* 底部深蓝色俄罗斯精细营销箱布局的 100% 英文版还原样式 */
+        .footer-contact-box { background-color: #1a365d; color: white; padding: 40px 20px; border-radius: 8px; text-align: center; margin: 40px auto; max-width: 900px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .footer-contact-box h3 { margin-top: 0; font-size: 24px; font-weight: bold; margin-bottom: 15px; color: #fff; letter-spacing: 0.5px; }
+        .footer-contact-box p { font-size: 15px; color: #cbd5e0; margin-bottom: 25px; line-height: 1.6; }
+        .footer-whatsapp-btn { display: inline-block; background-color: #25d366; color: white; padding: 12px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: all 0.3s ease; }
+        .footer-whatsapp-btn:hover { background-color: #1ebd59; transform: translateY(-2px); }
+        .footer-email { margin-top: 20px; font-size: 16px; font-weight: bold; color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; }
         footer { text-align: center; padding: 20px; color: #718096; font-size: 0.9em; margin-top: 40px; border-top: 1px solid #e2e8f0; }
     </style>
 </head>
@@ -70,7 +70,7 @@
             </div>
         </div>
         
-        <!-- 调用您仓库中真实存在的画册图片组件 -->
+        <!-- 调用真实存在且对应正确的 10 张大图组件 -->
         <div class="pdf-images-container" id="lang-catalog-head">
             <img src="automatic-soap-machine_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
             <img src="automatic-soap-machine_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
@@ -84,10 +84,6 @@
             <img src="automatic-soap-machine_Page12.jpg" alt="Catalog Page 12" class="catalog-poster">
         </div>
 
-        <!-- 证书图名对应真实存在的：certificates_01.jpg -->
+        <!-- 证书区（纯英文版标题） -->
         <div class="section-title">Certifications and Global Quality Standards</div>
         <div style="text-align: center; margin-bottom: 40px;">
-            <img src="certificates_01.jpg" alt="Certifications Jasun Machinery CE ISO" style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-        </div>
-
-        <!-- 地图图名对应真实存在的：world_map_soap_machinery.png -->
