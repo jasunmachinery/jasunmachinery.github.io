@@ -22,7 +22,7 @@
         .intro h2 { color: #2b6cb0; margin-top: 0; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 auto 20px auto; text-align: left; }
         
-        /* 针对最新工艺说明的专属完美对齐响应式容器 */
+        /* 针对工艺说明的专属完美对齐响应式容器 */
         .process-container { max-width: 900px; margin: 35px auto 0 auto; border-top: 1px solid #e2e8f0; padding-top: 25px; font-family: Arial, sans-serif; line-height: 1.6; color: #333; text-align: left; }
         .process-container h3 { color: #0056b3; font-size: 20px; font-weight: bold; margin-top: 0; margin-bottom: 15px; }
         .process-container p { font-size: 1.1em; color: #4a5568; margin-bottom: 15px; width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
@@ -35,14 +35,17 @@
         .shipment-wrapper { width: 125%; max-width: 125%; height: auto; max-height: 750px; overflow: hidden; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; }
         .shipment-wrapper img { width: 100%; display: block; margin-bottom: -40px; }
         
-        /* 深蓝色 Contact Us 联系模块样式 */
-        .contact-section { background-color: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .contact-section h2 { font-size: 2em; margin-top: 0; margin-bottom: 15px; font-weight: bold; }
-        .contact-section p { font-size: 1.2em; color: #cbd5e0; margin-bottom: 25px; }
-        .contact-section .btn-whatsapp-large { display: inline-block; background-color: #25d366; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: background-color 0.2s; margin-bottom: 25px; line-height: 1.4; }
-        .contact-section .btn-whatsapp-large:hover { background-color: #1ebd58; }
-        .contact-section .btn-whatsapp-large span { display: block; font-size: 16px; font-weight: normal; margin-top: 3px; color: #eefdf4; }
-        .contact-section .email-bottom { display: block; font-size: 20px; font-weight: bold; color: #fff; text-decoration: none; margin-top: 10px; }
+        /* 🎯 1:1 像素级还原截图效果的深蓝色 Contact Us 模块样式 */
+        .contact-section { background-color: #1a365d; color: #fff; padding: 45px 20px; text-align: center; border-radius: 8px; margin-top: 50px; box-sizing: border-box; }
+        .contact-section h2 { font-size: 24px; margin-top: 0; margin-bottom: 15px; font-weight: bold; letter-spacing: 0.5px; }
+        .contact-section p { font-size: 15px; color: #fff; margin-bottom: 25px; opacity: 0.9; }
+        
+        /* 精准微调的紧凑版圆角矩形绿色按钮外框 */
+        .contact-section .btn-whatsapp-large { display: inline-block; background-color: #25d366; color: white; padding: 10px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 17px; margin-bottom: 25px; line-height: 1.3; border: none; }
+        .contact-section .btn-whatsapp-large span { display: block; font-size: 13px; font-weight: bold; margin-top: 1px; color: #b30000; }
+        
+        /* 底部邮箱文案及图标对齐 */
+        .contact-section .email-bottom { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 16px; font-weight: bold; color: #fff; text-decoration: none; margin-top: 5px; }
         .contact-section .email-bottom:hover { text-decoration: underline; }
         
         /* 底部版权声明样式 */
@@ -66,7 +69,7 @@
             <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
             <p>Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
             
-            <!-- ==================== 肥皂工艺说明无痕嵌入区（精准定位在白框内、大标题上方） ==================== -->
+            <!-- ==================== 肥皂工艺说明无痕嵌入区 ==================== -->
             <div class="process-container">
                 <h3>The Soap Manufacturing Process From Vegetable Oil / Animal Fats and Caustic Soda</h3>
                 
@@ -98,6 +101,6 @@
             </div>
         </div>
 
+        <!-- ==================== 🎯 完美复制截图效果的组件样式 ==================== -->
         <div class="contact-section">
             <h2>Contact Us for a Free Quote & Catalog</h2>
-            <p>Get in touch with our engineering team directly via WhatsApp or Email for prices.</p>
