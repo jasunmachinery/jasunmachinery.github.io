@@ -18,6 +18,7 @@
         .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
         .languages-links a:hover { color: #e53e3e; text-decoration: underline; }
+        
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
         .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center; }
         .intro h2 { color: #2b6cb0; margin-top: 0; }
@@ -32,21 +33,24 @@
         .pdf-images-container { width: 100%; margin: 30px 0; text-align: center; display: block; clear: both; }
         .catalog-poster { width: 125%; max-width: 125%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
         
-        /* 底部深蓝色俄罗斯精细营销箱布局的 100% 英文版还原样式 */
-        .footer-contact-box { background-color: #1a365d; color: white; padding: 40px 20px; border-radius: 8px; text-align: center; margin: 40px auto; max-width: 900px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .footer-contact-box h3 { margin-top: 0; font-size: 24px; font-weight: bold; margin-bottom: 15px; color: #fff; letter-spacing: 0.5px; }
-        .footer-contact-box p { font-size: 15px; color: #cbd5e0; margin-bottom: 25px; line-height: 1.6; }
-        .footer-whatsapp-btn { display: inline-block; background-color: #25d366; color: white; padding: 12px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: all 0.3s ease; }
+        /* 🎯 终极优化：脱离内部容器，实现100%从左到右贯穿页面的全宽深色营销箱样式，与顶端宽度完全一致 */
+        .full-width-footer-box { background-color: #1a365d; color: white; padding: 45px 20px; text-align: center; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: 60px; box-sizing: border-box; box-shadow: 0 -4px 15px rgba(0,0,0,0.05); }
+        .full-width-footer-box h3 { margin-top: 0; font-size: 24px; font-weight: bold; margin-bottom: 12px; color: #fff; letter-spacing: 0.5px; }
+        .full-width-footer-box p { font-size: 15px; color: #cbd5e0; margin-bottom: 25px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .footer-whatsapp-btn { display: inline-block; background-color: #25d366; color: white; padding: 12px 35px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 18px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: all 0.3s ease; }
         .footer-whatsapp-btn:hover { background-color: #1ebd59; transform: translateY(-2px); }
-        .footer-email { margin-top: 20px; font-size: 16px; font-weight: bold; color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        footer { text-align: center; padding: 20px; color: #718096; font-size: 0.9em; margin-top: 40px; border-top: 1px solid #e2e8f0; }
+        .footer-email-btn { margin-top: 25px; font-size: 17px; font-weight: bold; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; transition: color 0.2s; }
+        .footer-email-btn:hover { color: #cbd5e0; text-decoration: underline; }
+        footer { text-align: center; padding: 25px 20px; color: #718096; font-size: 0.9em; border-top: 1px solid #e2e8f0; background-color: #f9f9f9; }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Kaifeng Jasun Industry Co., Ltd.</h1>
         <p>Professional Soap Making Machinery Experts</p>
     </header>
+    
     <div class="top-contact">
         <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
@@ -54,6 +58,7 @@
             <a href="index.html" style="font-weight: bold; color: #1a365d;">English</a> | <a href="index-es.html">Español</a> | <a href="index-fr.html">Français</a> | <a href="index-ar.html">العربية</a> | <a href="index-ru.html">Русский</a> | <a href="video.html" style="font-weight: bold; color: #25d366;">Video 🎥</a>
         </span>
     </div>
+    
     <div class="container">
         <div class="intro">
             <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
@@ -70,7 +75,7 @@
             </div>
         </div>
         
-        <!-- 调用真实存在且对应正确的 10 张大图组件 -->
+        <!-- 调用真实存在且不裂图的 Page10, 11, 12 大图 -->
         <div class="pdf-images-container" id="lang-catalog-head">
             <img src="automatic-soap-machine_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
             <img src="automatic-soap-machine_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
@@ -80,10 +85,3 @@
             <img src="automatic-soap-machine_Page6.jpg" alt="Catalog Page 6" class="catalog-poster">
             <img src="automatic-soap-machine_Page7.jpg" alt="Catalog Page 7" class="catalog-poster">
             <img src="automatic-soap-machine_Page10.jpg" alt="Catalog Page 10" class="catalog-poster">
-            <img src="automatic-soap-machine_Page11.jpg" alt="Catalog Page 11" class="catalog-poster">
-            <img src="automatic-soap-machine_Page12.jpg" alt="Catalog Page 12" class="catalog-poster">
-        </div>
-
-        <!-- 证书区（纯英文版标题） -->
-        <div class="section-title">Certifications and Global Quality Standards</div>
-        <div style="text-align: center; margin-bottom: 40px;">
