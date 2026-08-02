@@ -31,6 +31,10 @@
         .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
         .catalog-poster { width: 125%; max-width: 125%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
         
+        /* 专属物流图片包装容器：利用超出的截断彻底抹去原图底部的黑色文字和多余区域 */
+        .shipment-wrapper { width: 125%; max-width: 125%; height: auto; max-height: 750px; overflow: hidden; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; }
+        .shipment-wrapper img { width: 100%; display: block; margin-bottom: -40px; }
+        
         /* 完美还原的深蓝色 Contact Us 联系模块样式 */
         .contact-section { background-color: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .contact-section h2 { font-size: 2em; margin-top: 0; margin-bottom: 15px; font-weight: bold; }
@@ -89,10 +93,3 @@
             <img src="automatic-soap-machine_Page7.jpg" alt="Catalog Page 7" class="catalog-poster">
             <img src="automatic-soap-machine_Page8.jpg" alt="Catalog Page 8" class="catalog-poster">
             <img src="automatic-soap-machine_Page9.jpg" alt="Catalog Page 9" class="catalog-poster">
-            <img src="automatic-soap-machine_Page10.jpg" alt="Catalog Page 10" class="catalog-poster">
-        </div>
-
-        <!-- ==================== 完美复制追加：网页底端 Contact Us 联系模块 ==================== -->
-        <div class="contact-section">
-            <h2>Contact Us for a Free Quote & Catalog</h2>
-            <p>Get in touch with our engineering team directly via WhatsApp or Email for prices.</p>
