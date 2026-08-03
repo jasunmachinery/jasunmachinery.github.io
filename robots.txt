@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /$
+Allow: /index.html
+Allow: /sitemap.xml
+Disallow: /video.html
+Disallow: /index-ru.html
+Disallow: /index-ar.html
+Disallow: /index-fr.html
+Disallow: /index-es.html
