@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 【终极通关密钥】最新同步的谷歌站长工具验证元标记，无任何乱码，100%精准对齐 -->
     <meta name="google-site-verification" content="zTODkdG937FiJecmSsrSHAAC62ciiMwZb9suBveq3ys" />
     <title>Kaifeng Jasun Industry Co., Ltd. - Industrial Soap Machinery Manufacturer</title>
     <style>
@@ -12,7 +11,12 @@
         header h1 { margin: 0; font-size: 2.5em; }
         header p { margin: 5px 0 0 0; font-size: 1.2em; color: #cbd5e0; }
         .top-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px; padding: 18px 20px; background-color: #e2e8f0; text-align: center; width: 100%; box-sizing: border-box; }
-        .btn-whatsapp { display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        /* 🎯 双行高级按钮样式重塑 */
+        .btn-whatsapp { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; background: #25d366; color: white; padding: 6px 20px; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); line-height: 1.2; text-align: center; }
+        .btn-whatsapp span.txt-white { font-size: 18px; font-weight: bold; margin-bottom: 2px; display: block; }
+        .btn-whatsapp span.txt-red { color: #cc0000; font-size: 15px; font-weight: bold; display: block; }
+        
         .email-link { font-size: 18px; font-weight: bold; text-decoration: none; color: #2b5a9e; }
         .languages-links { font-size: 18px; font-weight: bold; color: #333333; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
         .languages-links a { color: #2b5a9e; text-decoration: none; font-size: 18px; transition: color 0.2s; }
@@ -21,35 +25,10 @@
         .intro { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center; }
         .intro h2 { color: #2b6cb0; margin-top: 0; }
         .intro p { font-size: 1.1em; color: #4a5568; max-width: 900px; margin: 0 auto 20px auto; text-align: left; }
-        
-        /* 针对工艺说明的专属完美对齐响应式容器 */
-        .process-container { max-width: 900px; margin: 35px auto 0 auto; border-top: 1px solid #e2e8f0; padding-top: 25px; font-family: Arial, sans-serif; line-height: 1.6; color: #333; text-align: left; }
-        .process-container h3 { color: #0056b3; font-size: 20px; font-weight: bold; margin-top: 0; margin-bottom: 15px; }
-        .process-container p { font-size: 1.1em; color: #4a5568; margin-bottom: 15px; width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
-        .process-tip { background-color: #fff9e6; border-left: 4px solid #ffcc00; padding: 15px; border-radius: 4px; font-size: 15px; line-height: 1.6; color: #665200; font-weight: 500; margin-top: 20px; }
-        
         .pdf-images-container { width: 100%; margin: 40px 0; text-align: center; display: block; clear: both; }
         .catalog-poster { width: 125%; max-width: 125%; height: auto; display: block; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; }
-        
-        /* 专属物流图片包装容器 */
-        .shipment-wrapper { width: 125%; max-width: 125%; height: auto; max-height: 750px; overflow: hidden; position: relative; left: 50%; transform: translateX(-50%); margin-bottom: 35px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; }
-        .shipment-wrapper img { width: 100%; display: block; margin-bottom: -40px; }
-        
-        /* 🎯 1:1 像素级还原截图效果的深蓝色 Contact Us 模块样式 */
-        .contact-section { background-color: #1a365d; color: #fff; padding: 45px 20px; text-align: center; border-radius: 8px; margin-top: 50px; box-sizing: border-box; }
-        .contact-section h2 { font-size: 24px; margin-top: 0; margin-bottom: 15px; font-weight: bold; letter-spacing: 0.5px; }
-        .contact-section p { font-size: 15px; color: #fff; margin-bottom: 25px; opacity: 0.9; }
-        
-        /* 精准微调的紧凑版圆角矩形绿色按钮外框 */
-        .contact-section .btn-whatsapp-large { display: inline-block; background-color: #25d366; color: white; padding: 10px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 17px; margin-bottom: 25px; line-height: 1.3; border: none; }
-        .contact-section .btn-whatsapp-large span { display: block; font-size: 13px; font-weight: bold; margin-top: 1px; color: #b30000; }
-        
-        /* 底部邮箱文案及图标对齐 */
-        .contact-section .email-bottom { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 16px; font-weight: bold; color: #fff; text-decoration: none; margin-top: 5px; }
-        .contact-section .email-bottom:hover { text-decoration: underline; }
-        
-        /* 底部版权声明样式 */
-        footer { text-align: center; padding: 30px 20px; color: #718096; font-size: 0.95em; margin-top: 50px; border-top: 1px solid #e2e8f0; background-color: #fff; }
+        .contact-section { background: #1a365d; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-top: 40px; }
+        footer { text-align: center; padding: 20px; color: #718096; font-size: 0.9em; margin-top: 40px; border-top: 1px solid #e2e8f0; }
     </style>
 </head>
 <body>
@@ -58,7 +37,10 @@
         <p>Professional Soap Making Machinery Experts</p>
     </header>
     <div class="top-contact">
-        <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
+        <a href="https://wa.me" target="_blank" class="btn-whatsapp">
+            <span class="txt-white">💬 Chat on WhatsApp</span>
+            <span class="txt-red">WhatsApp: +86-13937853263</span>
+        </a>
         <a href="mailto:jasunmachinery@gmail.com" class="email-link">✉ Email: jasunmachinery@gmail.com</a>
         <span class="languages-links">
             <a href="index.html" style="font-weight: bold; color: #1a365d;">English</a> | <a href="index-es.html">Español</a> | <a href="index-fr.html">Français</a> | <a href="index-ar.html">العربية</a> | <a href="index-ru.html">Русский</a> | <a href="video.html" style="font-weight: bold; color: #25d366;">Video 🎥</a>
@@ -68,39 +50,31 @@
         <div class="intro">
             <h2>Reliable Industrial Soap Machinery Manufacturer</h2>
             <p>Established in 2005, Kaifeng Jasun Industry Co., Ltd. specializes in professional soap making machinery and complete production lines. With over two decades of industrial expertise, we are dedicated to providing global soap manufacturers with high-performance soap processing machineries from saponification to finished soap package. Our machines have exported to over 50 countries and district, including the developed countries like United States.</p>
-            
-            <!-- ==================== 肥皂工艺说明无痕嵌入区 ==================== -->
-            <div class="process-container">
-                <h3>The Soap Manufacturing Process From Vegetable Oil / Animal Fats and Caustic Soda</h3>
-                
-                <p>The whole process is divided into two major steps.</p>
-                
-                <p><strong>The first step (Part A)</strong> is saponification and drying system to produce soap noodles. It is the saponification reaction of Vegetable Oil / Animal Fats and caustic soda to form a soap base. This soap base is then processed through a vacuum drying system and a pelletizer, which extrudes them into soap noodles.</p>
-                
-                <p><strong>The second step (Part B)</strong> is from soap noodles to produce finished soap. The soap noodles are put into a soap mixer, which blends the soap noodles with perfume and pigment. The mixture is then fed into a refine plodder (refiner). Its core objective is to thoroughly blend, homogenize, and mill the soap materials. After that, the soap noodles come to a three roll mill (three-roller grinder), where the soap noodles are ground into thin soap sheets. These thin sheets are transferred via a conveyor belt to a duplex vacuum soap plodder machine or a single screw soap plodder machine (soap extruder), where they are refined again and continuously extruded into a long soap bar with the desired shape. Afterward, the long bar is cut and shaped into individual soap bars of the required size using an automatic soap cutting machine (soap cutter) or a soap stamping machine (soap stamper / soap printer / soap press / soap punching machine). Finally, the finished soap bars are wrapped by a packaging machine (flow pillow soap packing machine / soap cartoning machine / paper soap packing machine).</p>
-                
-                <div class="process-tip">
-                    For most beginners with no experience in soap manufacturing and a small budget, we suggest choosing Part B for the initial production.
-                </div>
-            </div>
-            <!-- ==================== 肥皂工艺说明无痕嵌入区（结束） ==================== -->
         </div>
-        
-        <div class="pdf-images-container" id="lang-catalog-head">
-            <img src="automatic-soap-machine_Page1.jpg" alt="Catalog Page 1" class="catalog-poster">
-            <img src="automatic-soap-machine_Page2.jpg" alt="Catalog Page 2" class="catalog-poster">
-            <img src="automatic-soap-machine_Page3.jpg" alt="Catalog Page 3" class="catalog-poster">
-            <img src="automatic-soap-machine_Page4.jpg" alt="Catalog Page 4" class="catalog-poster">
-            <img src="automatic-soap-machine_Page5.jpg" alt="Catalog Page 5" class="catalog-poster">
-            <img src="automatic-soap-machine_Page6.jpg" alt="Catalog Page 6" class="catalog-poster">
-            <img src="automatic-soap-machine_Page7.jpg" alt="Catalog Page 7" class="catalog-poster">
-            <img src="automatic-soap-machine_Page8.jpg" alt="Catalog Page 8" class="catalog-poster">
-            <img src="automatic-soap-machine_Page9.jpg" alt="Catalog Page 9" class="catalog-poster">
-            <div class="shipment-wrapper">
-                <img src="automatic-soap-machine_Page11.jpg" alt="Packing and Shipment">
-            </div>
+        <div class="pdf-images-container">
+            <img src="automatic-soap-machine_Page1.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page2.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page3.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page4.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page5.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page6.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page7.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page8.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page9.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page10.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page11.jpg" class="catalog-poster">
+            <img src="automatic-soap-machine_Page12.jpg" class="catalog-poster">
         </div>
-
-        <!-- ==================== 🎯 完美复制截图效果的组件样式 ==================== -->
         <div class="contact-section">
             <h2>Contact Us for a Free Quote & Catalog</h2>
+            <p>Get in touch with our engineering team directly via WhatsApp or Email for prices and specifications.</p>
+            <a href="https://wa.me" target="_blank" class="btn-whatsapp" style="margin: 0 auto 15px auto;">
+                <span class="txt-white">💬 Chat on WhatsApp</span>
+                <span class="txt-red">WhatsApp: +86-13937853263</span>
+            </a>
+            <p><a href="mailto:jasunmachinery@gmail.com" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 18px;">✉ Email: jasunmachinery@gmail.com</a></p>
+        </div>
+    </div>
+    <footer>&copy; 2026 Jasun Machinery. All Rights Reserved.</footer>
+</body>
+</html>
