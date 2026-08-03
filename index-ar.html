@@ -16,29 +16,37 @@ header p{margin:5px 0 0 0;font-size:1.2em;color:#cbd5e0}
 .languages-links{font-size:18px;font-weight:bold;color:#333333;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .languages-links a{color:#2b5a9e;text-decoration:none;font-size:18px;transition:color 0.2s}
 .languages-links a:hover{color:#e53e3e;text-decoration:underline}
-.container{max-width:1200px;margin:30px auto;padding:0 20px}
-.intro{background:#fff;padding:30px;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,0.05);margin-bottom:30px;text-align:center}
+
+/* 阿拉伯语主容器布局：死死锁定 900px 宽度，并在页面自动靠右侧对齐 */
+.container{max-width:900px;margin:30px auto;padding:0 20px;text-align:right}
+.intro{background:#fff;padding:30px;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,0.05);margin-bottom:30px;text-align:right}
 .intro h2{color:#2b6cb0;margin-top:0}
-.intro p{font-size:1.1em;color:#4a5568;max-width:900px;margin:0 auto 20px auto;text-align:right}
-.process-container{max-width:900px;margin:35px auto 0 auto;border-top:1px solid #e2e8f0;padding-top:25px;font-family:Arial,sans-serif;line-height:1.6;color:#333;text-align:right}
-.process-container h3{color:#0056b3;font-size:20px;font-weight:bold;margin-top:0;margin-bottom:15px}
-.process-container p{font-size:1.1em;color:#4a5568;margin-bottom:15px;width:100%;max-width:100%;margin-left:0;margin-right:0}
-.process-tip{background-color:#fff9e6;border-right:4px solid #ffcc00;padding:15px;border-radius:4px;font-size:15px;line-height:1.6;color:#665200;font-weight:500;margin-top:20px}
-.pdf-images-container{width:100%;margin:40px 0;text-align:center;display:block;clear:both}
-.catalog-poster{width:125%;max-width:125%;height:auto;display:block;position:relative;left:50%;transform:translateX(-50%);margin-bottom:35px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border:1px solid #e2e8f0;border-radius:6px}
-.shipment-wrapper{width:125%;max-width:125%;height:auto;max-height:750px;overflow:hidden;position:relative;left:50%;transform:translateX(-50%);margin-bottom:35px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border:1px solid #e2e8f0;border-radius:6px;background:#fff}
+.intro p{font-size:1.1em;color:#4a5568;width:100%;max-width:100%;margin:0 0 20px 0;text-align:right}
+
+/* 阿拉伯语肥皂工艺说明专属靠右垂直对齐容器 */
+.process-container{width:100%;max-width:100%;margin:35px 0 0 0;border-top:1px solid #e2e8f0;padding-top:25px;font-family:Arial,sans-serif;line-height:1.6;color:#333;text-align:right}
+.process-container h3{color:#0056b3;font-size:20px;font-weight:bold;margin-top:0;margin-bottom:15px;text-align:right}
+.process-container p{font-size:1.1em;color:#4a5568;margin-bottom:15px;width:100%;max-width:100%;margin-left:0;margin-right:0;text-align:right}
+.process-tip{background-color:#fff9e6;border-right:4px solid #ffcc00;border-left:none;padding:15px;border-radius:4px;font-size:15px;line-height:1.6;color:#665200;font-weight:500;margin-top:20px;text-align:right}
+
+/* 🎯 核心修复：将画册大图容器强制限制在 100% 宽度，并彻底取消原英文版向左偏离的 transform 变形，实现物理右边缘的绝对精准贴合对齐 */
+.pdf-images-container{width:100%;max-width:100%;margin:40px 0;text-align:right;display:block;clear:both}
+.catalog-poster{width:100%;max-width:100%;height:auto;display:block;margin-bottom:35px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border:1px solid #e2e8f0;border-radius:6px}
+
+/* 物流图裁剪包装容器同步实现绝对右贴齐 */
+.shipment-wrapper{width:100%;max-width:100%;height:auto;max-height:750px;overflow:hidden;margin-bottom:35px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border:1px solid #e2e8f0;border-radius:6px;background:#fff}
 .shipment-wrapper img{width:100%;display:block;margin-bottom:-40px}
 
-/* 🎯 完美 1:1 像素级还原原版截图的精美底部深蓝色 Contact Us 模块样式（阿拉伯语专属版） */
-.contact-section{background-color:#1a365d;color:#fff;padding:45px 20px;text-align:center;border-radius:8px;margin-top:50px;box-sizing:border-box}
+/* 🎯 核心修复：将深蓝色联系模块的宽度也修改为与文字完全一致的 100%，实现右边缘垂直大合体 */
+.contact-section{width:100%;max-width:100%;background-color:#1a365d;color:#fff;padding:45px 20px;text-align:center;border-radius:8px;margin-top:50px;box-sizing:border-box}
 .contact-section h2{font-size:24px;margin-top:0;margin-bottom:15px;font-weight:bold;letter-spacing:0.3px}
 .contact-section p{font-size:14.5px;color:#fff;margin-bottom:22px;opacity:0.95}
 
-/* 扁平紧凑圆角矩形绿色按钮 */
+/* 紧凑精致的圆角矩形绿色咨询大按钮 */
 .contact-section .btn-whatsapp-large{display:inline-block;background-color:#25d366;color:white;padding:8px 24px;text-decoration:none;border-radius:6px;font-size:16.5px;font-weight:bold;line-height:1.35;margin-bottom:22px}
 .contact-section .btn-whatsapp-large span {display:block;font-size:13px;font-weight:bold;margin-top:1px;color:#b30000;direction:ltr}
 
-/* 底部邮箱文案及图标水平对齐 */
+/* 底部邮箱链接水平居中 */
 .contact-section .email-bottom{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:16.5px;font-weight:bold;color:#fff;text-decoration:none;margin-top:5px;direction:ltr}
 .contact-section .email-bottom:hover {text-decoration:underline}
 
@@ -74,9 +82,10 @@ footer{text-align:center;padding:30px 20px;color:#718096;font-size:0.95em;margin
 </div>
 </div>
 
-<h2 style="color:#1a365d;font-size:2.2em;text-align:center;margin-top:40px;margin-bottom:20px;font-weight:bold">مجموعة كاملة من خطوط إنتاج الصابون من بدءا الصابون إلى وصولاً الزيت تصبن النهائي</h2>
+<!-- 🎯 阿拉伯语专属优化标题：完美实现靠右侧垂直对齐 -->
+<h2 style="color:#1a365d;font-size:2.2em;text-align:right;margin-top:40px;margin-bottom:20px;font-weight:bold;max-width:900px;margin-right:auto;margin-left:auto;padding:0 20px">مجموعة كاملة من خطوط إنتاج الصابون من بدءا الصابون إلى وصولاً الزيت تصبن النهائي</h2>
 
-<!-- 核心修复：100% 精准按顺序调用您后台带 -ar 的阿拉伯语专属画册大图 -->
+<!-- 100% 精准调用您后台带 -ar 的阿拉伯语专属画册大图，且完美右侧对齐 -->
 <div class="pdf-images-container" id="lang-catalog-head">
 <img src="automatic-soap-machine-ar_Page1.jpg" alt="الصفحة 1" class="catalog-poster">
 <img src="automatic-soap-machine-ar_Page2.jpg" alt="الصفحة 2" class="catalog-poster">
@@ -87,13 +96,14 @@ footer{text-align:center;padding:30px 20px;color:#718096;font-size:0.95em;margin
 <img src="automatic-soap-machine-ar_Page7.jpg" alt="الصفحة 7" class="catalog-poster">
 <img src="automatic-soap-machine-ar_Page8.jpg" alt="الصفحة 8" class="catalog-poster">
 <img src="automatic-soap-machine-ar_Page9.jpg" alt="الصفحة 9" class="catalog-poster">
-<h3 style="color:#2b6cb0;font-size:1.8em;margin-top:30px;margin-bottom:15px">تعبئة وشحن المعدات</h3>
+
+<h3 style="color:#2b6cb0;font-size:1.8em;margin-top:30px;margin-bottom:15px;text-align:right;max-width:900px;margin-right:auto;margin-left:auto;padding:0 20px">تعبئة وشحن المعدات</h3>
 <div class="shipment-wrapper">
 <img src="automatic-soap-machine_Page11.jpg" alt="التعبئة والشحن">
 </div>
 </div>
 
-<!-- ==================== 🎯 核心修改：底端联系模块和所有文字全部变更为纯正外贸阿拉伯语 ==================== -->
+<!-- 底部精致圆角矩形联系模块，同步实现右边缘完美对齐 -->
 <div class="contact-section">
 <h2>اتصل بنا للحصول على عرض أسعار وكتالوج مجاني</h2>
 <p>تواصل مع فريقنا الهندسي مباشرة عبر الواتساب أو البريد الإلكتروني للحصول على الأسعار والمواصفات الفنية.</p>
