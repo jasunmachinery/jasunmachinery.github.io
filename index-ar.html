@@ -24,10 +24,16 @@ header p{margin:12px 0 0 0;font-size:1.6em;color:#cbd5e0}
 .process-container h3{color:#0056b3;font-size:30px;font-weight:bold;margin-top:0;margin-bottom:25px;text-align:right}
 .process-container p{font-size:25px;color:#4a5568;margin-bottom:25px;width:100%;max-width:100%;margin-left:0;margin-right:0;text-align:right}
 .process-tip{background-color:#fff9e6;border-right:6px solid #ffcc00;border-left:none;padding:25px;border-radius:4px;font-size:24px;line-height:1.9;color:#665200;font-weight:bold;margin-top:30px;text-align:right}
-.pdf-images-container{width:100%;max-width:100%;margin:50px 0;text-align:right;display:block;clear:both}
-.catalog-poster{width:100%;max-width:100%;height:auto;display:block;margin-bottom:35px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border:1px solid #e2e8f0;border-radius:6px}
-.shipment-wrapper{width:100%;max-width:100%;height:auto;max-height:850px;overflow:hidden;margin-bottom:35px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border:1px solid #e2e8f0;border-radius:6px;background:#fff}
+
+/* 🎯 核心修改：pdf-images-container 内边距增加，给画册区域左右提供更宽舒的呼吸感空间 */
+.pdf-images-container{width:100%;max-width:100%;margin:50px 0;text-align:right;display:block;clear:both;padding:0 10px;box-sizing:border-box}
+/* 🎯 核心修改：每张画册图的垂直外边距（图片上下前后的距离）从 35px 放大至 55px，防止画面产生拥挤感 */
+.catalog-poster{width:100%;max-width:100%;height:auto;display:block;margin-bottom:55px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border:1px solid #e2e8f0;border-radius:6px}
+
+/* 物流图裁剪外包装同步微调间距 */
+.shipment-wrapper{width:100%;max-width:100%;height:auto;max-height:850px;overflow:hidden;margin-bottom:55px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border:1px solid #e2e8f0;border-radius:6px;background:#fff}
 .shipment-wrapper img{width:100%;display:block;margin-bottom:-40px}
+
 .contact-section{width:100%;max-width:100%;background-color:#1a365d;color:#fff;padding:55px 30px;text-align:center;border-radius:8px;margin-top:65px;box-sizing:border-box}
 .contact-section h2{font-size:34px;margin-top:0;margin-bottom:20px;font-weight:bold;letter-spacing:0.3px}
 .contact-section p{font-size:21px;color:#fff;margin-bottom:35px;opacity:0.95}
@@ -40,7 +46,6 @@ footer{text-align:center;padding:40px 20px;color:#718096;font-size:1.2em;margin-
 </head>
 <body>
 <header>
-<!-- 🎯 终极底层修复：利用 unicode-bidi 技术彻底隔离阿语反向环境，强制所有电脑浏览器把点渲染在最右侧 -->
 <h1 style="direction: ltr; unicode-bidi: bidi-override; display: inline-block;">Kaifeng Jasun Industry Co., Ltd.</h1>
 <p>خبراء محترفون في آلات تصنيع الصابون</p>
 </header>
@@ -59,7 +64,7 @@ footer{text-align:center;padding:40px 20px;color:#718096;font-size:1.2em;margin-
 <h3>عملية تصنيع الصابون من الزيوت النباتية/الدهون الحيوانية والصودا الكاوية</h3>
 <p>تنقسم العملية برمتها إلى خطوتين رئيسيتين.</p>
 <p><strong>الخطوة الأولى (الجزء أ)</strong> هي عملية التصبين والتجفيف لإنتاج نودلز الصابون. وهي عبارة عن تفاعل تصبين بين الزيوت النباتية/الدهون الحيوانية والصودا الكاوية لتكوين قاعدة الصابون. ثم تُعالج قاعدة الصابون هذه من خلال نظام تجفيف بالتفريغ الهوائي وجهاز تحبيب، حيث يتم بثقها إلى نودلز الصابون.</p>
-<p><strong>الخطوة الثانية (الجزء ب)</strong> هي تحويل نودلز الصابون إلى صابون جاهز. توضع نودلز الصابون في خلاط الصابون، حيث تُخلط مع العطر والصبغة. ثم يُغذى الخليط إلى جهاز تكرير. والهدف الأساسي من ذلك هو مزج وتجانس وطحن مواد الصابون جيدًا. بعد ذلك، تصل نودلز الصابون إلى مطحنة ثلاثية الأسطوانات، حيث تُطحن إلى صفائح صابون رقيقة. تُنقل هذه صفائح الرقيقة عبر سير ناقل إلى آلة تشكيل الصابون بالتفريغ الهوائي المزدوجة أو آلة تشكيل الصابون باللولب الأحادي (آلة بثق الصابون)، حيث تُعاد معالجتها وتُبثق باستمرار لتشكيل قالب صابون طويل بالشكل المطلوب. بعد ذلك، يُقطع القالب الطويل ويُشكّل إلى قوالب صابون فردية بالحجم المطلوب باستخدام آلة تقطيع الصابون الأوتاعاتيكية أو آلة ختم الصابون. وأخيرًا، تُغلّف قوالب الصابون الجاهزة بواسطة آلة تغليف (آلة تغليف الصابون بالوسائد/آلة تعبئة الصابون في علب كرتونية/آلة تغليف الصابون بالورق).</p>
+<p><strong>الخطوة الثانية (الجزء ب)</strong> هي تحويل نودلز الصابون إلى صابون جاهز. توضع نودلز الصابون في خلاط الصابون، حيث تُخلط مع العطر والصبغة. ثم يُغذى الخليط إلى جهاز تكرير. والهدف الأساسي من ذلك هو مزج وتجانس وطحن مواد الصابون جيدًا. بعد ذلك، تصل نودلز الصابون إلى مطحنة ثلاثية الأسطوانات، حيث تُطحن إلى صفائح صابون رقيقة. تُنقل هذه صفائح الرقيقة عبر سير ناقل إلى آلة تشكيل الصابون بالتفريغ الهوائي المزدوجة أو آلة تشكيل الصابون باللولب الأحادي (آلة بثق الصابون)، حيث تُعاد معالجتها وتُبثق باستمرار لتشكيل قالب صابون طويل بالشكل المطلوب. بعد ذلك، يُقطع القالب الطويل ويُشكّل إلى قوالب صابون فردية بالحجم المطلوب باستخدام آلة تقطيع الصابون الأوتوماتيكية أو آلة ختم الصابون. وأfinalةً، تُغلّف قوالب الصابون الجاهزة بواسطة آلة تغليف (آلة تغليف الصابون بالوسائد/آلة تعبئة الصابون في علب كرتونية/آلة تغليف الصابون بالورق).</p>
 <div class="process-tip">
 بالنسبة لمعظم المبتدئين الذين ليس لديهم خبرة في صناعة الصابون وميزانية محدودة، نقترح اختيار الجزء (ب) للإنتاج الأولي.
 </div>
