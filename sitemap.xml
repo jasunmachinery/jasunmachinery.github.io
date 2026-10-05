@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://sitemaps.org">
+  
   <!-- 首页 -->
   <url>
-    <loc>https://jasunmachinery.github.io</loc>
+    <loc>https://jasunmachinery.com</loc>
     <priority>1.0</priority>
   </url>
+
   <!-- 产品主页 -->
   <url>
-    <loc>https://jasunmachinery.github.io/index.html</loc>
+    <loc>https://jasunmachinery.comindex.html</loc>
     <priority>0.8</priority>
   </url>
+
 </urlset>
+<!-- 复制号码: 20261005JM -->
