@@ -1,17 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://sitemaps.org">
-  
+
   <!-- 首页 -->
   <url>
-    <loc>https://jasunmachinery.com</loc>
+    <loc>https://jasunmachinery.com/</loc>
     <priority>1.0</priority>
   </url>
 
   <!-- 产品主页 -->
   <url>
-    <loc>https://jasunmachinery.com/index.html</loc>
+    <loc>https://jasunmachinery.com</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 英文页 English -->
+  <url>
+    <loc>https://jasunmachinery.com</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 西班牙语页 Español -->
+  <url>
+    <loc>https://jasunmachinery.com</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 法语页 Français -->
+  <url>
+    <loc>https://jasunmachinery.com</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 阿拉伯语页 العربية -->
+  <url>
+    <loc>https://jasunmachinery.com</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 俄语页 Русский -->
+  <url>
+    <loc>https://jasunmachinery.com</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 视频页 Video -->
+  <url>
+    <loc>https://jasunmachinery.com</loc>
     <priority>0.8</priority>
   </url>
 
 </urlset>
-<!-- 复制号码: 20261005JM_REAL_FIXED -->
+<!-- 更改年份: 20261005JM_REAL_FIXED -->
