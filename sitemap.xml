@@ -5,38 +5,31 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- 英文页 English -->
-  <url>
+    <url>
     <loc>https://jasunmachinery.com/index-en.html</loc>
     <priority>0.8</priority>
   </url>
 
-  <!-- 西班牙语页 Español -->
   <url>
     <loc>https://jasunmachinery.com/index-es.html</loc>
     <priority>0.8</priority>
   </url>
 
-  <!-- 法语页 Français -->
   <url>
     <loc>https://jasunmachinery.com/index-fr.html</loc>
     <priority>0.8</priority>
   </url>
-
-  <!-- 阿拉伯语页 العربية -->
   <url>
     <loc>https://jasunmachinery.com/index-ar.html</loc>
     <priority>0.8</priority>
   </url>
 
-  <!-- 俄语页 Русский -->
   <url>
     <loc>https://jasunmachinery.com/index-ru.html</loc>
     <priority>0.8</priority>
   </url>
 
-  <!-- 视频页 Video -->
-  <url>
+    <url>
     <loc>https://jasunmachinery.com/video.html</loc>
     <priority>0.8</priority>
   </url>
