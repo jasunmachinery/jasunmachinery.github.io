@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jasunmachinery.com/sitemap.xml
+Sitemap: https://jasunmachinery.com/video-sitemap.xml
